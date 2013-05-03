@@ -51,7 +51,7 @@
   \LoadClass[a4paper,12pt,openright,twoside]{book}
 \else
   \LoadClass[a4paper,12pt,openany]{book}
-\fi
+  \fi
 \RequirePackage[includeheadfoot]{geometry}
 \RequirePackage[center,pagestyles]{titlesec}
 \RequirePackage{titletoc}
@@ -196,21 +196,18 @@
 \sethead{}{\raisebox{.65\baselineskip}
   {
     \songti \wuhao
-    \ifisanon{~}
-    \else
-    {\ifischapter % 标题作为页眉
+    \ifischapter % 标题作为页眉
       \ifistwoside
       {
         \ifodd \value{page} % 奇数页
         {\chaptertitle}
         \else % 偶数页
-        {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi
+        {\@displaytitle}\fi
       }
       \else
       {\chaptertitle}\fi
       \else %标题不作为页眉
-      {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi}
-    \fi
+      {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -220,52 +217,46 @@
 }
 
 \newpagestyle{mpage}{
-\sethead{}{\raisebox{.65\baselineskip}
-  {
-    \songti \wuhao
-    \ifisanon{~}
-    \else
-    {\ifischapter % 标题作为页眉
-      \ifistwoside
-      {
-        \ifodd \value{page} % 奇数页
-        {第\thechapter 章\hspace{1em}\chaptertitle}
-        \else % 偶数页
-        {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi
-      }
-      \else
-      {第\thechapter 章\hspace{1em}\chaptertitle}\fi
-      \else %标题不作为页眉
-      {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi}
-    \fi
-  }
-}{}
-\headrule%
-\setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
-\footrule%
-\setfootrule{1bp}
+  \sethead{}{\raisebox{.65\baselineskip}
+    {
+      \songti \wuhao
+      \ifischapter % 标题作为页眉
+        \ifistwoside
+        {
+          \ifodd \value{page} % 奇数页
+          {第\thechapter 章\hspace{1em}\chaptertitle}
+          \else % 偶数页
+          {\@displaytitle}\fi
+        }
+        \else
+        {第\thechapter 章\hspace{1em}\chaptertitle}\fi
+        \else %标题不作为页眉
+        {\@displaytitle}\fi
+    }
+  }{}
+  \headrule%
+  \setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
+  \footrule%
+  \setfootrule{1bp}
 }
 
 \newpagestyle{appendixpage}{
 \sethead{}{\raisebox{.65\baselineskip}
   {
     \songti \wuhao
-    \ifisanon{~}
-    \else
-    {\ifischapter % 标题作为页眉
+    \ifischapter % 标题作为页眉
       \ifistwoside
       {
         \ifodd \value{page} % 奇数页
         {附录\thechapter\hspace{1em}\chaptertitle}
         \else % 偶数页
-        {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi
+        {\@displaytitle}\fi
       }
       \else
       {附录\thechapter\hspace{1em}\chaptertitle}\fi
       \else %标题不作为页眉
-      {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi}
-    \fi
-  }
+      {\@displaytitle}\fi
+    }
 }{}
 \headrule%
 \setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
@@ -277,21 +268,18 @@
 \sethead{}{\raisebox{.65\baselineskip}
   {
     \songti \wuhao
-    \ifisanon{~}
-    \else
-    {\ifischapter % 标题作为页眉
+    \ifischapter % 标题作为页眉
       \ifistwoside
       {
         \ifodd \value{page} % 奇数页
         {\chapterlabel}
         \else % 偶数页
-        {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi
+        {\@displaytitle}\fi
       }
       \else
       {\chapterlabel}\fi
       \else %标题不作为页眉
-      {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi}
-    \fi
+      {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -315,6 +303,7 @@
     \normalsize % normal, 正文开始
     \def\@tabular{\wuhao[1.25]\old@tabular} % 之后表格字体使用5号
 
+    \pagestyle{mpage}
   }
 \renewcommand\backmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
@@ -562,7 +551,7 @@
 \def\university#1{\def\@university{#1}} % university号
 \def\confidentiality#1{\def\@confidentiality{#1}} % 密级
 \def\title#1{\def\@title{#1}} % 中文题目
-\newtoks\displaytitle
+\def\displaytitle#1{\def\@displaytitle{#1}} % 文章标题
 \def\author#1{\def\@author{#1}}
 \def\zhdate#1{\def\@zhdate{#1}} % 中文日期
 \def\subject#1{\def\@subject{#1}} % 中文学科

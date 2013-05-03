@@ -39,10 +39,10 @@
 %   \documentclass[doctor,twoside,otf]{scnuthesis}
 %5. 如果想生成盲评，传递anon即可，仍需修改个人成果部分
 % \documentclass[master,otf,anon]{scnuthesis}
-%6. 让章节标题作为页眉，可以使用chapterhead选项。如果和twoside一起使
+%6. 让章节标题作为页眉，可以使用chapterhead选项。如果和twoside一起使用，则奇数页页眉为章节标题，偶数页为文章标题。
 % \documentclass[master,otf,twoside,chapterhead]{scnuthesis}
 %
-\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}
+\documentclass[master,twoside,ttf,anon,vista,chapterhead]{scnuthesis}
 \usepackage{myscnu}
 
 \begin{document}
@@ -63,10 +63,9 @@
 \entitle{How to Use the \LaTeX{} Document Class for SCNU Dissertations}
 % 插入摘要，制作封面
 \ifisanon{}\else{\maketitle}\fi
-
 \frontmatter
-
 \input{data/abstract}
+
 % 生成目录
 \tableofcontents
 \listoftables           % 如果要生成表目录
@@ -76,29 +75,33 @@
 
 \input{data/denotation} % 如果要生成符号列表
 
+% 书写正文，可以根据需要增添章节。
 \mainmatter
-\pagestyle{mpage}
 \input{data/chap01}
 \input{data/chap02}
 \input{data/chap03}
 
+% 参考文献
 \cleardoublepage
-\renewcommand{\chapterlabel}{\bibname} % 设置页眉
+\renewcommand{\chapterlabel}{\bibname} % 设置参考文献的页眉
 \bibliographystyle{bstutf8}
 \bibliography{ref/refs}
 
+% 附录
 \appendix
 \backmatter
-
 \input{data/appendix01}
 \input{data/appendix02}
 
+% 致谢
 \cleardoublepage
-\renewcommand{\chapterlabel}{\ackname} % 设置致谢参考文献的页眉
+\renewcommand{\chapterlabel}{\ackname} % 设置参考文献的页眉
 \input{data/ack}
 
+% 作者攻读学位期间发表的学术论文目录
 \cleardoublepage
 \renewcommand{\chapterlabel}{\resumename} % 设置作者个人成果的页眉
 \input{data/resume}
 
 \end{document}
+%%

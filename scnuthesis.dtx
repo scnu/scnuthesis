@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2013/04/28 v0.5.7 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2013/04/28 v0.5.8 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -36,7 +36,7 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}  
 %
-% \CheckSum{1176}
+% \CheckSum{1151}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -159,7 +159,7 @@
 %
 % \begin{center}
 %     \begin{minipage}{.9\textwidth}
-%       \begin{tcolorbox}[colback=blue!20,colframe=blue!30,arc=3mm]
+%       \begin{tcolorbox}[colback=blue!10,colframe=blue!20,arc=3mm]
 %         \begin{flushleft}
 %         \hspace{0.5em}{\scalefont{1.2}\textbf{\begin{Huge}\textquotedblleft\end{Huge}}}
 %         \\ \vspace{-0.65cm}
@@ -331,8 +331,7 @@
 %<thesis>%   \documentclass[doctor,twoside,otf]{scnuthesis}
 %<thesis>%5. 如果想生成盲评，传递anon即可，仍需修改个人成果部分
 %<thesis>% \documentclass[master,otf,anon]{scnuthesis}
-%<thesis>%6. 让章节标题作为页眉，可以使用chapterhead选项。如果和twoside一起使
-%用，则奇数页页眉为章节标题，偶数页为文章标题。
+%<thesis>%6. 让章节标题作为页眉，可以使用chapterhead选项。如果和twoside一起使用，则奇数页页眉为章节标题，偶数页为文章标题。
 %<thesis>% \documentclass[master,otf,twoside,chapterhead]{scnuthesis}
 %<thesis>%
 %    \end{macrocode}
@@ -471,10 +470,9 @@
 %    \begin{macrocode}
 %<*thesis>
 \ifisanon{}\else{\maketitle}\fi
-
 \frontmatter
-
 \input{data/abstract}
+
 %</thesis>
 %    \end{macrocode}
 %
@@ -492,6 +490,7 @@
 \renewcommand{\chapterlabel}{\denotationname} %设置页眉
 
 \input{data/denotation} % 如果要生成符号列表
+
 %</thesis>
 %    \end{macrocode}
 % \subsection{主体部分}
@@ -526,20 +525,22 @@
 % \changes{v0.5.3}{2011/02/23}{修改了示例文档中的少量错误标点}
 % \changes{v0.5.5}{2011/06/01}{去掉了第一章中的表格和插图示例，统一在第二章中说
 % 明}
-% \changes{v0.5.7}{2013/04/28}{解决了找不到参考文献样式的错误}
-%<thesis>
+% \changes{v0.5.7}{2013/04/28}{根据Jiawan Xu的反馈，解决了找不到参考文献样式的错误}
+%<thesis>% 书写正文，可以根据需要增添章节。
 %    \begin{macrocode}
 %<*thesis>
-% 书写正文，可以根据需要增添章节。
 \mainmatter
-\pagestyle{mpage}
 \input{data/chap01}
 \input{data/chap02}
 \input{data/chap03}
 
-% 参考文献
+%</thesis>
+%    \end{macrocode}
+%<thesis>% 参考文献
+%    \begin{macrocode}
+%<*thesis>
 \cleardoublepage
-\renewcommand{\chapterlabel}{\bibname} % 设置页眉
+\renewcommand{\chapterlabel}{\bibname} % 设置参考文献的页眉
 \bibliographystyle{bstutf8}
 \bibliography{ref/refs}
 
@@ -551,21 +552,28 @@
 % 文原创性声明、学位论文使用授权声明。
 % 
 % \changes{v0.5.7}{2013/04/28}{将多个附录分离成多个文件}
+%<thesis>% 附录
 %    \begin{macrocode}
 %<*thesis>
 \appendix
 \backmatter
-
-% 附录
 \input{data/appendix01}
 \input{data/appendix02}
 
-% 致谢
+%</thesis>
+%    \end{macrocode}
+%<thesis>% 致谢
+%    \begin{macrocode}
+%<*thesis>
 \cleardoublepage
-\renewcommand{\chapterlabel}{\ackname} % 设置致谢参考文献的页眉
+\renewcommand{\chapterlabel}{\ackname} % 设置参考文献的页眉
 \input{data/ack}
 
-% 作者攻读学位期间发表的学术论文目录
+%</thesis>
+%    \end{macrocode}
+%<thesis>% 作者攻读学位期间发表的学术论文目录
+%    \begin{macrocode}
+%<*thesis>
 \cleardoublepage
 \renewcommand{\chapterlabel}{\resumename} % 设置作者个人成果的页眉
 \input{data/resume}
@@ -597,6 +605,7 @@
 %
 % 当前的宏包选项在之前已经介绍了，下面是实现步骤，就是几个\verb|if|。
 %    \begin{macrocode}
+%<*cls>
 \newif\ifismaster\ismastertrue
 \newif\ifisttf\isttftrue
 \DeclareOption{master}{\ismastertrue}
@@ -613,11 +622,14 @@
 \DeclareOption{chapterhead}{\ischaptertrue}
 \DeclareOption*{\PackageWarning{scnuthesis}{Unknown Option '\CurrentOption'}}
 \ProcessOptions\relax
+%</cls>
 %    \end{macrocode}
 %
 % 首先调用在文档类书写中需要的过程控制语句，在计算一些\verb|length|时要用到
 %    \begin{macrocode}
+%<*cls>
 \RequirePackage{ifthen,calc}
+%</cls>
 %    \end{macrocode}
 %
 % 接着我们导入文本类，该模板基于标准的书籍模板book，其默认格式为单面打印。
@@ -625,20 +637,24 @@
 % 起在右手边，左手空白页为完全的空白页，不包含页眉页脚。
 %
 %    \begin{macrocode}
+%<*cls>
 \ifistwoside
   \LoadClass[a4paper,12pt,openright,twoside]{book}
 \else
   \LoadClass[a4paper,12pt,openany]{book}
-\fi
+  \fi
+%</cls>  
 %    \end{macrocode}
 %
 % 我们直接用\textsf{geometry}宏包进行页面边距的设定，调用titlesec设定标题以及页眉页脚，
 % 用\textsf{titletoc}设定目录格式。需要改动的可以参考这三个宏包的说明文档。
 %
 %    \begin{macrocode}
+%<*cls>
 \RequirePackage[includeheadfoot]{geometry}
 \RequirePackage[center,pagestyles]{titlesec}
 \RequirePackage{titletoc}
+%</cls>
 %    \end{macrocode}
 %
 % 文档中另外重要的两个部分是表格和图片。
@@ -651,9 +667,11 @@
 % 将浮动对象强制放在这里(副作用是版面可能不好):
 %
 %    \begin{macrocode}
+%<*cls>
 \RequirePackage{graphicx}
 \RequirePackage[config]{subfig}
 \RequirePackage{float}
+%</cls>
 %    \end{macrocode}
 %
 % 再来看表格：我们采用\textsf{longtable}来处理长的表格，还需要\textsf{array}包;
@@ -663,32 +681,36 @@
 % 为了在表格中支持跨行，需要引入\textsf{multirow}包，\textsf{tabularx}的作用是为了使用
 % 固定宽度的表格，\textsf{slashbox}可以让我们在表格中使用反斜线:
 %    \begin{macrocode}
+%<*cls>
 \RequirePackage{array}
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
 \RequirePackage{multirow}
 \RequirePackage{tabularx}
 \RequirePackage{slashbox}
+%</cls>
 %    \end{macrocode}
 % 表格和图片的例子可以搜索C\TeX{}论坛或者看示例文件。
 %
 % 引入\textsf{paralist}来达到比较好看的列表环境
 %    \begin{macrocode}
-\RequirePackage[neverdecrease]{paralist}
+%<cls>\RequirePackage[neverdecrease]{paralist}
 %    \end{macrocode}
 %
 % 文档中还需要一定的色彩控制和字体控制
 %    \begin{macrocode}
-\RequirePackage{xcolor}
+%<cls>\RequirePackage{xcolor}
 %    \end{macrocode}
 %
 % 为了排出漂亮的数学公式，\textsf{amsmath}包是必不可少的，\textsf{txfonts}的作用是用
 % 自己的typewriter字体替换系统Courier字体，它必须在\AmSTeX{}之后，这个包还可以
 % 让用户方便的使用正体希腊字幕。数学应用中还需要定理环境，我们一并包括进来：
 %    \begin{macrocode}
+%<*cls>
 \RequirePackage{amsmath,amssymb,bm}
 \RequirePackage[varg]{txfonts}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
+%</cls>
 %    \end{macrocode}
 %
 % 本文档类直接采用\XeTeX{}引擎，方便了字体配置以及编译，
@@ -696,16 +718,20 @@
 % 同时采用\textsf{indentfirst}宏包管理文字的缩进:
 % \changes{v0.5.7}{2013/04/28}{使用ulem宏包替代kulem宏包，以解决MikTeX编译出错的问题}
 %    \begin{macrocode}
+%<*cls>
 \RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
+%</cls>
 %    \end{macrocode}
 %
 % 另外一个关键部分是文献索引，包括书签以及参考文献的索引，记得\textsf{hyperref}配合
 % \XeTeX{}使用时暂不能开启Unicode选项，新的发行版已经移除\textsf{hypernat}包:
 %    \begin{macrocode}
+%<*cls>
 \RequirePackage[numbers,sort&compress,square]{natbib}
 \RequirePackage[CJKbookmarks=true,pdfborder=0 0 1]{hyperref}
+%</cls>
 %    \end{macrocode}
 %
 %\subsection{基础配置}
@@ -983,6 +1009,7 @@
 % \changes{v0.5.4}{2011/05/11}{针对文中的几个部分设计页眉和页脚，以便于实现章节
 % 标题}
 % \changes{v0.5.5}{2011/06/01}{偶数页面改为华南师范大学硕士/博士学位论文}
+% \changes{v0.5.8}{2013/05/03}{根据You Gao的建议，双数页眉由学校论文信息改为论文标题}
 %    \begin{macrocode}
 %<*cls>
 % 设置前置部分的页眉、页脚
@@ -990,21 +1017,18 @@
 \sethead{}{\raisebox{.65\baselineskip}
   {
     \songti \wuhao
-    \ifisanon{~}
-    \else
-    {\ifischapter % 标题作为页眉
+    \ifischapter % 标题作为页眉
       \ifistwoside
       {
         \ifodd \value{page} % 奇数页         
         {\chaptertitle}
         \else % 偶数页
-        {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi
+        {\@displaytitle}\fi
       }
       \else
       {\chaptertitle}\fi
       \else %标题不作为页眉
-      {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi}
-    \fi
+      {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -1016,30 +1040,27 @@
 
 % 设置正文部分的页眉、页脚
 \newpagestyle{mpage}{
-\sethead{}{\raisebox{.65\baselineskip}
-  {
-    \songti \wuhao
-    \ifisanon{~}
-    \else
-    {\ifischapter % 标题作为页眉
-      \ifistwoside
-      {
-        \ifodd \value{page} % 奇数页         
-        {第\thechapter 章\hspace{1em}\chaptertitle}
-        \else % 偶数页
-        {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi
-      }
-      \else
-      {第\thechapter 章\hspace{1em}\chaptertitle}\fi
-      \else %标题不作为页眉
-      {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi}
-    \fi
-  }
-}{}
-\headrule%
-\setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
-\footrule%
-\setfootrule{1bp}
+  \sethead{}{\raisebox{.65\baselineskip}
+    {
+      \songti \wuhao
+      \ifischapter % 标题作为页眉
+        \ifistwoside
+        {
+          \ifodd \value{page} % 奇数页
+          {第\thechapter 章\hspace{1em}\chaptertitle}
+          \else % 偶数页
+          {\@displaytitle}\fi
+        }
+        \else
+        {第\thechapter 章\hspace{1em}\chaptertitle}\fi
+        \else %标题不作为页眉
+        {\@displaytitle}\fi
+    }
+  }{}
+  \headrule%
+  \setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
+  \footrule%
+  \setfootrule{1bp}
 }
 
 % 设置附录页面的页眉、页脚
@@ -1047,22 +1068,19 @@
 \sethead{}{\raisebox{.65\baselineskip}
   {
     \songti \wuhao
-    \ifisanon{~}
-    \else
-    {\ifischapter % 标题作为页眉
+    \ifischapter % 标题作为页眉
       \ifistwoside
       {
         \ifodd \value{page} % 奇数页         
         {附录\thechapter\hspace{1em}\chaptertitle}
         \else % 偶数页
-        {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi
+        {\@displaytitle}\fi
       }
       \else
       {附录\thechapter\hspace{1em}\chaptertitle}\fi
       \else %标题不作为页眉
-      {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi}
-    \fi
-  }
+      {\@displaytitle}\fi
+    }
 }{}
 \headrule%
 \setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
@@ -1075,21 +1093,18 @@
 \sethead{}{\raisebox{.65\baselineskip}
   {
     \songti \wuhao
-    \ifisanon{~}
-    \else
-    {\ifischapter % 标题作为页眉
+    \ifischapter % 标题作为页眉
       \ifistwoside
       {
         \ifodd \value{page} % 奇数页         
         {\chapterlabel}
         \else % 偶数页
-        {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi
+        {\@displaytitle}\fi
       }
       \else
       {\chapterlabel}\fi
       \else %标题不作为页眉
-      {华南师范大学\ifismaster{硕士}\else{博士}\fi 学位论文}\fi}
-    \fi
+      {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -1137,7 +1152,8 @@
     \pagenumbering{arabic}
     \normalsize % normal, 正文开始
     \def\@tabular{\wuhao[1.25]\old@tabular} % 之后表格字体使用5号
-    
+
+    \pagestyle{mpage}
   }
 %</cls>
 %    \end{macrocode}
@@ -1610,7 +1626,7 @@
 \def\university#1{\def\@university{#1}} % university号
 \def\confidentiality#1{\def\@confidentiality{#1}} % 密级
 \def\title#1{\def\@title{#1}} % 中文题目
-\newtoks\displaytitle
+\def\displaytitle#1{\def\@displaytitle{#1}} % 文章标题
 \def\author#1{\def\@author{#1}}
 \def\zhdate#1{\def\@zhdate{#1}}	% 中文日期
 \def\subject#1{\def\@subject{#1}} % 中文学科

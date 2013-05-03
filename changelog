@@ -1,3 +1,4 @@
+ - 偶数页眉由华师信息改为论文标题，修改thesis.tex
  - 增加了Readme.md和Changelog
  - 默认master分支取代basic分支，去掉basic分支
  - 项目迁移至github
