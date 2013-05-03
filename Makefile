@@ -2,8 +2,7 @@ thesis: thesis.tex thesis.pdf
 cls: scnuthesis.cls
 
 zip:
-	git archive pro --format=zip > scnuthesis-`git describe pro`-pro.zip
-	git archive basic --format=zip > scnuthesis-`git describe basic`-basic.zip
+	git archive master --format=zip > scnuthesis-`git describe master`-basic.zip
 
 thesis.pdf: thesis.tex
 	xelatex thesis
