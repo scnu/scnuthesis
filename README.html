@@ -43,6 +43,8 @@
 <h1>版本历史</h1>
 
 <ul>
+<li>与时俱进，默认使用vista字库，说明文档封面增加项目主页信息 </li>
+<li>偶数页眉由华师信息改为论文标题，修改thesis.tex</li>
 <li>增加了Readme.md和Changelog</li>
 <li>默认master分支取代basic分支，去掉basic分支</li>
 <li>项目迁移至github</li>
@@ -79,11 +81,11 @@
 <ol>
 <li><p>下载安装 MikTeX 或者 CTeX；</p></li>
 <li><p>使用 WinEdit 、TeXMaker 或其他文本编辑器打开 thesis.tex 文件。</p></li>
-<li><p>如果使用的是 Windows Vista 或 Windows 7，请将第43行内容改为：</p>
+<li><p>如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
 
-<p><code>\documentclass[master,twoside,vista,ttf]{scnuthesis}</code></p>
+<p><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}</code></p>
 
-<p>如果使用的是 Windows XP，则不需要做任何改动。</p></li>
+<p>如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。</p></li>
 <li><p>双击模板目录下的 makepdf.bat，生成示例论文。</p></li>
 </ol>
 
@@ -103,11 +105,11 @@
 
 <p>观察列表中是否有宋体等 Windows字体。</p></li>
 <li><p>使用Emacs或其他文本编辑器打开thesis.tex文件。</p></li>
-<li><p>如果字体拷贝的来源是Windows Vista 或 Windows 7，请将第43行内容改为：</p>
+<li><p>如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
 
-<p><code>\documentclass[master,twoside,vista,ttf]{scnuthesis}</code></p>
+<p><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}</code></p>
 
-<p>如果来源是Windows Vista或Windows 7，则不需要做任何改动。</p></li>
+<p>如果来源是 Windows Vista 或更高的版本，则不需要做任何改动。</p></li>
 <li><p><code>cd</code> 进去模板目录，然后输入这条命令：</p>
 
 <p><code>make</code></p>

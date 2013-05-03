@@ -81,7 +81,7 @@
 % \renewcommand{\contentsname}{目~~录}
 %
 % \title{\textsc{SCNUThesis:}\,\,华南师范大学学位论文\\\LaTeX{}模板使用手册}
-% \author{潘伟洲 \\ \href{mailto:cs.wzpan@gmail.com}{\texttt{cs.wzpan@gmail.com}}}
+% \author{潘伟洲 \\ \href{mailto:cs.wzpan@gmail.com}{\texttt{cs.wzpan@gmail.com}}} 
 % \date{\fileversion\ (\filedate)}
 %
 % \maketitle
@@ -90,6 +90,10 @@
 % \begin{abstract}
 % 本模板旨在提供规范的华南师范大学\LaTeX{}写作模板环境，
 % 现支持硕士/博士学位论文格式。
+% \vspace{2em}
+% \begin{center}
+%	{\octocat~}\url{http://wzpan.github.io/scnuthesis/}
+% \end{center}
 % \end{abstract}
 %
 % \vspace{2cm}
@@ -175,14 +179,14 @@
 % \label{sec:install}
 %
 % \subsection{下载}
-% \textsc{SCNUThesis} 主页：\url{http://code.google.com/p/scnuthesis/}。
+% \textsc{SCNUThesis} 主页：\url{http://wzpan.github.io/scnuthesis/}。
 % 模板的更新信息发布在 \href{http://blog.josephpan.net}{我的博客}
 % 以及 \href{http://bbs.scnu.edu.cn}{陶园BBS论坛}。
 %
-% \scnuthesis{}的开发版本同样可以在 \textsc{google}\textsc{code} 上获得：
+% \scnuthesis{}的开发版本同样可以在 \textsc{Github} 上获得：
 % \changes{v0.5.5}{2011/06/01}{改为使用Git来做版本控制}
 % \begin{shell}
-% $ git clone https://code.google.com/p/scnuthesis/
+% $ git clone git@github.com:wzpan/scnuthesis.git
 % \end{shell}
 %
 % \subsection{模板的组成部分}
@@ -320,11 +324,11 @@
 %
 %    \begin{macrocode}
 %<thesis>%1. 如果是研究生论文，常用的选项是：
-%<thesis>% \documentclass[master,twoside,ttf]{scnuthesis}
+%<thesis>% \documentclass[master,twoside,vista,ttf]{scnuthesis}
 %<thesis>%2. 如果是博士生论文，常用的选项是：
-%<thesis>% \documentclass[doctor,twoside,ttf]{scnuthesis}
-%<thesis>%3. 如果使用是Vista、Windows 7或者使用从Vista或Windows 7拷贝过来的字体，则需要再加一个Vista选项，如：
-%<thesis>% \documentclass[master,twoside,ttf,vista]{scnuthesis}
+%<thesis>% \documentclass[doctor,twoside,vista,ttf]{scnuthesis}
+%<thesis>%3. 如果使用是Windows XP之前的Windows系列，或者使用从这个系列拷贝过来的字体，则需要将Vista选项去掉，如：
+%<thesis>% \documentclass[master,twoside,ttf]{scnuthesis}
 %<thesis>%4. 建议使用OTF字体获得较好的页面显示效果
 %<thesis>%   OTF字体从网上获得，各个系统名称统一，不用加vista选项
 %<thesis>%   如果你下载的是最新的(1201)OTF英文字体，建议修改scnuthesis.cls，使用PS Std
@@ -337,7 +341,7 @@
 %    \end{macrocode}
 %    \begin{macrocode}
 %<*thesis>
-\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}
+\documentclass[master,vista,ttf,twoside]{scnuthesis}
 \usepackage{myscnu}
 
 %</thesis>
