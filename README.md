@@ -30,7 +30,8 @@ SCNUThesis
 
 # 版本历史 #
 
-* 与时俱进，默认使用vista字库，说明文档封面增加项目主页信息 
+* 默认不启用chapterhead选项，默认使用vista字库
+* 说明文档封面增加项目主页信息 
 * 偶数页眉由华师信息改为论文标题，修改thesis.tex
 * 增加了Readme.md和Changelog
 * 默认master分支取代basic分支，去掉basic分支
