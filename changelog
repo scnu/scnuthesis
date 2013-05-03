@@ -1,0 +1,18 @@
+ - 增加了Readme.md和Changelog
+ - 默认master分支取代basic分支，去掉basic分支
+ - 项目迁移至github
+ - 修正basic版无法make成功的问题
+ - 去掉thesis.tex中多余的内容
+ - 使用 ulem 宏包替代 kulem 宏包，以解决 MikTeX 编译出错的问题
+ - 修复了几个错误，重新使用Makefile
+ - 修复少量错误
+ - 删除 test.sh 文件
+ - 增加了 README 和 README.txt
+ - 修复少量错误
+ - 修复了参考文献编译出错的问题
+ - 使用shell脚本取代原来的Makefile
+ - 删掉了没用的文件
+ - 修改了模板帮助文档的错误
+ - 改为使用git版本控制系统
+ - 增加 chapterhead 选项
+ - 去掉了第一章中的表格和插图示例，统一在第二章中说明

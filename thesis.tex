@@ -1,0 +1,104 @@
+%%
+%% This is file `thesis.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% scnuthesis.dtx  (with options: `thesis')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2013 by Joseph Pan <cs.wzpan@gmail.com>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3a
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3a or later is part of all distributions of LaTeX
+%% version 2004/10/01 or later.
+%% 
+%% To produce the documentation run the original source files ending with `.dtx'
+%% through LaTeX.
+%% 
+%% Any Suggestions : LiuBenYuan <liubenyuan@gmail.com>
+%% Thanks Xue Ruini <xueruini@gmail.com> for the thuthesis class!
+%% Thanks sofoot for the original NUDT paper class!
+%% 
+%1. 如果是研究生论文，常用的选项是：
+% \documentclass[master,twoside,ttf]{scnuthesis}
+%2. 如果是博士生论文，常用的选项是：
+% \documentclass[doctor,twoside,ttf]{scnuthesis}
+%3. 如果使用是Vista、Windows 7或者使用从Vista或Windows 7拷贝过来的字体，则需要再加一个Vista选项，如：
+% \documentclass[master,twoside,ttf,vista]{scnuthesis}
+%4. 建议使用OTF字体获得较好的页面显示效果
+%   OTF字体从网上获得，各个系统名称统一，不用加vista选项
+%   如果你下载的是最新的(1201)OTF英文字体，建议修改scnuthesis.cls，使用PS Std
+%   \documentclass[doctor,twoside,otf]{scnuthesis}
+%5. 如果想生成盲评，传递anon即可，仍需修改个人成果部分
+% \documentclass[master,otf,anon]{scnuthesis}
+%6. 让章节标题作为页眉，可以使用chapterhead选项。如果和twoside一起使
+% \documentclass[master,otf,twoside,chapterhead]{scnuthesis}
+%
+\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}
+\usepackage{myscnu}
+
+\begin{document}
+\graphicspath{{figures/}}
+\classification{}
+\university{10574}
+\confidentiality{无}
+\serialno{2011123456}
+\title{华南师范大学硕士/博士\\
+  学位论文\LaTeX{}模板使用手册}
+\displaytitle{华南师范大学硕士/博士学位论文\LaTeX{}模板使用手册}
+\author{张三}
+\subject{计算机应用技术}
+\researchfield{数字图像处理}
+\school{计算机学院}
+\supervisor{李四\quad{}教授}
+\zhdate{\zhtoday}
+\entitle{How to Use the \LaTeX{} Document Class for SCNU Dissertations}
+% 插入摘要，制作封面
+\ifisanon{}\else{\maketitle}\fi
+
+\frontmatter
+
+\input{data/abstract}
+% 生成目录
+\tableofcontents
+\listoftables           % 如果要生成表目录
+\listoffigures          % 如果要生成图目录
+
+\renewcommand{\chapterlabel}{\denotationname} %设置页眉
+
+\input{data/denotation} % 如果要生成符号列表
+
+\mainmatter
+\pagestyle{mpage}
+\input{data/chap01}
+\input{data/chap02}
+\input{data/chap03}
+
+\cleardoublepage
+\renewcommand{\chapterlabel}{\bibname} % 设置页眉
+\bibliographystyle{bstutf8}
+\bibliography{ref/refs}
+
+\appendix
+\backmatter
+
+\input{data/appendix01}
+\input{data/appendix02}
+
+\cleardoublepage
+\renewcommand{\chapterlabel}{\ackname} % 设置致谢参考文献的页眉
+\input{data/ack}
+
+\cleardoublepage
+\renewcommand{\chapterlabel}{\resumename} % 设置作者个人成果的页眉
+\input{data/resume}
+
+\end{document}

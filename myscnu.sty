@@ -1,0 +1,40 @@
+\ProvidesPackage{myscnu}
+% 这里添加你的论文中专门使用的宏包
+
+% 算法以及列表环境
+\RequirePackage{cases,listings}
+\RequirePackage{fancyvrb}
+\RequirePackage[chapter]{algorithm}
+\RequirePackage{algorithmic}
+
+% 配置Lstlisting
+\lstset{
+  columns=flexible,sensitive=true,lineskip=-3pt,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\ttfamily,
+  commentstyle=\color{red!50!green!50!blue!50},
+  numbers=left,numberstyle=\tiny,
+  xleftmargin=0.5em,xrightmargin=0.5em,aboveskip=0.5em,
+  showstringspaces=false,breaklines=true,extendedchars=true,escapeinside=``,
+  frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20}}
+
+% 配置算法包
+\algsetup{indent=3em}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{已知:}}
+\renewcommand{\algorithmicensure}{\textbf{求:}}
+
+\DefineVerbatimEnvironment{code}{Verbatim}%
+  {frame=single,framerule=0.3mm,rulecolor=\color{black},%
+   fillcolor=\color{red!20!green!20!blue!20},framesep=1mm,fontsize=\small}
+
+% 自定义其他命令
+\newcommand{\myscnu}{我的导言}
+\newcommand{\ve}[1]{\ensuremath{\bm #1}}
+
+% tabularx 中的 Z 环境，居中自动调整
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+% %
+\endinput
