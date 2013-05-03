@@ -1,14 +1,14 @@
 简介
 =============
 
-符合华南师范大学硕士/博士学位论文格式要求的LaTeX模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
+符合华南师范大学硕士/博士学位论文格式要求的 [LaTeX](https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX) 模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
 
 这个项目遵循[The LaTeX project public license](http://latex-project.org/lppl/)，我们迫切希望得到更多LaTeX爱好者的支持，尤其是 _SCNUers_ 。如果要加入我们，请联系作者。
 
 在使用过程中如果有任何意见、建议或者疑惑，欢迎联系作者。你可以：
-  * 在[issue](http://code.google.com/p/scnuthesis/issues/list)板块提交意见和建议；
+  * 在[issues](https://github.com/wzpan/scnuthesis/issues)板块提交意见和建议；
   * 直接给作者发邮件（不推荐）；
-  * 但在你联系作者之前，建议先认真看看这份[F&Q](http://code.google.com/p/scnuthesis/wiki/FAQ)。
+  * 但在你联系作者之前，建议先认真看看这份[F&Q](https://github.com/wzpan/scnuthesis/wiki/F&Q)。
 
 
 ## 郑重声明
