@@ -30,6 +30,9 @@ SCNUThesis
 
 # 版本历史 #
 
+* 默认不启用chapterhead选项，默认使用vista字库
+* 说明文档封面增加项目主页信息 
+* 偶数页眉由华师信息改为论文标题，修改thesis.tex
 * 增加了Readme.md和Changelog
 * 默认master分支取代basic分支，去掉basic分支
 * 项目迁移至github
@@ -65,11 +68,11 @@ SCNUThesis
   
 2. 使用 WinEdit 、TeXMaker 或其他文本编辑器打开 thesis.tex 文件。
   
-3. 如果使用的是 Windows Vista 或 Windows 7，请将第43行内容改为：
+3. 如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：
   
-     `\documentclass[master,twoside,vista,ttf]{scnuthesis}`
+     `\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}`
      
-     如果使用的是 Windows XP，则不需要做任何改动。
+     如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。
 	 
 4. 双击模板目录下的 makepdf.bat，生成示例论文。
 
@@ -91,11 +94,11 @@ SCNUThesis
 	  
 3. 使用Emacs或其他文本编辑器打开thesis.tex文件。
 
-4. 如果字体拷贝的来源是Windows Vista 或 Windows 7，请将第43行内容改为：
+4. 如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：
 
-  `\documentclass[master,twoside,vista,ttf]{scnuthesis}`
+  `\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}`
 
-  如果来源是Windows Vista或Windows 7，则不需要做任何改动。
+  如果来源是 Windows Vista 或更高的版本，则不需要做任何改动。
   
 5. `cd` 进去模板目录，然后输入这条命令：
   

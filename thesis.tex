@@ -28,11 +28,11 @@
 %% Thanks sofoot for the original NUDT paper class!
 %% 
 %1. 如果是研究生论文，常用的选项是：
-% \documentclass[master,twoside,ttf]{scnuthesis}
+% \documentclass[master,twoside,vista,ttf]{scnuthesis}
 %2. 如果是博士生论文，常用的选项是：
-% \documentclass[doctor,twoside,ttf]{scnuthesis}
-%3. 如果使用是Vista、Windows 7或者使用从Vista或Windows 7拷贝过来的字体，则需要再加一个Vista选项，如：
-% \documentclass[master,twoside,ttf,vista]{scnuthesis}
+% \documentclass[doctor,twoside,vista,ttf]{scnuthesis}
+%3. 如果使用是Windows XP之前的Windows系列，或者使用从这个系列拷贝过来的字体，则需要将Vista选项去掉，如：
+% \documentclass[master,twoside,ttf]{scnuthesis}
 %4. 建议使用OTF字体获得较好的页面显示效果
 %   OTF字体从网上获得，各个系统名称统一，不用加vista选项
 %   如果你下载的是最新的(1201)OTF英文字体，建议修改scnuthesis.cls，使用PS Std
@@ -42,7 +42,11 @@
 %6. 让章节标题作为页眉，可以使用chapterhead选项。如果和twoside一起使用，则奇数页页眉为章节标题，偶数页为文章标题。
 % \documentclass[master,otf,twoside,chapterhead]{scnuthesis}
 %
+<<<<<<< HEAD
 \documentclass[master,twoside,ttf,anon,vista,chapterhead]{scnuthesis}
+=======
+\documentclass[master,vista,ttf,twoside]{scnuthesis}
+>>>>>>> pro
 \usepackage{myscnu}
 
 \begin{document}
