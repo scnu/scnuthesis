@@ -1,7 +1,7 @@
 SCNUThesis
 =============
 
-# 简介 #
+## 简介 ##
 
 符合华南师范大学硕士/博士学位论文格式要求的 [LaTeX](https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX) 模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
 
@@ -10,17 +10,17 @@ SCNUThesis
 
 在使用过程中如果有任何意见、建议或者疑惑，欢迎联系作者。你可以：
 
-  * 在[issues](https://github.com/wzpan/scnuthesis/issues)板块提交意见和建议；
+  * 在[issues](https://github.com/wzpan/scnuthesis/issues)板块提交意见和建议（推荐）；
+  * 在[项目主页](#comment)下方留言区留言；
   * 直接给作者发邮件（不推荐）；
   * 但在你联系作者之前，建议先认真看看这份[F&Q](https://github.com/wzpan/scnuthesis/wiki/F&Q)。
 
-
-# 郑重声明 #
+## 郑重声明 ##
 
 这份模板目前还处于个人开发阶段，并非学校提供的官方模板。如果因为使用这份模板蒙受了任何经济、学术上的损失，作者将不承担任何责任。
 
 
-# 模板特色 #
+## 模板特色 ##
 
 * 根据官方提供的华南师范大学学位论文格式要求进行开发，基本符合格式规范；
 * 使用xelatex来处理中文，配置简单，同时支持TTF和OTF两种字体方案；
@@ -28,18 +28,16 @@ SCNUThesis
 * 针对不同的用户群体分别提供basic版本和pro版本，前者只包含编译论文所需要的格式宏包，而后者还包含了模板的源代码。
 
 
-# 版本历史 #
+## 版本历史 ##
 
   详细的版本历史请查看[changelog](https://github.com/wzpan/scnuthesis/blob/master/changelog)
 
-# 下载须知 #
+## 下载须知 ##
 
 * 对于普通用户，如果不需要定制本模板，请直接使用master分支。
 * 对于有更多LaTeX经验的用户，如果需要更多的定制，可以使用pro分支，这个分支比basic版多了模板的相关驱动文件。
 
-# 使用方法 #
-
-## 简单安装过程 ##
+## 安装使用 ##
 
 ### 如果使用的是 Windows ###
 
@@ -89,6 +87,6 @@ SCNUThesis
 
   *Happy Texing!*
 
-# 特别感谢 #
+## 特别感谢 ##
 
 这个模板的制作得到了很多高校的TEXer们的帮助，尤其是国防科大的 [NudtPaper](http://nudtpaper.googlecode.com) 和清华大学的 [Thu-Thesis](https://github.com/xueruini/thuthesis)，在这里要特别谢谢他们的热心帮助！
