@@ -11,7 +11,7 @@ SCNUThesis
 在使用过程中如果有任何意见、建议或者疑惑，欢迎联系作者。你可以：
 
   * 在[issues](https://github.com/wzpan/scnuthesis/issues)板块提交意见和建议（推荐）；
-  * 在[项目主页](https://wzpan.github.io/scnuthesis#comment)下方留言区留言；
+  * 在[项目主页](http://wzpan.github.io/scnuthesis/#comment)下方留言区留言；
   * 直接给作者发邮件（不推荐）；
   * 但在你联系作者之前，建议先认真看看这份[F&Q](https://github.com/wzpan/scnuthesis/wiki/F&Q)。
 
@@ -28,40 +28,11 @@ SCNUThesis
 * 针对不同的用户群体分别提供basic版本和pro版本，前者只包含编译论文所需要的格式宏包，而后者还包含了模板的源代码。
 
 
-<<<<<<< HEAD
 ## 版本历史 ##
 
   详细的版本历史请查看[changelog](https://github.com/wzpan/scnuthesis/blob/master/changelog)
 
 ## 下载须知 ##
-=======
-# 版本历史 #
-
-* 默认不启用chapterhead选项，默认使用vista字库
-* 说明文档封面增加项目主页信息 
-* 偶数页眉由华师信息改为论文标题，修改thesis.tex
-* 增加了Readme.md和Changelog
-* 默认master分支取代basic分支，去掉basic分支
-* 项目迁移至github
-* 修正basic版无法make成功的问题
-* 去掉thesis.tex中多余的内容
-* 使用 ulem 宏包替代 kulem 宏包，以解决 MikTeX 编译出错的问题
-* 修复了几个错误，重新使用Makefile
-* 修复少量错误
-* 删除 test.sh 文件
-* 增加了 README 和 README.txt
-* 修复少量错误
-* 修复了参考文献编译出错的问题
-* 使用shell脚本取代原来的Makefile
-* 删掉了没用的文件
-* 修改了模板帮助文档的错误
-* 改为使用git版本控制系统
-* 增加 chapterhead 选项
-* 去掉了第一章中的表格和插图示例，统一在第二章中说明
-
-
-# 下载须知 #
->>>>>>> 31c06c9... 修改README.md
 
 * 对于普通用户，如果不需要定制本模板，请直接使用master分支。
 * 对于有更多LaTeX经验的用户，如果需要更多的定制，可以使用pro分支，这个分支比basic版多了模板的相关驱动文件。
