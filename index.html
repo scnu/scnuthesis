@@ -28,7 +28,9 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1>简介</h1>
+          <h1>SCNUThesis</h1>
+
+<h2>简介</h2>
 
 <p>符合华南师范大学硕士/博士学位论文格式要求的 <a href="https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX">LaTeX</a> 模板。关于这个项目的发起原因，请下载这个<a href="http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&amp;can=2&amp;q=">slides</a>。</p>
 
@@ -37,7 +39,8 @@
 <p>在使用过程中如果有任何意见、建议或者疑惑，欢迎联系作者。你可以：</p>
 
 <ul>
-<li>在<a href="https://github.com/wzpan/scnuthesis/issues">issues</a>板块提交意见和建议；</li>
+<li>在<a href="https://github.com/wzpan/scnuthesis/issues">issues</a>板块提交意见和建议（推荐）；</li>
+<li>在<a href="#comment">项目主页</a>下方留言区留言；</li>
 <li>直接给作者发邮件（不推荐）；</li>
 <li>但在你联系作者之前，建议先认真看看这份<a href="https://github.com/wzpan/scnuthesis/wiki/F&amp;Q">F&amp;Q</a>。</li>
 </ul><h2>郑重声明</h2>
@@ -53,72 +56,52 @@
 <li>针对不同的用户群体分别提供basic版本和pro版本，前者只包含编译论文所需要的格式宏包，而后者还包含了模板的源代码。</li>
 </ul><h2>版本历史</h2>
 
-<ul>
-<li>增加了Readme.md和Changelog</li>
-<li>默认master分支取代basic分支，去掉basic分支</li>
-<li>项目迁移至github</li>
-<li>修正basic版无法make成功的问题</li>
-<li>去掉thesis.tex中多余的内容</li>
-<li>使用 ulem 宏包替代 kulem 宏包，以解决 MikTeX 编译出错的问题</li>
-<li>修复了几个错误，重新使用Makefile</li>
-<li>修复少量错误</li>
-<li>删除 test.sh 文件</li>
-<li>增加了 README 和 README.txt</li>
-<li>修复少量错误</li>
-<li>修复了参考文献编译出错的问题</li>
-<li>使用shell脚本取代原来的Makefile</li>
-<li>删掉了没用的文件</li>
-<li>修改了模板帮助文档的错误</li>
-<li>改为使用git版本控制系统</li>
-<li>增加 chapterhead 选项</li>
-<li>去掉了第一章中的表格和插图示例，统一在第二章中说明</li>
-</ul><h2>下载须知</h2>
+<p>详细的版本历史请查看<a href="https://github.com/wzpan/scnuthesis/blob/master/changelog">changelog</a></p>
+
+<h2>下载须知</h2>
 
 <ul>
 <li>对于普通用户，如果不需要定制本模板，请直接使用master分支。</li>
 <li>对于有更多LaTeX经验的用户，如果需要更多的定制，可以使用pro分支，这个分支比basic版多了模板的相关驱动文件。</li>
-</ul><h2>使用方法</h2>
+</ul><h2>安装使用</h2>
 
-<h3>简单安装过程</h3>
-
-<p>1) 如果使用的是 Windows</p>
+<h3>如果使用的是 Windows</h3>
 
 <ol>
-<li>下载安装 MikTeX 或者 CTeX；</li>
-<li>使用 WinEdit 、TeXMaker 或其他文本编辑器打开 thesis.tex 文件。</li>
+<li><p>下载安装 MikTeX 或者 CTeX；</p></li>
+<li><p>使用 WinEdit 、TeXMaker 或其他文本编辑器打开 thesis.tex 文件。</p></li>
 <li>
-<p>如果使用的是 Windows Vista 或 Windows 7，请将第43行内容改为：</p>
+<p>如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
 
-<p><code>\documentclass[master,twoside,vista,ttf]{scnuthesis}</code></p>
+<p><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}</code></p>
 
-<p>如果使用的是 Windows XP，则不需要做任何改动。</p>
+<p>如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。</p>
 </li>
 <li><p>双击模板目录下的 makepdf.bat，生成示例论文。</p></li>
-</ol><p>2) 如果使用的是 Linux</p>
+</ol><h3>如果使用的是 Linux</h3>
 
 <ol>
-<li>安装 TexLive；</li>
+<li><p>安装 TexLive；</p></li>
 <li>
-<p>配置字体：将 Windows 下的 simsun.ttf, simhei.ttf, simkai.ttf，simli,ttf，simfang.ttf 拷贝到/usr/share/fonts/TTF下；
- 终端下输入</p>
+<p>配置字体：将 Windows 下的 simsun.ttf, simhei.ttf, simkai.ttf，simli,ttf，simfang.ttf 拷贝到 <code>~/.fonts</code> 目录下；</p>
 
-<p><code>sudo fc-cache</code></p>
+<p>终端下输入</p>
+
+<p><code>fc-cache</code></p>
 
 <p>完成后输入</p>
 
 <p><code>fc-list :lang=zh</code></p>
 
-<p>观察列表中是否有宋体等 Windows字体，如果没有，还需要cd进去 /usr/share/fonts/TTF 目录将刚刚拷贝进去的几个字体文件的权限设置为</p>
-
-<p><code>cd /usr/share/fonts/TTF &amp;&amp; chmod 777 *.ttf *.TTF</code></p>
+<p>观察列表中是否有宋体等 Windows字体。</p>
 </li>
 <li><p>使用Emacs或其他文本编辑器打开thesis.tex文件。</p></li>
 <li>
-<p>如果字体拷贝的来源是Windows Vista 或 Windows 7，请将第43行内容改为：</p>
+<p>如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
 
-<p><code>\documentclass[master,twoside,vista,ttf]{scnuthesis}</code></p>
+<p><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}</code></p>
 
-<p>如果来源是Windows Vista或Windows 7，则不需要做任何改动。</p>
+<p>如果来源是 Windows Vista 或更高的版本，则不需要做任何改动。</p>
 </li>
 <li>
 <p><code>cd</code> 进去模板目录，然后输入这条命令：</p>
@@ -131,25 +114,25 @@
 
 <p><em>Happy Texing!</em></p>
 </li>
-</ol><h3>特别感谢</h3>
+</ol><h2>特别感谢</h2>
 
 <p>这个模板的制作得到了很多高校的TEXer们的帮助，尤其是国防科大的 <a href="http://nudtpaper.googlecode.com">NudtPaper</a> 和清华大学的 <a href="https://github.com/xueruini/thuthesis">Thu-Thesis</a>，在这里要特别谢谢他们的热心帮助！</p>
 
- <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'scnuthesis'; // required: replace example with your forum shortname
+<h2>留言</h2>
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<div></div>
 
+<pre><code>&lt;script type="text/javascript"&gt;
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'scnuthesis'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</code></pre>
         </section>
 
         <aside id="sidebar">
@@ -169,6 +152,16 @@
       </div>
     </div>
 
-  
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-26996137-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
