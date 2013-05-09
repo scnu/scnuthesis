@@ -1,6 +1,8 @@
 SCNUThesis
 =============
 
+:octocat: 项目主页: [http://wzpan.github.io/scnuthesis/](http://wzpan.github.io/scnuthesis/)
+
 ## 简介 ##
 
 符合华南师范大学硕士/博士学位论文格式要求的 [LaTeX](https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX) 模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
