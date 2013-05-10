@@ -1,358 +1,111 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<title>README</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style type="text/css">
-/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
-/* Author: Nicolas Hery - http://nicolashery.com */
-/* Version: 29d1c5bc36da364ad5aa86946d420b7bbc54a253 */
-/* Source: https://github.com/nicolahery/markdownpad-github */
+<title>README.html</title>
 
-/* RESET
-=============================================================================*/
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-/* BODY
-=============================================================================*/
-
-body {
-  font-family: Helvetica, arial, freesans, clean, sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  padding: 20px;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-body>*:first-child {
-  margin-top: 0 !important;
-}
-
-body>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* BLOCKS
-=============================================================================*/
-
-p, blockquote, ul, ol, dl, table, pre {
-  margin: 15px 0;
-}
-
-/* HEADERS
-=============================================================================*/
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 20px 0 10px;
-  padding: 0;
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
-  font-size: inherit;
-}
-
-h1 {
-  font-size: 28px;
-  color: #000;
-}
-
-h2 {
-  font-size: 24px;
-  border-bottom: 1px solid #ccc;
-  color: #000;
-}
-
-h3 {
-  font-size: 18px;
-}
-
-h4 {
-  font-size: 16px;
-}
-
-h5 {
-  font-size: 14px;
-}
-
-h6 {
-  color: #777;
-  font-size: 14px;
-}
-
-body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
-  margin-top: 10px;
-}
-
-/* LINKS
-=============================================================================*/
-
-a {
-  color: #4183C4;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* LISTS
-=============================================================================*/
-
-ul, ol {
-  padding-left: 30px;
-}
-
-ul li > :first-child, 
-ol li > :first-child, 
-ul li ul:first-of-type, 
-ol li ol:first-of-type, 
-ul li ol:first-of-type, 
-ol li ul:first-of-type {
-  margin-top: 0px;
-}
-
-ul ul, ul ol, ol ol, ol ul {
-  margin-bottom: 0;
-}
-
-dl {
-  padding: 0;
-}
-
-dl dt {
-  font-size: 14px;
-  font-weight: bold;
-  font-style: italic;
-  padding: 0;
-  margin: 15px 0 5px;
-}
-
-dl dt:first-child {
-  padding: 0;
-}
-
-dl dt>:first-child {
-  margin-top: 0px;
-}
-
-dl dt>:last-child {
-  margin-bottom: 0px;
-}
-
-dl dd {
-  margin: 0 0 15px;
-  padding: 0 15px;
-}
-
-dl dd>:first-child {
-  margin-top: 0px;
-}
-
-dl dd>:last-child {
-  margin-bottom: 0px;
-}
-
-/* CODE
-=============================================================================*/
-
-pre, code, tt {
-  font-size: 12px;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-}
-
-code, tt {
-  margin: 0 0px;
-  padding: 0px 0px;
-  white-space: nowrap;
-  border: 1px solid #eaeaea;
-  background-color: #f8f8f8;
-  border-radius: 3px;
-}
-
-pre>code {
-  margin: 0;
-  padding: 0;
-  white-space: pre;
-  border: none;
-  background: transparent;
-}
-
-pre {
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  font-size: 13px;
-  line-height: 19px;
-  overflow: auto;
-  padding: 6px 10px;
-  border-radius: 3px;
-}
-
-pre code, pre tt {
-  background-color: transparent;
-  border: none;
-}
-
-/* QUOTES
-=============================================================================*/
-
-blockquote {
-  border-left: 4px solid #DDD;
-  padding: 0 15px;
-  color: #777;
-}
-
-blockquote>:first-child {
-  margin-top: 0px;
-}
-
-blockquote>:last-child {
-  margin-bottom: 0px;
-}
-
-/* HORIZONTAL RULES
-=============================================================================*/
-
-hr {
-  clear: both;
-  margin: 15px 0;
-  height: 0px;
-  overflow: hidden;
-  border: none;
-  background: transparent;
-  border-bottom: 4px solid #ddd;
-  padding: 0;
-}
-
-/* TABLES
-=============================================================================*/
-
-table th {
-  font-weight: bold;
-}
-
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 6px 13px;
-}
-
-table tr {
-  border-top: 1px solid #ccc;
-  background-color: #fff;
-}
-
-table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
-
-/* IMAGES
-=============================================================================*/
-
-img {
-  max-width: 100%
-}
-</style>
 </head>
+
 <body>
+
 <h1>SCNUThesis</h1>
+
 <p>:octocat: 项目主页: <a href="http://wzpan.github.io/scnuthesis/">http://wzpan.github.io/scnuthesis/</a></p>
+
 <h2>简介</h2>
+
 <p>符合华南师范大学硕士/博士学位论文格式要求的 <a href="https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX">LaTeX</a> 模板。关于这个项目的发起原因，请下载这个<a href="http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&amp;can=2&amp;q=">slides</a>。</p>
+
 <p>这个项目遵循<a href="http://latex-project.org/lppl/">The LaTeX project public license</a>，我们迫切希望得到更多LaTeX爱好者的支持，尤其是 <em>SCNUers</em> 。如果要加入我们，请联系作者。</p>
+
 <p>在使用过程中如果有任何意见、建议或者疑惑，欢迎联系作者。你可以：</p>
+
 <ul>
 <li>在<a href="https://github.com/wzpan/scnuthesis/issues">issues</a>板块提交意见和建议（推荐）；</li>
 <li>在<a href="http://wzpan.github.io/scnuthesis/#comment">项目主页</a>下方留言区留言；</li>
 <li>直接给作者发邮件（不推荐）；</li>
 <li>但在你联系作者之前，建议先认真看看这份<a href="https://github.com/wzpan/scnuthesis/wiki/F&amp;Q">F&amp;Q</a>。</li>
 </ul>
+
+<p><em>实例胜千言</em> ，查看本模板生成的论文效果示例： <a href="http://wzpan.github.io/scnuthesis/thesis.html">http://wzpan.github.io/scnuthesis/thesis.html</a></p>
+
 <h2>郑重声明</h2>
+
 <p>这份模板目前还处于个人开发阶段，并非学校提供的官方模板。如果因为使用这份模板蒙受了任何经济、学术上的损失，作者将不承担任何责任。</p>
+
 <h2>模板特色</h2>
+
 <ul>
 <li>根据官方提供的华南师范大学学位论文格式要求进行开发，基本符合格式规范；</li>
 <li>使用xelatex来处理中文，配置简单，同时支持TTF和OTF两种字体方案；</li>
 <li>提供多个模板选项，用户在文档中只需修改一行内容，就可以指定不同的排版样式，包括硕士/博士论文封面、单面/双面排版、TTF/OTF字库选择、盲评/非盲评论文等；</li>
 <li>针对不同的用户群体分别提供basic版本和pro版本，前者只包含编译论文所需要的格式宏包，而后者还包含了模板的源代码。</li>
 </ul>
+
 <h2>版本历史</h2>
+
 <p>详细的版本历史请查看<a href="https://github.com/wzpan/scnuthesis/blob/master/changelog">changelog</a></p>
+
 <h2>下载须知</h2>
+
 <ul>
 <li>对于普通用户，如果不需要定制本模板，请直接使用master分支。</li>
 <li>对于有更多LaTeX经验的用户，如果需要更多的定制，可以使用pro分支，这个分支比basic版多了模板的相关驱动文件。</li>
 </ul>
+
 <h2>安装使用</h2>
+
 <h3>如果使用的是 Windows</h3>
+
 <ol>
-<li>
-<p>下载安装 MikTeX 或者 CTeX；</p>
-</li>
-<li>
-<p>使用 WinEdit 、TeXMaker 或其他文本编辑器打开 thesis.tex 文件。</p>
-</li>
-<li>
-<p>如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
+<li><p>下载安装 MikTeX 或者 CTeX；</p></li>
+<li><p>使用 WinEdit 、TeXMaker 或其他文本编辑器打开 thesis.tex 文件。</p></li>
+<li><p>如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
+
 <p><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}</code></p>
-<p>如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。</p>
-</li>
-<li>
-<p>双击模板目录下的 makepdf.bat，生成示例论文。</p>
-</li>
+
+<p>如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。</p></li>
+<li><p>双击模板目录下的 makepdf.bat，生成示例论文。</p></li>
 </ol>
+
 <h3>如果使用的是 Linux</h3>
+
 <ol>
-<li>
-<p>安装 TexLive；</p>
-</li>
-<li>
-<p>配置字体：将 Windows 下的 simsun.ttf, simhei.ttf, simkai.ttf，simli,ttf，simfang.ttf 拷贝到 <code>~/.fonts</code> 目录下；</p>
-</li>
-</ol>
+<li><p>安装 TexLive；</p></li>
+<li><p>配置字体：将 Windows 下的 simsun.ttf, simhei.ttf, simkai.ttf，simli,ttf，simfang.ttf 拷贝到 <code>~/.fonts</code> 目录下；</p>
+
 <p>终端下输入</p>
+
 <p><code>fc-cache</code></p>
+
 <p>完成后输入</p>
+
 <p><code>fc-list :lang=zh</code></p>
-<p>观察列表中是否有宋体等 Windows字体。</p>
-<ol>
-<li>
-<p>使用Emacs或其他文本编辑器打开thesis.tex文件。</p>
-</li>
-<li>
-<p>如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
-</li>
-</ol>
+
+<p>观察列表中是否有宋体等 Windows字体。</p></li>
+<li><p>使用Emacs或其他文本编辑器打开thesis.tex文件。</p></li>
+<li><p>如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
+
 <p><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}</code></p>
-<p>如果来源是 Windows Vista 或更高的版本，则不需要做任何改动。</p>
-<ol>
-<li><code>cd</code> 进去模板目录，然后输入这条命令：</li>
-</ol>
+
+<p>如果来源是 Windows Vista 或更高的版本，则不需要做任何改动。</p></li>
+<li><p><code>cd</code> 进去模板目录，然后输入这条命令：</p>
+
 <p><code>make</code></p>
+
 <p>将生成示例论文。</p>
+
 <p>具体使用方法请参考附带的scnuthesis.pdf文件。</p>
-<p><em>Happy Texing!</em></p>
+
+<p><em>Happy Texing!</em></p></li>
+</ol>
+
 <h2>特别感谢</h2>
+
 <p>这个模板的制作得到了很多高校的TEXer们的帮助，尤其是国防科大的 <a href="http://nudtpaper.googlecode.com">NudtPaper</a> 和清华大学的 <a href="https://github.com/xueruini/thuthesis">Thu-Thesis</a>，在这里要特别谢谢他们的热心帮助！</p>
 
 </body>
 </html>
-<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

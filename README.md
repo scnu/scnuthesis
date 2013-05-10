@@ -7,7 +7,6 @@ SCNUThesis
 
 符合华南师范大学硕士/博士学位论文格式要求的 [LaTeX](https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX) 模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
 
-
 这个项目遵循[The LaTeX project public license](http://latex-project.org/lppl/)，我们迫切希望得到更多LaTeX爱好者的支持，尤其是 _SCNUers_ 。如果要加入我们，请联系作者。
 
 在使用过程中如果有任何意见、建议或者疑惑，欢迎联系作者。你可以：
@@ -17,6 +16,8 @@ SCNUThesis
   * 直接给作者发邮件（不推荐）；
   * 但在你联系作者之前，建议先认真看看这份[F&Q](https://github.com/wzpan/scnuthesis/wiki/F&Q)。
 
+*实例胜千言* ，查看本模板生成的论文效果示例： [http://wzpan.github.io/scnuthesis/thesis.html](http://wzpan.github.io/scnuthesis/thesis.html)
+ 
 ## 郑重声明 ##
 
 这份模板目前还处于个人开发阶段，并非学校提供的官方模板。如果因为使用这份模板蒙受了任何经济、学术上的损失，作者将不承担任何责任。
