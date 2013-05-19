@@ -28,5 +28,3 @@ data\*.out
 data\*.toc
 *.thm
 *.zip
-scnuthesis.dtx
-scnux.sty
