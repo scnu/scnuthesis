@@ -162,10 +162,10 @@
 \def\scnuthesis{\textsc{SCNU}\textsc{Thesis}}
 \newcommand{\pozhehao}{\kern0.3ex\rule[0.8ex]{2em}{0.1ex}\kern0.3ex}
 \newcommand{\chapterlabel}{}
-\renewcommand\contentsname{目\hspace{1em}录}
-\renewcommand\listfigurename{图\hspace{1em}目\hspace{1em}录}
-\renewcommand\listtablename{表\hspace{1em}目\hspace{1em}录}
-\newcommand\denotationname{符号列表}
+\renewcommand\contentsname{\hei 目\hspace{1em}录}
+\renewcommand\listfigurename{\hei 图\hspace{1em}目\hspace{1em}录}
+\renewcommand\listtablename{\hei 表\hspace{1em}目\hspace{1em}录}
+\newcommand\denotationname{\hei 符号列表}
 \newcommand\ackname{致\hspace{1em}谢}
 \newcommand\resumename{作者攻读学位期间发表的学术论文目录}
 \newcommand\listequationname{公式索引}
@@ -202,12 +202,12 @@
         \ifodd \value{page} % 奇数页
         {\chaptertitle}
         \else % 偶数页
-        {\@displaytitle}\fi
+        {\@title}\fi
       }
       \else
       {\chaptertitle}\fi
       \else %标题不作为页眉
-      {\@displaytitle}\fi
+      {\@title}\fi
   }
 }{}
 \headrule%
@@ -226,12 +226,12 @@
           \ifodd \value{page} % 奇数页
           {第\thechapter 章\hspace{1em}\chaptertitle}
           \else % 偶数页
-          {\@displaytitle}\fi
+          {\@title}\fi
         }
         \else
         {第\thechapter 章\hspace{1em}\chaptertitle}\fi
         \else %标题不作为页眉
-        {\@displaytitle}\fi
+        {\@title}\fi
     }
   }{}
   \headrule%
@@ -250,12 +250,12 @@
         \ifodd \value{page} % 奇数页
         {附录\thechapter\hspace{1em}\chaptertitle}
         \else % 偶数页
-        {\@displaytitle}\fi
+        {\@title}\fi
       }
       \else
       {附录\thechapter\hspace{1em}\chaptertitle}\fi
       \else %标题不作为页眉
-      {\@displaytitle}\fi
+      {\@title}\fi
     }
 }{}
 \headrule%
@@ -274,12 +274,12 @@
         \ifodd \value{page} % 奇数页
         {\chapterlabel}
         \else % 偶数页
-        {\@displaytitle}\fi
+        {\@title}\fi
       }
       \else
       {\chapterlabel}\fi
       \else %标题不作为页眉
-      {\@displaytitle}\fi
+      {\@title}\fi
   }
 }{}
 \headrule%
@@ -333,16 +333,44 @@
 \newcommand\ekeywordsname{\xiaosi \textbf{KEY WORDS}}
 \newcommand\ekeywords[1]{{\xiaosi \ekeywordsname: #1}}
 \newenvironment{cabstract}{%
-  \titleformat*{\chapter}{\xiaosan \heiti \filcenter \bfseries}
-  \chapter{\cabstractname}
+  {\if@openright\cleardoublepage\else\clearpage\fi}
+  \addcontentsline{toc}{chapter}{\cabstractname}%
+  \vspace*{1.5em}
+  \centerline{\sanhao \hei \@title}
   \xiaosi
+  \vspace{1.5em}
+  \begin{center}
+    \begin{tabular}[c]{ll}
+        专业名称： &\@subject \\
+        申请者：& \@author \\
+        导师： &\@supervisor \\
+    \end{tabular}
+  \end{center}
+  \vspace{1.5em}
+
+  {\heiti \sihao \cabstractname}
+
   \@afterheading}
 {\par\vspace{2em}\par}
 
 \newenvironment{eabstract}{%
-  \titleformat*{\chapter}{\sihao \filcenter \bfseries}
-  \chapter{\eabstractname}
+  {\if@openright\cleardoublepage\else\clearpage\fi}
+  \addcontentsline{toc}{chapter}{\eabstractname}%
+  \vspace*{1.5em}
+  \centerline{\sanhao \@entitle}
   \xiaosi
+  \vspace{1.5em}
+  \begin{center}
+    \begin{tabular}[c]{ll}
+        Major： &\@ensubject \\
+        Name：& \@enauthor \\
+        Supervisor： &\@ensupervisor \\
+    \end{tabular}
+  \end{center}
+  \vspace{1.5em}
+
+  {\bfseries \eabstractname}
+
   \@afterheading}
 {\par\vspace{2em}\par}
 \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
@@ -401,8 +429,8 @@
 \titlespacing{\subsection}{2em}{2ex}{2ex}
 \titlespacing{\subsubsection}{2em}{1ex}{0ex}
 \renewcommand\normalsize{%
-  \@setfontsize\normalsize{12bp}{12.87bp}%
-  \renewcommand{\baselinestretch}{1.3}%
+  \xiaosi%
+  \renewcommand{\baselinestretch}{1.4}%
 \setlength\abovedisplayskip{10bp \@plus 2bp \@minus 2bp}%
 \setlength\abovedisplayshortskip{10bp \@plus 2bp \@minus 2bp}%
 \setlength\belowdisplayskip{\abovedisplayskip}%
@@ -552,13 +580,17 @@
 \def\confidentiality#1{\def\@confidentiality{#1}} % 密级
 \def\title#1{\def\@title{#1}} % 中文题目
 \def\displaytitle#1{\def\@displaytitle{#1}} % 文章标题
-\def\author#1{\def\@author{#1}}
+\def\entitle#1{\def\@entitle{#1}} % 英文标题
+\def\author#1{\def\@author{#1}} % 中文作者名
+\def\enauthor#1{\def\@enauthor{#1}} % 英文作者名
 \def\zhdate#1{\def\@zhdate{#1}} % 中文日期
 \def\subject#1{\def\@subject{#1}} % 中文学科
+\def\ensubject#1{\def\@ensubject{#1}} % 英文学科
 \def\researchfield#1{\def\@researchfield{#1}} % 中文研究方向
 \def\supervisor#1{\def\@supervisor{#1}} % 导师
-\def\school#1{\def\@school{#1}} % 工学，理学，以同等学历申请工(理)学
-\def\entitle#1{\def\@entitle{#1}}
+\def\ensupervisor#1{\def\@ensupervisor{#1}} % 导师英文名
+\def\protitle#1{\def\@protitle{#1}} % 导师的职称
+\def\school#1{\def\@school{#1}} % 学院
 
 \def\optionpaperclass#1{\def\@optionpaperclass{#1}} % paperclass
 \def\optionpaperclassen#1{\def\@optionpaperclassen{#1}} % paperclass english
@@ -573,6 +605,7 @@
   \optionas{Supervisor}
 \fi
 \def\maketitle{%
+  \renewcommand{\baselinestretch}{1.3}%
   \def\entry##1##2##3{%
     \multicolumn{##1}{l}{\underline{\hbox to ##2{\hfil##3\hfil}}}
     }
@@ -581,14 +614,13 @@
   \author{}%
   \enauthor{}%
   \supervisor{}%
-  \cosupervisor{}%
   \ensupervisor{}%
-  \encosupervisor{}%
+  \protitle{}%
   \else\relax\fi%
   \pagenumbering{alph}% not display, for print only
   \thispagestyle{empty}%
   \begin{center}\leavevmode % 表格环境
-  \vspace{-2cm}
+  \vspace{-2.3cm}
   {\songti \sihao[1.25]%
     \begin{tabular}{llcll}
     学校代码 & \entry{1}{3.2cm}{\@university}     & \hspace*{4.8cm}%
@@ -605,7 +637,7 @@
   \vspace{1cm} %插入空白
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
   \vspace{1cm} %插入空白
-  \uline{\songti \bfseries \erhao[1.25] 题目：\@title }
+  \uline{\songti \erhao[1.25] 题目：\@displaytitle }
   \vspace{45bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
@@ -622,7 +654,7 @@
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@school}\hfil{}} & \\[3.2ex]
         \cline{2-2}
       \raisebox{-3.7ex}[0pt]{导师姓名及职称} &
-        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor}\hfil{}} & \\[3.2ex]
+        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[3.2ex]
         \cline{2-2}
       \raisebox{-3.7ex}[0pt]{论文提交日期} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@zhdate}\hfil{}} & \\[3.2ex]

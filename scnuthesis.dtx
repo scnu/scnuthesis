@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2013/04/28 v0.5.8 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2013/05/19 v0.6 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -36,7 +36,7 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}  
 %
-% \CheckSum{1151}
+% \CheckSum{1214}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -67,7 +67,7 @@
 % \DoNotIndex{\normalfont,\bfseries,\slshape,\interlinepenalty}
 % \DoNotIndex{\hfil,\par,\hskip,\vskip,\vspace,\quad}
 % \DoNotIndex{\centering,\raggedright}
-% \DoNotIndex{\c@secnumdepth,\@startsection,\@setfontsize}
+% \DoNotIndex{\c@secnumdepth,\@startsection}
 % \DoNotIndex{\ ,\@plus,\@minus,\p@,\z@,\@m,\@M,\@ne,\m@ne}
 % \DoNotIndex{\@@par,\DeclareOperation,\RequirePackage,\LoadClass}
 % \DoNotIndex{\AtBeginDocument,\AtEndDocument}
@@ -91,9 +91,6 @@
 % 本模板旨在提供规范的华南师范大学\LaTeX{}写作模板环境，
 % 现支持硕士/博士学位论文格式。
 % \vspace{2em}
-% \begin{center}
-%	{\octocat~}\url{http://wzpan.github.io/scnuthesis/}
-% \end{center}
 % \end{abstract}
 %
 % \vspace{2cm}
@@ -416,26 +413,15 @@
 %
 % 论文题目应能概括整个论文最重要的内容，应简明、恰当，一般不超过25个字（外语专
 % 业的学位论文须有中文题目）。由于论文题目可能超过1行， 我们提供额外的一个命
-% 令\verb|\displaytitle|用来在授权书中填入(限定为)单行的题目。
-%
+% 令\verb|\displaytitle|用来在授权书中填入多行的题目。
+% \changes{v0.6}{2013/05/19}{作者基本信息迁移到 info.tex，导师职称和名字
+% 分离} 
+% 
 % \end{description}
 %
 %    \begin{macrocode}
 %<*thesis>
-\classification{}
-\university{10574}
-\confidentiality{无}
-\serialno{2011123456}
-\title{华南师范大学硕士/博士\\
-  学位论文\LaTeX{}模板使用手册}
-\displaytitle{华南师范大学硕士/博士学位论文\LaTeX{}模板使用手册}
-\author{张三}
-\subject{计算机应用技术}
-\researchfield{数字图像处理}
-\school{计算机学院}
-\supervisor{李四\quad{}教授}
-\zhdate{\zhtoday}
-\entitle{How to Use the \LaTeX{} Document Class for SCNU Dissertations}
+\input{data/info} 
 %</thesis>
 %    \end{macrocode}
 %
@@ -939,13 +925,14 @@
 %
 % 默认的页面元素的英文名，诸如Contents为目录，Abstract为摘要等，
 % 我们首先将他们一一中文化：
+% \changes{v0.6}{2013/05/19}{目录字体更改为黑体} 
 %
 %    \begin{macrocode}
 %<*cls>
-\renewcommand\contentsname{目\hspace{1em}录}
-\renewcommand\listfigurename{图\hspace{1em}目\hspace{1em}录}
-\renewcommand\listtablename{表\hspace{1em}目\hspace{1em}录}
-\newcommand\denotationname{符号列表}
+\renewcommand\contentsname{\hei 目\hspace{1em}录}
+\renewcommand\listfigurename{\hei 图\hspace{1em}目\hspace{1em}录}
+\renewcommand\listtablename{\hei 表\hspace{1em}目\hspace{1em}录}
+\newcommand\denotationname{\hei 符号列表}
 \newcommand\ackname{致\hspace{1em}谢}
 \newcommand\resumename{作者攻读学位期间发表的学术论文目录}
 \newcommand\listequationname{公式索引}
@@ -1027,12 +1014,12 @@
         \ifodd \value{page} % 奇数页         
         {\chaptertitle}
         \else % 偶数页
-        {\@displaytitle}\fi
+        {\@title}\fi
       }
       \else
       {\chaptertitle}\fi
       \else %标题不作为页眉
-      {\@displaytitle}\fi
+      {\@title}\fi
   }
 }{}
 \headrule%
@@ -1053,12 +1040,12 @@
           \ifodd \value{page} % 奇数页
           {第\thechapter 章\hspace{1em}\chaptertitle}
           \else % 偶数页
-          {\@displaytitle}\fi
+          {\@title}\fi
         }
         \else
         {第\thechapter 章\hspace{1em}\chaptertitle}\fi
         \else %标题不作为页眉
-        {\@displaytitle}\fi
+        {\@title}\fi
     }
   }{}
   \headrule%
@@ -1078,12 +1065,12 @@
         \ifodd \value{page} % 奇数页         
         {附录\thechapter\hspace{1em}\chaptertitle}
         \else % 偶数页
-        {\@displaytitle}\fi
+        {\@title}\fi
       }
       \else
       {附录\thechapter\hspace{1em}\chaptertitle}\fi
       \else %标题不作为页眉
-      {\@displaytitle}\fi
+      {\@title}\fi
     }
 }{}
 \headrule%
@@ -1103,12 +1090,12 @@
         \ifodd \value{page} % 奇数页         
         {\chapterlabel}
         \else % 偶数页
-        {\@displaytitle}\fi
+        {\@title}\fi
       }
       \else
       {\chapterlabel}\fi
       \else %标题不作为页眉
-      {\@displaytitle}\fi
+      {\@title}\fi
   }
 }{}
 \headrule%
@@ -1208,6 +1195,7 @@
 % 英文摘要要求``ABSTRACT''二字四号黑体居中，再下空一行打印英文摘要内容，英文摘要
 % 与中文摘要相对应。摘要内容每段开头留四个字符空格,字体为Times New Roman，小四号。
 % 摘要内容后下空二行打印“KEY WORDS：”（小四号黑体）， 其后关键词小写。
+% \changes{v0.6}{2013/05/19}{修改摘要的格式}  
 % \end{description}
 %
 %    \begin{macrocode}
@@ -1220,16 +1208,44 @@
 \newcommand\ekeywordsname{\xiaosi \textbf{KEY WORDS}}
 \newcommand\ekeywords[1]{{\xiaosi \ekeywordsname: #1}}
 \newenvironment{cabstract}{%
-  \titleformat*{\chapter}{\xiaosan \heiti \filcenter \bfseries}
-  \chapter{\cabstractname}
-  \xiaosi
+  {\if@openright\cleardoublepage\else\clearpage\fi}
+  \addcontentsline{toc}{chapter}{\cabstractname}%
+  \vspace*{1.5em}
+  \centerline{\sanhao \hei \@title}
+  \xiaosi  
+  \vspace{1.5em}
+  \begin{center}
+    \begin{tabular}[c]{ll}
+        专业名称： &\@subject \\
+        申请者：& \@author \\
+        导师： &\@supervisor \\
+    \end{tabular}
+  \end{center}
+  \vspace{1.5em}
+  
+  {\heiti \sihao \cabstractname}
+  
   \@afterheading}
 {\par\vspace{2em}\par}
 
 \newenvironment{eabstract}{%
-  \titleformat*{\chapter}{\sihao \filcenter \bfseries}
-  \chapter{\eabstractname}
-  \xiaosi
+  {\if@openright\cleardoublepage\else\clearpage\fi}
+  \addcontentsline{toc}{chapter}{\eabstractname}%    
+  \vspace*{1.5em}
+  \centerline{\sanhao \@entitle} 
+  \xiaosi  
+  \vspace{1.5em}
+  \begin{center}
+    \begin{tabular}[c]{ll}
+        Major： &\@ensubject \\
+        Name：& \@enauthor \\
+        Supervisor： &\@ensupervisor \\
+    \end{tabular}
+  \end{center}
+  \vspace{1.5em}
+  
+  {\bfseries \eabstractname}
+  
   \@afterheading}
 {\par\vspace{2em}\par}
 %</cls>
@@ -1363,8 +1379,8 @@
 %    \begin{macrocode}
 %<*cls>
 \renewcommand\normalsize{%
-  \@setfontsize\normalsize{12bp}{12.87bp}%
-  \renewcommand{\baselinestretch}{1.3}%
+  \xiaosi%
+  \renewcommand{\baselinestretch}{1.4}%
 \setlength\abovedisplayskip{10bp \@plus 2bp \@minus 2bp}%
 \setlength\abovedisplayshortskip{10bp \@plus 2bp \@minus 2bp}%
 \setlength\belowdisplayskip{\abovedisplayskip}%
@@ -1631,13 +1647,17 @@
 \def\confidentiality#1{\def\@confidentiality{#1}} % 密级
 \def\title#1{\def\@title{#1}} % 中文题目
 \def\displaytitle#1{\def\@displaytitle{#1}} % 文章标题
-\def\author#1{\def\@author{#1}}
+\def\entitle#1{\def\@entitle{#1}} % 英文标题
+\def\author#1{\def\@author{#1}} % 中文作者名
+\def\enauthor#1{\def\@enauthor{#1}} % 英文作者名
 \def\zhdate#1{\def\@zhdate{#1}}	% 中文日期
 \def\subject#1{\def\@subject{#1}} % 中文学科
+\def\ensubject#1{\def\@ensubject{#1}} % 英文学科
 \def\researchfield#1{\def\@researchfield{#1}} % 中文研究方向
 \def\supervisor#1{\def\@supervisor{#1}} % 导师
-\def\school#1{\def\@school{#1}} % 工学，理学，以同等学历申请工(理)学
-\def\entitle#1{\def\@entitle{#1}}
+\def\ensupervisor#1{\def\@ensupervisor{#1}} % 导师英文名
+\def\protitle#1{\def\@protitle{#1}} % 导师的职称
+\def\school#1{\def\@school{#1}} % 学院
 
 \def\optionpaperclass#1{\def\@optionpaperclass{#1}} % paperclass
 \def\optionpaperclassen#1{\def\@optionpaperclassen{#1}} % paperclass english
@@ -1673,10 +1693,11 @@
 %
 % 制作封面比较复杂，需要一些手动调整的东西，首先来看第一页，
 % 重新定义了\verb|maketitle|，
-% 用表格来安排页面元素，页头采用仿宋五号字体，段前段后间距一行，这个空一行就用3ex实现，
+% 用表格来安排页面元素，页头采用仿宋五号字体，段前段后间距一行。
 %    \begin{macrocode}
 %<*cls>
 \def\maketitle{%
+  \renewcommand{\baselinestretch}{1.3}%
   \def\entry##1##2##3{%
     \multicolumn{##1}{l}{\underline{\hbox to ##2{\hfil##3\hfil}}}
     }
@@ -1685,14 +1706,13 @@
   \author{}%
   \enauthor{}%
   \supervisor{}%
-  \cosupervisor{}%
-  \ensupervisor{}%
-  \encosupervisor{}%
+  \ensupervisor{}%  
+  \protitle{}%
   \else\relax\fi%
   \pagenumbering{alph}% not display, for print only
   \thispagestyle{empty}%
   \begin{center}\leavevmode	% 表格环境
-  \vspace{-2cm}
+  \vspace{-2.3cm}
   {\songti \sihao[1.25]%
     \begin{tabular}{llcll}
     学校代码	& \entry{1}{3.2cm}{\@university}     & \hspace*{4.8cm}%
@@ -1709,7 +1729,7 @@
   \vspace{1cm} %插入空白
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
   \vspace{1cm} %插入空白
-  \uline{\songti \bfseries \erhao[1.25] 题目：\@title }
+  \uline{\songti \erhao[1.25] 题目：\@displaytitle }
   \vspace{45bp} 
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
@@ -1726,7 +1746,7 @@
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@school}\hfil{}} & \\[3.2ex]
         \cline{2-2}
       \raisebox{-3.7ex}[0pt]{导师姓名及职称} &
-        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor}\hfil{}} & \\[3.2ex]
+        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[3.2ex]
         \cline{2-2}
       \raisebox{-3.7ex}[0pt]{论文提交日期} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@zhdate}\hfil{}} & \\[3.2ex]
