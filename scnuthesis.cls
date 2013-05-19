@@ -23,7 +23,8 @@
 %% To produce the documentation run the original source files ending with `.dtx'
 %% through LaTeX.
 %% 
-%% Any Suggestions : LiuBenYuan <liubenyuan@gmail.com>
+%% Any Suggestions : Joseph Pan <cs.wzpan@gmail.com>
+%% Thanks LiuBenYuan <liubenyuan@gmail.com> for the nudtpapre class!
 %% Thanks Xue Ruini <xueruini@gmail.com> for the thuthesis class!
 %% Thanks sofoot for the original NUDT paper class!
 %% 
