@@ -330,7 +330,7 @@
   \clearpage\fi\fi%
 }
 %%
-\newcommand\cabstractname{\hspace{-2em} 摘\hspace{1em}要}
+\newcommand\cabstractname{\hspace{-2em}摘\hspace{1em}要}
 \newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词}}
 \newcommand\ckeywords[1]{\xiaosi \songti \ckeywordsname: #1}
 
@@ -339,7 +339,7 @@
 \newcommand\ekeywords[1]{{\xiaosi \ekeywordsname: #1}}
 \newenvironment{cabstract}{%
   {\if@openright\cleardoublepage\else\clearpage\fi}%
-  \addcontentsline{toc}{chapter}{\cabstractname}%
+  \addcontentsline{toc}{chapter}{\hspace{2em}\cabstractname}%
   \vspace*{1.5em}
   \begin{center}{\sanhao \hei \@displaytitle}\end{center}
   \xiaosi
@@ -353,14 +353,14 @@
   \end{center}
 
   \vspace{1.5em}
-  {\heiti \sihao \cabstractname}
-
-  \@afterheading}
+  {\heiti\sihao~\cabstractname}
+  %\@afterheading
+}
 {\par\vspace{2em}\par}
 
 \newenvironment{eabstract}{%
   \if@openright\cleardoublepage\else\clearpage\fi%
-  \addcontentsline{toc}{chapter}{\eabstractname}%
+  \addcontentsline{toc}{chapter}{\hspace{2em}\eabstractname}%
   \vspace*{1.5em}
   \begin{center}{\sanhao \@entitle}\end{center}
   \xiaosi
@@ -377,7 +377,8 @@
 
   {\bfseries \eabstractname}
 
-  \@afterheading}
+  % \@afterheading
+}
 {\par\vspace{2em}\par}
 \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
     {第\CJKnumber{\thecontentslabel}章\quad}{}
