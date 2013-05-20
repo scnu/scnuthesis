@@ -708,13 +708,13 @@
 % 本文档类直接采用\XeTeX{}引擎，方便了字体配置以及编译，
 % 这里需要调用\textsf{XeCJK}宏包，no--math的作用是不改变先前数学宏包设定的数学字体。
 % 同时采用\textsf{indentfirst}宏包管理文字的缩进:
-% \changes{v0.5.7}{2013/04/28}{使用CJKulem宏包替代kulem宏包，以解决MikTeX编译出错的
+% \changes{v0.5.7}{2013/04/28}{使用ulem宏包替代kulem宏包，以解决MikTeX编译出错的
 %问题}
 % \changes{v0.6}{2013/05/19}{使用半角格式处理标点}
 %    \begin{macrocode}
 %<*cls>
 \RequirePackage[CJKnumber,no-math,BoldFont,SlantFont,CheckSingle]{xeCJK}
-\RequirePackage{CJKulem}
+\RequirePackage{ulem}
 \RequirePackage{indentfirst}
 \xeCJKsetup{
   PunctStyle=kaiming,
@@ -1209,7 +1209,7 @@
 %
 %    \begin{macrocode}
 %<*cls>
-\newcommand\cabstractname{\hspace{-2em}摘\hspace{1em}要}
+\newcommand\cabstractname{\hspace{-2em} 摘\hspace{1em}要}
 \newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词}}
 \newcommand\ckeywords[1]{\xiaosi \songti \ckeywordsname: #1}
 
@@ -1220,7 +1220,7 @@
   {\if@openright\cleardoublepage\else\clearpage\fi}%
   \addcontentsline{toc}{chapter}{\cabstractname}%
   \vspace*{1.5em}
-  \begin{center}{\sanhao \hei \@title}\end{center}
+  \begin{center}{\sanhao \hei \@displaytitle}\end{center}
   \xiaosi
   \vspace{1.5em}
   \begin{center}
@@ -1248,7 +1248,7 @@
     \begin{tabular}[c]{ll}
       Major： &\ifisanon{}\else{\@ensubject}\fi \\
       Name：& \ifisanon{}\else{\@enauthor}\fi \\
-      Supervisor： &\ifisanon{}\else{\@supervisor}\fi\\
+      Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\
     \end{tabular}
   \end{center}
   
