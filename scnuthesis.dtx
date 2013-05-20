@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2013/05/19 v0.6 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2013/05/20 v0.6.1 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -36,7 +36,7 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}  
 %
-% \CheckSum{1214}
+% \CheckSum{1239}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -246,7 +246,7 @@
 % \subsection{\TeX{}系统的选择}
 % 有网络环境的用户推荐安装\href{http://www.tug.org/texlive}{\TeX{}live}，
 % \href{http://miktex.org}{MiKTeX}或者\href{http://www.ctex.org}{C\TeX}，
-% 对于无网络环境的，主要是针对教研室用户，推荐{\TeX{}live}或者C\TeX{}完整版，安装
+% 对于无网络环境的，推荐{\TeX{}live}或者C\TeX{}完整版，安装
 % 过程很简单，一路下一步即可，但是需要\textbf{注意：}
 %
 % \begin{description}
@@ -413,7 +413,7 @@
 %
 % 论文题目应能概括整个论文最重要的内容，应简明、恰当，一般不超过25个字（外语专
 % 业的学位论文须有中文题目）。由于论文题目可能超过1行， 我们提供额外的一个命
-% 令\verb|\displaytitle|用来在授权书中填入多行的题目。
+% 令\verb|\displaytitle|用来填入在页眉等地方出现的单行的题目。
 % \changes{v0.6}{2013/05/19}{作者基本信息迁移到 info.tex，导师职称和名字
 % 分离} 
 % 
@@ -515,7 +515,9 @@
 % \changes{v0.5.3}{2011/02/23}{修改了示例文档中的少量错误标点}
 % \changes{v0.5.5}{2011/06/01}{去掉了第一章中的表格和插图示例，统一在第二章中说
 % 明}
-% \changes{v0.5.7}{2013/04/28}{根据Jiawan Xu的反馈，解决了找不到参考文献样式的错误}
+% \changes{v0.5.7}{2013/04/28}{根据Jiawan Xu的反馈，解决了找不到参考文献样式的错
+% 误}
+% \changes{v0.6.1}{2013/05/20}{修正标点符号位于行首的问题，添加说明书相关教程}  
 %<thesis>% 书写正文，可以根据需要增添章节。
 %    \begin{macrocode}
 %<*thesis>
@@ -706,12 +708,18 @@
 % 本文档类直接采用\XeTeX{}引擎，方便了字体配置以及编译，
 % 这里需要调用\textsf{XeCJK}宏包，no--math的作用是不改变先前数学宏包设定的数学字体。
 % 同时采用\textsf{indentfirst}宏包管理文字的缩进:
-% \changes{v0.5.7}{2013/04/28}{使用ulem宏包替代kulem宏包，以解决MikTeX编译出错的问题}
+% \changes{v0.5.7}{2013/04/28}{使用CJKulem宏包替代kulem宏包，以解决MikTeX编译出错的
+%问题}
+% \changes{v0.6}{2013/05/19}{使用半角格式处理标点}
 %    \begin{macrocode}
 %<*cls>
-\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
-\RequirePackage{ulem}
+\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont,CheckSingle]{xeCJK}
+\RequirePackage{CJKulem}
 \RequirePackage{indentfirst}
+\xeCJKsetup{
+  PunctStyle=kaiming,
+  CheckSingle=true
+}
 %</cls>
 %    \end{macrocode}
 %
@@ -1014,12 +1022,12 @@
         \ifodd \value{page} % 奇数页         
         {\chaptertitle}
         \else % 偶数页
-        {\@title}\fi
+        {\@displaytitle}\fi
       }
       \else
       {\chaptertitle}\fi
       \else %标题不作为页眉
-      {\@title}\fi
+      {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -1040,12 +1048,12 @@
           \ifodd \value{page} % 奇数页
           {第\thechapter 章\hspace{1em}\chaptertitle}
           \else % 偶数页
-          {\@title}\fi
+          {\@displaytitle}\fi
         }
         \else
         {第\thechapter 章\hspace{1em}\chaptertitle}\fi
         \else %标题不作为页眉
-        {\@title}\fi
+        {\@displaytitle}\fi
     }
   }{}
   \headrule%
@@ -1065,12 +1073,12 @@
         \ifodd \value{page} % 奇数页         
         {附录\thechapter\hspace{1em}\chaptertitle}
         \else % 偶数页
-        {\@title}\fi
+        {\@displaytitle}\fi
       }
       \else
       {附录\thechapter\hspace{1em}\chaptertitle}\fi
       \else %标题不作为页眉
-      {\@title}\fi
+      {\@displaytitle}\fi
     }
 }{}
 \headrule%
@@ -1090,12 +1098,12 @@
         \ifodd \value{page} % 奇数页         
         {\chapterlabel}
         \else % 偶数页
-        {\@title}\fi
+        {\@displaytitle}\fi
       }
       \else
       {\chapterlabel}\fi
       \else %标题不作为页眉
-      {\@title}\fi
+      {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -1195,53 +1203,55 @@
 % 英文摘要要求``ABSTRACT''二字四号黑体居中，再下空一行打印英文摘要内容，英文摘要
 % 与中文摘要相对应。摘要内容每段开头留四个字符空格,字体为Times New Roman，小四号。
 % 摘要内容后下空二行打印“KEY WORDS：”（小四号黑体）， 其后关键词小写。
-% \changes{v0.6}{2013/05/19}{修改摘要的格式}  
+% \changes{v0.6}{2013/05/19}{修改摘要的格式}
+% \changes{v0.6.1}{2013/05/20}{“摘要”和“关键词”首行不缩进}  
 % \end{description}
 %
 %    \begin{macrocode}
 %<*cls>
-\newcommand\cabstractname{摘\hspace{1em}要}
-\newcommand\ckeywordsname{{\heiti \sihao 关键词}}
+\newcommand\cabstractname{\hspace{-2em}摘\hspace{1em}要}
+\newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词}}
 \newcommand\ckeywords[1]{\xiaosi \songti \ckeywordsname: #1}
 
-\newcommand\eabstractname{ABSTRACT}
-\newcommand\ekeywordsname{\xiaosi \textbf{KEY WORDS}}
+\newcommand\eabstractname{\hspace{-2em}ABSTRACT}
+\newcommand\ekeywordsname{\hspace{-2em}\xiaosi \textbf{KEY WORDS}}
 \newcommand\ekeywords[1]{{\xiaosi \ekeywordsname: #1}}
 \newenvironment{cabstract}{%
-  {\if@openright\cleardoublepage\else\clearpage\fi}
+  {\if@openright\cleardoublepage\else\clearpage\fi}%
   \addcontentsline{toc}{chapter}{\cabstractname}%
   \vspace*{1.5em}
-  \centerline{\sanhao \hei \@title}
-  \xiaosi  
+  \begin{center}{\sanhao \hei \@title}\end{center}
+  \xiaosi
   \vspace{1.5em}
   \begin{center}
     \begin{tabular}[c]{ll}
-        专业名称： &\@subject \\
-        申请者：& \@author \\
-        导师： &\@supervisor \\
+      专业名称： & \ifisanon{}\else{\@subject}\fi \\
+      申请者：& \ifisanon{}\else{\@author}\fi \\
+      导师： & \ifisanon{}\else{\@supervisor}\fi \\
     \end{tabular}
   \end{center}
-  \vspace{1.5em}
   
+  \vspace{1.5em}
   {\heiti \sihao \cabstractname}
   
   \@afterheading}
 {\par\vspace{2em}\par}
 
 \newenvironment{eabstract}{%
-  {\if@openright\cleardoublepage\else\clearpage\fi}
-  \addcontentsline{toc}{chapter}{\eabstractname}%    
+  \if@openright\cleardoublepage\else\clearpage\fi%
+  \addcontentsline{toc}{chapter}{\eabstractname}%
   \vspace*{1.5em}
-  \centerline{\sanhao \@entitle} 
-  \xiaosi  
-  \vspace{1.5em}
+  \begin{center}{\sanhao \@entitle}\end{center}
+  \xiaosi 
   \begin{center}
+    \vspace{1.5em}
     \begin{tabular}[c]{ll}
-        Major： &\@ensubject \\
-        Name：& \@enauthor \\
-        Supervisor： &\@ensupervisor \\
+      Major： &\ifisanon{}\else{\@ensubject}\fi \\
+      Name：& \ifisanon{}\else{\@enauthor}\fi \\
+      Supervisor： &\ifisanon{}\else{\@supervisor}\fi\\
     \end{tabular}
   \end{center}
+  
   \vspace{1.5em}
   
   {\bfseries \eabstractname}
@@ -1729,7 +1739,7 @@
   \vspace{1cm} %插入空白
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
   \vspace{1cm} %插入空白
-  \uline{\songti \erhao[1.25] 题目：\@displaytitle }
+  \uline{\songti \erhao[1.25] 题目：\@title }
   \vspace{45bp} 
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}

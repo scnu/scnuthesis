@@ -70,9 +70,13 @@
 \RequirePackage{amsmath,amssymb,bm}
 \RequirePackage[varg]{txfonts}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
-\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
-\RequirePackage{ulem}
+\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont,CheckSingle]{xeCJK}
+\RequirePackage{CJKulem}
 \RequirePackage{indentfirst}
+\xeCJKsetup{
+  PunctStyle=kaiming,
+  CheckSingle=true
+}
 \RequirePackage[numbers,sort&compress,square]{natbib}
 \RequirePackage[CJKbookmarks=true,pdfborder=0 0 1]{hyperref}
 \defaultfontfeatures{Mapping=tex-text}
@@ -203,12 +207,12 @@
         \ifodd \value{page} % 奇数页
         {\chaptertitle}
         \else % 偶数页
-        {\@title}\fi
+        {\@displaytitle}\fi
       }
       \else
       {\chaptertitle}\fi
       \else %标题不作为页眉
-      {\@title}\fi
+      {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -227,12 +231,12 @@
           \ifodd \value{page} % 奇数页
           {第\thechapter 章\hspace{1em}\chaptertitle}
           \else % 偶数页
-          {\@title}\fi
+          {\@displaytitle}\fi
         }
         \else
         {第\thechapter 章\hspace{1em}\chaptertitle}\fi
         \else %标题不作为页眉
-        {\@title}\fi
+        {\@displaytitle}\fi
     }
   }{}
   \headrule%
@@ -251,12 +255,12 @@
         \ifodd \value{page} % 奇数页
         {附录\thechapter\hspace{1em}\chaptertitle}
         \else % 偶数页
-        {\@title}\fi
+        {\@displaytitle}\fi
       }
       \else
       {附录\thechapter\hspace{1em}\chaptertitle}\fi
       \else %标题不作为页眉
-      {\@title}\fi
+      {\@displaytitle}\fi
     }
 }{}
 \headrule%
@@ -275,12 +279,12 @@
         \ifodd \value{page} % 奇数页
         {\chapterlabel}
         \else % 偶数页
-        {\@title}\fi
+        {\@displaytitle}\fi
       }
       \else
       {\chapterlabel}\fi
       \else %标题不作为页眉
-      {\@title}\fi
+      {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -326,48 +330,49 @@
   \clearpage\fi\fi%
 }
 %%
-\newcommand\cabstractname{摘\hspace{1em}要}
-\newcommand\ckeywordsname{{\heiti \sihao 关键词}}
+\newcommand\cabstractname{\hspace{-2em}摘\hspace{1em}要}
+\newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词}}
 \newcommand\ckeywords[1]{\xiaosi \songti \ckeywordsname: #1}
 
-\newcommand\eabstractname{ABSTRACT}
-\newcommand\ekeywordsname{\xiaosi \textbf{KEY WORDS}}
+\newcommand\eabstractname{\hspace{-2em}ABSTRACT}
+\newcommand\ekeywordsname{\hspace{-2em}\xiaosi \textbf{KEY WORDS}}
 \newcommand\ekeywords[1]{{\xiaosi \ekeywordsname: #1}}
 \newenvironment{cabstract}{%
-  {\if@openright\cleardoublepage\else\clearpage\fi}
+  {\if@openright\cleardoublepage\else\clearpage\fi}%
   \addcontentsline{toc}{chapter}{\cabstractname}%
   \vspace*{1.5em}
-  \centerline{\sanhao \hei \@title}
+  \begin{center}{\sanhao \hei \@title}\end{center}
   \xiaosi
   \vspace{1.5em}
   \begin{center}
     \begin{tabular}[c]{ll}
-        专业名称： &\@subject \\
-        申请者：& \@author \\
-        导师： &\@supervisor \\
+      专业名称： & \ifisanon{}\else{\@subject}\fi \\
+      申请者：& \ifisanon{}\else{\@author}\fi \\
+      导师： & \ifisanon{}\else{\@supervisor}\fi \\
     \end{tabular}
   \end{center}
-  \vspace{1.5em}
 
+  \vspace{1.5em}
   {\heiti \sihao \cabstractname}
 
   \@afterheading}
 {\par\vspace{2em}\par}
 
 \newenvironment{eabstract}{%
-  {\if@openright\cleardoublepage\else\clearpage\fi}
+  \if@openright\cleardoublepage\else\clearpage\fi%
   \addcontentsline{toc}{chapter}{\eabstractname}%
   \vspace*{1.5em}
-  \centerline{\sanhao \@entitle}
+  \begin{center}{\sanhao \@entitle}\end{center}
   \xiaosi
-  \vspace{1.5em}
   \begin{center}
+    \vspace{1.5em}
     \begin{tabular}[c]{ll}
-        Major： &\@ensubject \\
-        Name：& \@enauthor \\
-        Supervisor： &\@ensupervisor \\
+      Major： &\ifisanon{}\else{\@ensubject}\fi \\
+      Name：& \ifisanon{}\else{\@enauthor}\fi \\
+      Supervisor： &\ifisanon{}\else{\@supervisor}\fi\\
     \end{tabular}
   \end{center}
+
   \vspace{1.5em}
 
   {\bfseries \eabstractname}
@@ -638,7 +643,7 @@
   \vspace{1cm} %插入空白
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
   \vspace{1cm} %插入空白
-  \uline{\songti \erhao[1.25] 题目：\@displaytitle }
+  \uline{\songti \erhao[1.25] 题目：\@title }
   \vspace{45bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
