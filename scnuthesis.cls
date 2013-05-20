@@ -71,7 +71,7 @@
 \RequirePackage[varg]{txfonts}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
 \RequirePackage[CJKnumber,no-math,BoldFont,SlantFont,CheckSingle]{xeCJK}
-\RequirePackage{CJKulem}
+\RequirePackage{ulem}
 \RequirePackage{indentfirst}
 \xeCJKsetup{
   PunctStyle=kaiming,
@@ -330,7 +330,7 @@
   \clearpage\fi\fi%
 }
 %%
-\newcommand\cabstractname{\hspace{-2em}摘\hspace{1em}要}
+\newcommand\cabstractname{\hspace{-2em} 摘\hspace{1em}要}
 \newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词}}
 \newcommand\ckeywords[1]{\xiaosi \songti \ckeywordsname: #1}
 
@@ -341,7 +341,7 @@
   {\if@openright\cleardoublepage\else\clearpage\fi}%
   \addcontentsline{toc}{chapter}{\cabstractname}%
   \vspace*{1.5em}
-  \begin{center}{\sanhao \hei \@title}\end{center}
+  \begin{center}{\sanhao \hei \@displaytitle}\end{center}
   \xiaosi
   \vspace{1.5em}
   \begin{center}
@@ -369,7 +369,7 @@
     \begin{tabular}[c]{ll}
       Major： &\ifisanon{}\else{\@ensubject}\fi \\
       Name：& \ifisanon{}\else{\@enauthor}\fi \\
-      Supervisor： &\ifisanon{}\else{\@supervisor}\fi\\
+      Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\
     \end{tabular}
   \end{center}
 
