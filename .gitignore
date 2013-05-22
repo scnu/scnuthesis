@@ -28,3 +28,5 @@ data\*.out
 data\*.toc
 *.thm
 *.zip
+scnuthesis.dtx
+scnuthesis.ins
