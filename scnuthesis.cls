@@ -6,6 +6,8 @@
 %%
 %% scnuthesis.dtx  (with options: `cls')
 %% 
+%% !Mode:: "TeX:UTF-8"
+%% 
 %% This is a generated file.
 %% 
 %% Copyright (C) 2013 by Joseph Pan <cs.wzpan@gmail.com>
@@ -70,13 +72,9 @@
 \RequirePackage{amsmath,amssymb,bm}
 \RequirePackage[varg]{txfonts}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
-\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont,CheckSingle]{xeCJK}
+\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
-\xeCJKsetup{
-  PunctStyle=kaiming,
-  CheckSingle=true
-}
 \RequirePackage[numbers,sort&compress,square]{natbib}
 \RequirePackage[CJKbookmarks=true,pdfborder=0 0 1]{hyperref}
 \defaultfontfeatures{Mapping=tex-text}

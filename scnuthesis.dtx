@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2013/05/20 v0.6.1 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2013/05/20 v0.6.2 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -36,7 +36,7 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}  
 %
-% \CheckSum{1241}
+% \CheckSum{1240}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -711,15 +711,12 @@
 % \changes{v0.5.7}{2013/04/28}{使用ulem宏包替代kulem宏包，以解决MikTeX编译出错的
 %问题}
 % \changes{v0.6}{2013/05/19}{使用半角格式处理标点}
+% \changes{v0.6.2}{2013/05/22}{取消使用CheckSingle和xeCJKsetup}
 %    \begin{macrocode}
 %<*cls>
-\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont,CheckSingle]{xeCJK}
+\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
-\xeCJKsetup{
-  PunctStyle=kaiming,
-  CheckSingle=true
-}
 %</cls>
 %    \end{macrocode}
 %
