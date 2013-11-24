@@ -73,6 +73,7 @@
 \RequirePackage[varg]{txfonts}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
 \RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
+\punctstyle{hangmobanjiao}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
 \RequirePackage[numbers,sort&compress,square]{natbib}
