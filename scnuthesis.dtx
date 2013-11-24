@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2013/05/20 v0.6.2 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2013/11/24 v0.6.3 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -36,7 +36,7 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}  
 %
-% \CheckSum{1240}
+% \CheckSum{1241}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -712,9 +712,11 @@
 %问题}
 % \changes{v0.6}{2013/05/19}{使用半角格式处理标点}
 % \changes{v0.6.2}{2013/05/22}{取消使用CheckSingle和xeCJKsetup}
+% \changes{v0.6.3}{2013/11/24}{修复半角标点出现在首行的问题，谢谢Yuheng。}
 %    \begin{macrocode}
 %<*cls>
 \RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
+\punctstyle{hangmobanjiao}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
 %</cls>
@@ -1156,7 +1158,7 @@
 %
 % 最后是附录部分，由于他的章节标题与正文中不一样(不是第几章，而是附录几)，
 % 我们需要单独设定：
-% \changes{v0.5.7}{2013/04/28}{听取Brintton Chen的建议，修复了附录B开始页眉变为“第\ldots章”的问题}
+% \changes{v0.5.7}{2013/04/28}{听取Brintton Chen的建议，修复了附录B开始页眉变为“第\ldots{}章”的问题}
 %    \begin{macrocode}
 %<*cls>
 \renewcommand\backmatter{%
