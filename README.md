@@ -32,8 +32,6 @@ SCNUThesis
 * 使用xelatex来处理中文，配置简单，同时支持TTF和OTF两种字体方案；
 * 提供多个模板选项，用户在文档中只需修改一行内容，就可以指定不同的排版样式，包括硕士/博士论文封面、单面/双面排版、TTF/OTF字库选择、盲评/非盲评论文等；
 * 针对不同的用户群体分别提供 basic 版本和 pro 版本，前者只包含编译论文所需要的格式宏包（master 分支），而后者还包含了模板的源代码（pro 分支）。
-* 
-
 
 ## 版本历史 ##
 
@@ -100,7 +98,7 @@ $ make
 
   将生成示例论文。
 
-## 在线编辑 ##
+### 在线编辑 ###
 
 1. 注册一个 [ShareLaTeX](https://www.sharelatex.com?r=76bc0f35&rm=d&rs=b) 账号；
 2. 克隆 SCNUThesis 的[在线模板](https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d)；
@@ -115,7 +113,9 @@ $ make
 
 具体的使用方法请参考附带的scnuthesis.pdf文件。
 
-*Happy Texing!*
+**如果喜欢这份模板，请为这个项目加一颗星，谢谢！**
+
+** *Happy Texing!* **
 
 ## 特别感谢 ##
 
