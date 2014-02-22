@@ -1,11 +1,12 @@
 SCNUThesis
 =============
 
-:octocat: 项目主页: [http://wzpan.github.io/scnuthesis/](http://wzpan.github.io/scnuthesis/)
+:octocat: 项目主页: http://wzpan.github.io/scnuthesis/
 
-:octocat: 输出示例: [http://wzpan.github.io/scnuthesis/thesis.html](http://wzpan.github.io/scnuthesis/thesis.html)
+:octocat: 输出示例: http://wzpan.github.io/scnuthesis/thesis.html
 
-在线模板：[![ShareLaTeX](https://www.sharelatex.com/brand/logo/logo-64.png)](https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d)
+<img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle">
+在线模板：https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d
 
 ## 简介 ##
 
