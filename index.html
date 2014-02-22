@@ -86,14 +86,14 @@
 <ol>
 <li><p>下载安装 MikTeX 或者 CTeX；</p></li>
 <li><p>使用 WinEdit 、TeXMaker 或其他文本编辑器打开 thesis.tex 文件。</p></li>
-<li>
-<p>如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
-
-<p><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}</code></p>
+<li><p>如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p></li>
+</ol><pre><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}
+</code></pre>
 
 <p>如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。</p>
-</li>
-<li><p>双击模板目录下的 makepdf.bat，生成示例论文。</p></li>
+
+<ol>
+<li>双击模板目录下的 makepdf.bat，生成示例论文。</li>
 </ol><h3>
 <a name="%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF-linux" class="anchor" href="#%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF-linux"><span class="octicon octicon-link"></span></a>如果使用的是 Linux</h3>
 
@@ -103,56 +103,56 @@
 <p>配置字体：将 Windows 下的 simsun.ttf, simhei.ttf, simkai.ttf，simli,ttf，simfang.ttf 拷贝到 <code>~/.fonts</code> 目录下；</p>
 
 <p>终端下输入</p>
-
-<p><code>fc-cache</code></p>
+</li>
+</ol><div class="highlight highlight-bash"><pre><span class="nv">$ </span><span class="nb">fc</span>-cache
+</pre></div>
 
 <p>完成后输入</p>
 
-<p><code>fc-list :lang=zh</code></p>
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span><span class="nb">fc</span>-list :lang<span class="o">=</span>zh
+</pre></div>
 
 <p>观察列表中是否有宋体等 Windows字体。</p>
-</li>
-<li><p>使用Emacs或其他文本编辑器打开thesis.tex文件。</p></li>
-<li>
-<p>如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p>
 
-<p><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}</code></p>
+<ol>
+<li><p>使用Emacs或其他文本编辑器打开thesis.tex文件。</p></li>
+<li><p>如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：</p></li>
+</ol><pre><code>\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}
+</code></pre>
 
 <p>如果来源是 Windows Vista 或更高的版本，则不需要做任何改动。</p>
-</li>
-<li>
-<p><code>cd</code> 进去模板目录，然后输入这条命令：</p>
 
-<p><code>make</code></p>
+<ol>
+<li>
+<code>cd</code> 进去模板目录，然后输入这条命令：</li>
+</ol><pre><code>$ make
+</code></pre>
 
 <p>将生成示例论文。</p>
 
-<p>具体使用方法请参考附带的scnuthesis.pdf文件。</p>
+<h2>
+<a name="%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91" class="anchor" href="#%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91"><span class="octicon octicon-link"></span></a>在线编辑</h2>
+
+<ol>
+<li>注册一个 <a href="https://www.sharelatex.com?r=76bc0f35&amp;rm=d&amp;rs=b">ShareLaTeX</a> 账号；</li>
+<li>克隆 SCNUThesis 的<a href="https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&amp;rs=ps&amp;rm=d">在线模板</a>；</li>
+<li>在网站左侧的文件资源管理器中找到 thesis.tex 并打开；</li>
+<li>点击页面右上方的 Recompile 按钮，将生成示例论文。</li>
+</ol><p><img src="http://ww1.sinaimg.cn/large/5ac2fba5jw1eds31ggkm8j218f0ozgto.jpg" alt="使用在线编辑器 ShareLaTeX 排版论文"></p>
+
+<p>注意：由于在线模板已经预先配好了字体方案，因此去掉了 vista、ttf 和 otf 字体相关的选项。</p>
+
+<h2>
+<a name="%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E" class="anchor" href="#%E5%85%B6%E4%BB%96%E8%AF%B4%E6%98%8E"><span class="octicon octicon-link"></span></a>其他说明</h2>
+
+<p>具体的使用方法请参考附带的scnuthesis.pdf文件。</p>
 
 <p><em>Happy Texing!</em></p>
-</li>
-</ol><h2>
+
+<h2>
 <a name="%E7%89%B9%E5%88%AB%E6%84%9F%E8%B0%A2" class="anchor" href="#%E7%89%B9%E5%88%AB%E6%84%9F%E8%B0%A2"><span class="octicon octicon-link"></span></a>特别感谢</h2>
 
 <p>这个模板的制作得到了很多高校的TEXer们的帮助，尤其是国防科大的 <a href="http://nudtpaper.googlecode.com">NudtPaper</a> 和清华大学的 <a href="https://github.com/xueruini/thuthesis">Thu-Thesis</a>，在这里要特别谢谢他们的热心帮助！</p>
-
-<h2 id="comment">留言</h2>
-
-<div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'scnuthesis'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
         </section>
 
         <aside id="sidebar">
