@@ -5,7 +5,7 @@ SCNUThesis
 
 :octocat: 输出示例: [http://wzpan.github.io/scnuthesis/thesis.html](http://wzpan.github.io/scnuthesis/thesis.html)
 
-在线模板：[[ShareLaTeX](https://www.sharelatex.com/brand/logo/logo-64.png)](https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d)
+在线模板：[![ShareLaTeX](https://www.sharelatex.com/brand/logo/logo-64.png)](https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d)
 
 ## 简介 ##
 
