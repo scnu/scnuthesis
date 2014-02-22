@@ -5,6 +5,8 @@ SCNUThesis
 
 :octocat: 输出示例: [http://wzpan.github.io/scnuthesis/thesis.html](http://wzpan.github.io/scnuthesis/thesis.html)
 
+在线模板：[[ShareLaTeX](https://www.sharelatex.com/brand/logo/logo-64.png)](https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d)
+
 ## 简介 ##
 
 符合华南师范大学硕士/博士学位论文格式要求的 [LaTeX](https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX) 模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
