@@ -92,10 +92,12 @@ SCNUThesis
 
 ## 在线编辑 ##
 
-1. 注册一个 [ShareLaTeX]() 账号；
+1. 注册一个 [ShareLaTeX](https://www.sharelatex.com?r=76bc0f35&rm=d&rs=b) 账号；
 2. 克隆 SCNUThesis 的[在线模板](https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d)；
 3. 在网站左侧的文件资源管理器中找到 thesis.tex 并打开；
 4. 点击页面右上方的 Recompile 按钮，将生成示例论文。
+
+![使用在线编辑器 ShareLaTeX 排版论文](http://ww1.sinaimg.cn/large/5ac2fba5jw1eds31ggkm8j218f0ozgto.jpg)
 
 注意：由于在线模板已经预先配好了字体方案，因此去掉了 vista、ttf 和 otf 字体相关的选项。
 
