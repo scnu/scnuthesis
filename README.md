@@ -90,9 +90,20 @@ SCNUThesis
 	  
   将生成示例论文。
 
-  具体使用方法请参考附带的scnuthesis.pdf文件。
+## 在线编辑 ##
 
-  *Happy Texing!*
+1. 注册一个 [ShareLaTeX]() 账号；
+2. 克隆 SCNUThesis 的[在线模板](https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d)；
+3. 在网站左侧的文件资源管理器中找到 thesis.tex 并打开；
+4. 点击页面右上方的 Recompile 按钮，将生成示例论文。
+
+注意：由于在线模板已经预先配好了字体方案，因此去掉了 vista、ttf 和 otf 字体相关的选项。
+
+## 其他说明 ##
+
+具体的使用方法请参考附带的scnuthesis.pdf文件。
+
+*Happy Texing!*
 
 ## 特别感谢 ##
 
