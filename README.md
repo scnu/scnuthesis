@@ -54,9 +54,11 @@ SCNUThesis
   
 3. 如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：
   
-     `\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}`
+```
+\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}
+```
      
-     如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。
+   如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。
 	 
 4. 双击模板目录下的 makepdf.bat，生成示例论文。
 
@@ -67,12 +69,16 @@ SCNUThesis
 2. 配置字体：将 Windows 下的 simsun.ttf, simhei.ttf, simkai.ttf，simli,ttf，simfang.ttf 拷贝到 `~/.fonts` 目录下；
   
   终端下输入
-     
-  `fc-cache`
+
+``` bash
+$ fc-cache
+```
      
   完成后输入
-     
-  `fc-list :lang=zh`
+
+``` bash
+$ fc-list :lang=zh
+```
 	  
   观察列表中是否有宋体等 Windows字体。
 	  
@@ -80,14 +86,18 @@ SCNUThesis
 
 4. 如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：
 
-  `\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}`
+```
+\documentclass[master,twoside,ttf,chapterhead]{scnuthesis}
+```
 
   如果来源是 Windows Vista 或更高的版本，则不需要做任何改动。
   
 5. `cd` 进去模板目录，然后输入这条命令：
-  
-  `make`
-	  
+
+```
+$ make
+```
+
   将生成示例论文。
 
 ## 在线编辑 ##
