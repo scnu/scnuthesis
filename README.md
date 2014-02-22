@@ -6,7 +6,7 @@ SCNUThesis
 :octocat: 输出示例: http://wzpan.github.io/scnuthesis/thesis.html
 
 <img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle">
-在线模板：https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d
+在线编辑：https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d
 
 ## 简介 ##
 
@@ -31,12 +31,13 @@ SCNUThesis
 * 根据官方提供的华南师范大学学位论文格式要求进行开发，基本符合格式规范；
 * 使用xelatex来处理中文，配置简单，同时支持TTF和OTF两种字体方案；
 * 提供多个模板选项，用户在文档中只需修改一行内容，就可以指定不同的排版样式，包括硕士/博士论文封面、单面/双面排版、TTF/OTF字库选择、盲评/非盲评论文等；
-* 针对不同的用户群体分别提供basic版本和pro版本，前者只包含编译论文所需要的格式宏包，而后者还包含了模板的源代码。
+* 针对不同的用户群体分别提供 basic 版本和 pro 版本，前者只包含编译论文所需要的格式宏包（master 分支），而后者还包含了模板的源代码（pro 分支）。
+* 
 
 
 ## 版本历史 ##
 
-  详细的版本历史请查看[changelog](https://github.com/wzpan/scnuthesis/blob/master/changelog)
+  详细的版本历史请查看[changelog](https://github.com/wzpan/scnuthesis/blob/master/changelog.md)
 
 ## 下载须知 ##
 
