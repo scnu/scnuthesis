@@ -1,6 +1,8 @@
 SCNUThesis
 =============
 
+## 相关页面 ##
+
 :octocat: 项目主页: http://wzpan.github.io/scnuthesis/
 
 :octocat: 输出示例: http://wzpan.github.io/scnuthesis/thesis.html
@@ -8,7 +10,17 @@ SCNUThesis
 <img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle">
 在线编辑：https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d
 
-## 简介 ##
+## Table of Contents ##
+
+* [简介](#简介)
+* [模板特色](#模板特色)
+* [版本历史](#版本历史)
+* [下载须知](#下载须知)
+* [安装使用](#安装使用)
+* [其他说明](#其他说明)
+* [特别感谢](#特别感谢)
+
+## <a name="简介"></a>简介
 
 符合华南师范大学硕士/博士学位论文格式要求的 [LaTeX](https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX) 模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
 
@@ -21,28 +33,26 @@ SCNUThesis
   * 直接给作者发邮件（不推荐）；
   * 但在你联系作者之前，建议先认真看看这份[F&Q](https://github.com/wzpan/scnuthesis/wiki/F&Q)。
 
-## 郑重声明 ##
-
-这份模板目前还处于个人开发阶段，并非学校提供的官方模板。如果因为使用这份模板蒙受了任何经济、学术上的损失，作者将不承担任何责任。
+**郑重声明**：这份模板目前还处于个人开发阶段，并非学校提供的官方模板。如果因为使用这份模板蒙受了任何经济、学术上的损失，作者将不承担任何责任。
 
 
-## 模板特色 ##
+## <a name="模板特色"></a>模板特色
 
 * 根据官方提供的华南师范大学学位论文格式要求进行开发，基本符合格式规范；
 * 使用xelatex来处理中文，配置简单，同时支持TTF和OTF两种字体方案；
 * 提供多个模板选项，用户在文档中只需修改一行内容，就可以指定不同的排版样式，包括硕士/博士论文封面、单面/双面排版、TTF/OTF字库选择、盲评/非盲评论文等；
 * 针对不同的用户群体分别提供 basic 版本和 pro 版本，前者只包含编译论文所需要的格式宏包（master 分支），而后者还包含了模板的源代码（pro 分支）。
 
-## 版本历史 ##
+## <a name="版本历史"></a>版本历史 ##
 
   详细的版本历史请查看[changelog](https://github.com/wzpan/scnuthesis/blob/master/changelog.md)
 
-## 下载须知 ##
+## <a name="下载须知"></a>下载须知 ##
 
-* 对于普通用户，如果不需要定制本模板，请直接使用master分支。
-* 对于有更多LaTeX经验的用户，如果需要更多的定制，可以使用pro分支，这个分支比basic版多了模板的相关驱动文件。
+* 对于普通用户，如果不需要定制本模板，请直接使用 master 分支，或者直接 [在线编辑](#在线编辑) 。
+* 对于有更多 LaTeX 经验的用户，如果需要更多的定制，可以使用 pro 分支，这个分支比 basic 版多了模板的相关驱动文件。
 
-## 安装使用 ##
+## <a name="安装使用"></a>安装使用 ##
 
 ### 如果使用的是 Windows ###
 
@@ -98,7 +108,7 @@ $ make
 
   将生成示例论文。
 
-### 在线编辑 ###
+### <a name="在线编辑"></a>在线编辑 ###
 
 1. 注册一个 [ShareLaTeX](https://www.sharelatex.com?r=76bc0f35&rm=d&rs=b) 账号；
 2. 克隆 SCNUThesis 的[在线模板](https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d)；
@@ -109,7 +119,7 @@ $ make
 
 注意：由于在线模板已经预先配好了字体方案，因此去掉了 vista、ttf 和 otf 字体相关的选项。
 
-## 其他说明 ##
+## <a name="其他说明"></a>其他说明 ##
 
 具体的使用方法请参考附带的scnuthesis.pdf文件。
 
@@ -117,6 +127,6 @@ $ make
 
 ** *Happy Texing!* **
 
-## 特别感谢 ##
+## <a name="特别感谢"></a>特别感谢 ##
 
 这个模板的制作得到了很多高校的TEXer们的帮助，尤其是国防科大的 [NudtPaper](http://nudtpaper.googlecode.com) 和清华大学的 [Thu-Thesis](https://github.com/xueruini/thuthesis)，在这里要特别谢谢他们的热心帮助！
