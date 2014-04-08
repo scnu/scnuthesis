@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2013/11/24 v0.6.3 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2014/04/08 v0.6.4 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -36,7 +36,7 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}  
 %
-% \CheckSum{1241}
+% \CheckSum{1243}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -1203,7 +1203,8 @@
 % 与中文摘要相对应。摘要内容每段开头留四个字符空格,字体为Times New Roman，小四号。
 % 摘要内容后下空二行打印“KEY WORDS：”（小四号黑体）， 其后关键词小写。
 % \changes{v0.6}{2013/05/19}{修改摘要的格式}
-% \changes{v0.6.1}{2013/05/20}{“摘要”和“关键词”首行不缩进}  
+% \changes{v0.6.1}{2013/05/20}{“摘要”和“关键词”首行不缩进}
+% \changes{v0.6.4}{2014/04/08}{英文标题加粗处理}
 % \end{description}
 %
 %    \begin{macrocode}
@@ -1240,7 +1241,7 @@
   \if@openright\cleardoublepage\else\clearpage\fi%
   \addcontentsline{toc}{chapter}{\hspace{2em}\eabstractname}%
   \vspace*{1.5em}
-  \begin{center}{\sanhao \@entitle}\end{center}
+  \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}
   \xiaosi 
   \begin{center}
     \vspace{1.5em}

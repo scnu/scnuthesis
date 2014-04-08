@@ -10,7 +10,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright (C) 2013 by Joseph Pan <cs.wzpan@gmail.com>
+%% Copyright (C) 2014 by Joseph Pan <cs.wzpan@gmail.com>
 %% 
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3a
@@ -361,7 +361,7 @@
   \if@openright\cleardoublepage\else\clearpage\fi%
   \addcontentsline{toc}{chapter}{\hspace{2em}\eabstractname}%
   \vspace*{1.5em}
-  \begin{center}{\sanhao \@entitle}\end{center}
+  \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}
   \xiaosi
   \begin{center}
     \vspace{1.5em}
