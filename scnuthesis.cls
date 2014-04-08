@@ -361,7 +361,7 @@
   \if@openright\cleardoublepage\else\clearpage\fi%
   \addcontentsline{toc}{chapter}{\hspace{2em}\eabstractname}%
   \vspace*{1.5em}
-  \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}
+  \begin{center}{\sanhao \textsf{\@entitle}}\end{center}
   \xiaosi
   \begin{center}
     \vspace{1.5em}
