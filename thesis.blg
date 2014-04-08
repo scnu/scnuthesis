@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: bstutf8.bst
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated wiz_functions (elt_size=8) to 6000 items from 3000.
+Database file #1: ref/refs.bib
+-- BUPTThesis.bst version 1.0 Beta 1 (2009/05/31) by Yu Zhang.
+-- http://code.google.com/p/buptthesis/
+-- See the "userguide.pdf" manual for usage information.
+Warning--empty editor in clzs
+Warning--empty booktitle in clzs
+Warning--there's a publisher but no address in clzs
+Warning--The editor in DPMG is missing.
+Warning--empty editor in DPMG
+Warning--empty pages in DPMG
+Warning--there's neither address nor publisher in NPB2
+
+Done.
+You've used 15 entries,
+            4554 wiz_defined-function locations,
+            1102 strings with 9708 characters,
+and the built_in function-call counts, 7636 in all, are:
+= -- 848
+> -- 118
+< -- 10
++ -- 66
+- -- 46
+* -- 623
+:= -- 836
+add.period$ -- 53
+call.type$ -- 15
+change.case$ -- 1
+chr.to.int$ -- 12
+cite$ -- 22
+duplicate$ -- 523
+empty$ -- 823
+format.name$ -- 33
+if$ -- 1841
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 0
+newline$ -- 87
+num.names$ -- 15
+pop$ -- 55
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 195
+stack$ -- 0
+substring$ -- 862
+swap$ -- 150
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 149
+warning$ -- 7
+while$ -- 64
+width$ -- 17
+write$ -- 123
+(There were 7 warnings)
