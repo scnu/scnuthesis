@@ -45,7 +45,7 @@ SCNUThesis
 
 ## <a name="版本历史"></a>版本历史 ##
 
-  详细的版本历史请查看[changelog](https://github.com/wzpan/scnuthesis/blob/master/changelog.md)
+详细的版本历史请查阅模板使用手册 scnuthesis.pdf 末尾的修改细节。
 
 ## <a name="下载须知"></a>下载须知 ##
 

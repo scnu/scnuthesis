@@ -329,36 +329,38 @@
   \clearpage\fi\fi%
 }
 %%
-\newcommand\cabstractname{\hspace{-2em}摘\hspace{1em}要}
-\newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词}}
-\newcommand\ckeywords[1]{\xiaosi \songti \ckeywordsname: #1}
+\newcommand\cabstractname{摘\hspace{1em}要}
+\newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词：}}
+\newcommand\ckeywords[1]{{\xiaosi \songti \ckeywordsname #1}}
 
-\newcommand\eabstractname{\hspace{-2em}ABSTRACT}
-\newcommand\ekeywordsname{\hspace{-2em}\xiaosi \textbf{KEY WORDS}}
-\newcommand\ekeywords[1]{{\xiaosi \ekeywordsname: #1}}
+\newcommand\eabstractname{ABSTRACT}
+\newcommand\ekeywordsname{\hspace{-2em}{\textsf{KEY WORDS:}}}
+\newcommand\ekeywords[1]{{\xiaosi \ekeywordsname~#1}}
 \newenvironment{cabstract}{%
   {\if@openright\cleardoublepage\else\clearpage\fi}%
-  \addcontentsline{toc}{chapter}{\hspace{2em}\cabstractname}%
-  \vspace*{1.5em}
-  \begin{center}{\sanhao \hei \@displaytitle}\end{center}
-  \xiaosi
-  \vspace{1.5em}
-  \begin{center}
-    \begin{tabular}[c]{ll}
-      专业名称： & \ifisanon{}\else{\@subject}\fi \\
-      申请者：& \ifisanon{}\else{\@author}\fi \\
-      导师： & \ifisanon{}\else{\@supervisor}\fi \\
-    \end{tabular}
-  \end{center}
+  \addcontentsline{toc}{chapter}{\cabstractname}%
+  ~
+  \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  \xiaosi \vspace{1.4pt}%
+  \begin{center}%
+    \begin{tabular}[c]{ll}%
+      专业名称： & \ifisanon{}\else{\@subject}\fi \\%
+      申请者：& \ifisanon{}\else{\@author}\fi \\%
+      导师： & \ifisanon{}\else{\@supervisor}\fi \\%
+    \end{tabular}%
+  \end{center}%
+  ~\\%
+  ~\\%
+  ~\\%
+  {\heiti\xiaosan \cabstractname} %
 
-  \vspace{1.5em}
-  {\heiti\sihao~\cabstractname}
-  %\@afterheading
+  % \@afterheading
 }
 {\par\vspace{2em}\par}
 
 \newenvironment{eabstract}{%
   \if@openright\cleardoublepage\else\clearpage\fi%
+<<<<<<< HEAD
   \addcontentsline{toc}{chapter}{\hspace{2em}\eabstractname}%
   \vspace*{1.5em}
   \begin{center}{\sanhao \textsf{\@entitle}}\end{center}
@@ -375,6 +377,23 @@
   \vspace{1.5em}
 
   {\bfseries \eabstractname}
+=======
+  \addcontentsline{toc}{chapter}{\eabstractname}%
+  ~
+  \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}%
+  \xiaosi \vspace{1.4pt}
+  \begin{center}%
+    \begin{tabular}[c]{ll}%
+      Major： &\ifisanon{}\else{\@ensubject}\fi \\%
+      Name：& \ifisanon{}\else{\@enauthor}\fi \\%
+      Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\%
+    \end{tabular}%
+  \end{center}%
+  ~\\%
+  ~\\%
+  ~\\%
+  {\sihao \textsf \eabstractname} %
+>>>>>>> pro
 
   % \@afterheading
 }
