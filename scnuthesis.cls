@@ -360,24 +360,6 @@
 
 \newenvironment{eabstract}{%
   \if@openright\cleardoublepage\else\clearpage\fi%
-<<<<<<< HEAD
-  \addcontentsline{toc}{chapter}{\hspace{2em}\eabstractname}%
-  \vspace*{1.5em}
-  \begin{center}{\sanhao \textsf{\@entitle}}\end{center}
-  \xiaosi
-  \begin{center}
-    \vspace{1.5em}
-    \begin{tabular}[c]{ll}
-      Major： &\ifisanon{}\else{\@ensubject}\fi \\
-      Name：& \ifisanon{}\else{\@enauthor}\fi \\
-      Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\
-    \end{tabular}
-  \end{center}
-
-  \vspace{1.5em}
-
-  {\bfseries \eabstractname}
-=======
   \addcontentsline{toc}{chapter}{\eabstractname}%
   ~
   \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}%
@@ -389,11 +371,10 @@
       Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\%
     \end{tabular}%
   \end{center}%
-  ~\\%
-  ~\\%
-  ~\\%
+ ~\\%
+ ~\\%
+ ~\\%
   {\sihao \textsf \eabstractname} %
->>>>>>> pro
 
   % \@afterheading
 }
