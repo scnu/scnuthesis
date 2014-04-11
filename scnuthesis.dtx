@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2014/04/08 v0.6.4 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2014/04/08 v0.6.5 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -36,7 +36,6 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}  
 %
-% \CheckSum{1243}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -1193,68 +1192,67 @@
 %
 % \scnuthesis{}摘要的格式如下：\\
 % \begin{description}
-% \item[~中文摘要~]
-% 中文摘要要求``摘要''二字小三号黑体居中，两字间空一格。``摘要二字''下空一行，打
-% 印摘要内容(小四号宋体)。段落按照“首行缩进”格式，每段开头空二格，标点符号占一
-% 格。摘要内容后下空一行打印“关键词：”三字（四号黑体），其后为关键词（小四号宋
-% 体）。关键词数量为3～8个。
-% \item[~英文摘要~]
-% 英文摘要要求``ABSTRACT''二字四号黑体居中，再下空一行打印英文摘要内容，英文摘要
-% 与中文摘要相对应。摘要内容每段开头留四个字符空格,字体为Times New Roman，小四号。
-% 摘要内容后下空二行打印“KEY WORDS：”（小四号黑体）， 其后关键词小写。
-% \changes{v0.6}{2013/05/19}{修改摘要的格式}
-% \changes{v0.6.1}{2013/05/20}{“摘要”和“关键词”首行不缩进}
-% \changes{v0.6.4}{2014/04/08}{英文标题加粗处理}
+% \item[~中文摘要~]%
+% \begin{itemize}%
+%\item 论文题目为三号黑体字，可以分成1或2行居中打印。
+%\item 论文题目下空一行居中依次打印专业名称、申请者姓名、导师姓名（小四号宋体）。之后空三行靠左打印“摘要”二字(小三号黑体)，两字间空一格（注：“一格”的标准为一个汉字，以下同）。
+%\item“摘要”二字下空一行，打印摘要内容(小四号宋体)。段落按照“首行缩进”格式，每段开头空二格，标点符号占一格。
+%\item 摘要内容后下空一行打印“关键词：”三字（四号黑体），其后为关键词（小四号
+%   宋体）。关键词数量为3～8个。
+% \end{itemize}
+% \item[~英文摘要~]%
+% \begin{itemize}%
+%\item 论文英文题目全部采用大写字母（小三号黑体），可分成1～3行居中打印。每行左右两边至少留五个字符空格。
+%\item 论文题目下空一行居中依次打印出Major，Name，Supervisor信息（小四号Times New Roman）。之后下空三行靠左打印“ABSTRACT”二字（四号黑体），再下空一行打印英文摘要内容，英文摘要与中文摘要相对应。
+%\item 摘要内容每段开头留四个字符空格,字体为Times New Roman，小四号。
+%\item 摘要内容后下空二行打印“KEY WORDS：”（小四号黑体）， 其后关键词小写。 
+% \end{itemize}
 % \end{description}
 %
 %    \begin{macrocode}
 %<*cls>
-\newcommand\cabstractname{\hspace{-2em}摘\hspace{1em}要}
-\newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词}}
-\newcommand\ckeywords[1]{\xiaosi \songti \ckeywordsname: #1}
+\newcommand\cabstractname{摘\hspace{1em}要}
+\newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词：}}
+\newcommand\ckeywords[1]{{\xiaosi \songti \ckeywordsname #1}}
 
-\newcommand\eabstractname{\hspace{-2em}ABSTRACT}
-\newcommand\ekeywordsname{\hspace{-2em}\xiaosi \textbf{KEY WORDS}}
-\newcommand\ekeywords[1]{{\xiaosi \ekeywordsname: #1}}
+\newcommand\eabstractname{ABSTRACT}
+\newcommand\ekeywordsname{\hspace{-2em}{\textsf{KEY WORDS:}}}
+\newcommand\ekeywords[1]{{\xiaosi \ekeywordsname~#1}}
 \newenvironment{cabstract}{%
   {\if@openright\cleardoublepage\else\clearpage\fi}%
-  \addcontentsline{toc}{chapter}{\hspace{2em}\cabstractname}%
-  \vspace*{1.5em}
-  \begin{center}{\sanhao \hei \@displaytitle}\end{center}
-  \xiaosi
-  \vspace{1.5em}
-  \begin{center}
-    \begin{tabular}[c]{ll}
-      专业名称： & \ifisanon{}\else{\@subject}\fi \\
-      申请者：& \ifisanon{}\else{\@author}\fi \\
-      导师： & \ifisanon{}\else{\@supervisor}\fi \\
-    \end{tabular}
-  \end{center}
+  \addcontentsline{toc}{chapter}{\cabstractname}%  
+  \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  \xiaosi%
   
-  \vspace{1.5em}
-  {\heiti\sihao~\cabstractname}
-  %\@afterheading
+  \begin{center}%
+    \begin{tabular}[c]{ll}%
+      专业名称： & \ifisanon{}\else{\@subject}\fi \\%
+      申请者：& \ifisanon{}\else{\@author}\fi \\%
+      导师： & \ifisanon{}\else{\@supervisor}\fi \\%
+    \end{tabular}%
+  \end{center}%
+  \vspace{4.5em}%
+  {\heiti\xiaosan \cabstractname} %
+  
+  % \@afterheading
 }
 {\par\vspace{2em}\par}
 
 \newenvironment{eabstract}{%
   \if@openright\cleardoublepage\else\clearpage\fi%
-  \addcontentsline{toc}{chapter}{\hspace{2em}\eabstractname}%
-  \vspace*{1.5em}
-  \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}
-  \xiaosi 
-  \begin{center}
-    \vspace{1.5em}
-    \begin{tabular}[c]{ll}
-      Major： &\ifisanon{}\else{\@ensubject}\fi \\
-      Name：& \ifisanon{}\else{\@enauthor}\fi \\
-      Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\
-    \end{tabular}
-  \end{center}
+  \addcontentsline{toc}{chapter}{\eabstractname}%  
+  \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}%
+  \xiaosi%
   
-  \vspace{1.5em}
-  
-  {\bfseries \eabstractname}
+  \begin{center}%
+    \begin{tabular}[c]{ll}%
+      Major： &\ifisanon{}\else{\@ensubject}\fi \\%
+      Name：& \ifisanon{}\else{\@enauthor}\fi \\%
+      Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\%
+    \end{tabular}%
+  \end{center}%
+  \vspace{4.5em}%
+  {\sihao \textsf \eabstractname} %
   
   % \@afterheading
 }
@@ -1262,11 +1260,6 @@
 %</cls>
 %    \end{macrocode}
 %
-% \textbf{注意}：这份模板生成的摘要并没有严格按照官方的模板要求，官方要求在摘要的
-% 前面还加上论文标题和作者信息，但作者在所阅读的毕业生论文中并没有发现加上这些信
-% 息的范文。所以只是沿用了比较流行的样式。如果有需要改成严格按照官方的格式，请发
-% 邮件给这个模板的作者。
-% 
 %\subsubsection{目录}
 % 前置部分的封面在后面详细介绍。首先看目录，要求为：
 % 目次页由论文的章、节、条、项、附录等的序号、名称和页码组成，
@@ -1771,6 +1764,5 @@
 %</cls>
 %    \end{macrocode}
 %
-% \Finale
 %
 \endinput
