@@ -1220,10 +1220,10 @@
 \newcommand\ekeywords[1]{{\xiaosi \ekeywordsname~#1}}
 \newenvironment{cabstract}{%
   {\if@openright\cleardoublepage\else\clearpage\fi}%
-  \addcontentsline{toc}{chapter}{\cabstractname}%  
+  \addcontentsline{toc}{chapter}{\cabstractname}%
+  ~
   \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
-  \xiaosi%
-  
+  \xiaosi \vspace{1.4pt}%
   \begin{center}%
     \begin{tabular}[c]{ll}%
       专业名称： & \ifisanon{}\else{\@subject}\fi \\%
@@ -1231,7 +1231,9 @@
       导师： & \ifisanon{}\else{\@supervisor}\fi \\%
     \end{tabular}%
   \end{center}%
-  \vspace{4.5em}%
+  ~\\%
+  ~\\%
+  ~\\%
   {\heiti\xiaosan \cabstractname} %
   
   % \@afterheading
@@ -1240,10 +1242,10 @@
 
 \newenvironment{eabstract}{%
   \if@openright\cleardoublepage\else\clearpage\fi%
-  \addcontentsline{toc}{chapter}{\eabstractname}%  
+  \addcontentsline{toc}{chapter}{\eabstractname}%
+  ~
   \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}%
-  \xiaosi%
-  
+  \xiaosi \vspace{1.4pt}
   \begin{center}%
     \begin{tabular}[c]{ll}%
       Major： &\ifisanon{}\else{\@ensubject}\fi \\%
@@ -1251,7 +1253,9 @@
       Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\%
     \end{tabular}%
   \end{center}%
-  \vspace{4.5em}%
+  ~\\%
+  ~\\%
+  ~\\%
   {\sihao \textsf \eabstractname} %
   
   % \@afterheading
@@ -1375,7 +1379,7 @@
 %
 %\subsubsection{正文字体}
 % 首先确定正文中使用的字体，文档要求正文字体为小四，行距为1.5倍，
-% 中文字体为宋体，英文为{Times New Roman}
+% 中文字体为宋体，英文为{Times New Roman}。
 %
 %\begin{macro}{\normalsize}
 % 我们重新定义 |\normalsize| 来确定文档的正文字体，

@@ -339,9 +339,9 @@
 \newenvironment{cabstract}{%
   {\if@openright\cleardoublepage\else\clearpage\fi}%
   \addcontentsline{toc}{chapter}{\cabstractname}%
+  ~
   \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
-  \xiaosi%
-
+  \xiaosi \vspace{1.4pt}%
   \begin{center}%
     \begin{tabular}[c]{ll}%
       专业名称： & \ifisanon{}\else{\@subject}\fi \\%
@@ -349,7 +349,9 @@
       导师： & \ifisanon{}\else{\@supervisor}\fi \\%
     \end{tabular}%
   \end{center}%
-  \vspace{4.5em}%
+  ~\\%
+  ~\\%
+  ~\\%
   {\heiti\xiaosan \cabstractname} %
 
   % \@afterheading
@@ -359,9 +361,9 @@
 \newenvironment{eabstract}{%
   \if@openright\cleardoublepage\else\clearpage\fi%
   \addcontentsline{toc}{chapter}{\eabstractname}%
+  ~
   \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}%
-  \xiaosi%
-
+  \xiaosi \vspace{1.4pt}
   \begin{center}%
     \begin{tabular}[c]{ll}%
       Major： &\ifisanon{}\else{\@ensubject}\fi \\%
@@ -369,7 +371,9 @@
       Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\%
     \end{tabular}%
   \end{center}%
-  \vspace{4.5em}%
+  ~\\%
+  ~\\%
+  ~\\%
   {\sihao \textsf \eabstractname} %
 
   % \@afterheading
