@@ -346,7 +346,7 @@
     \begin{tabular}[c]{ll}%
       专业名称： & \ifisanon{}\else{\@subject}\fi \\%
       申请者：& \ifisanon{}\else{\@author}\fi \\%
-      导师： & \ifisanon{}\else{\@supervisor}\fi \\%
+      导师： & \ifisanon{}\else{\@supervisor \@protitle}\fi \\%
     \end{tabular}%
   \end{center}%
   ~\\%
