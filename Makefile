@@ -4,7 +4,7 @@ cls: scnuthesis.cls
 zip:
 	git archive master --format=zip > scnuthesis-`git describe master`-basic.zip
 
-thesis.pdf: thesis.tex scnuthesis.cls
+thesis.pdf: thesis.tex scnuthesis.cls data/*tex
 	xelatex thesis
 	bibtex thesis
 	bibtex thesis
