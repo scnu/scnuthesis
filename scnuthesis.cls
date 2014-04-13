@@ -362,7 +362,7 @@
   \if@openright\cleardoublepage\else\clearpage\fi%
   \addcontentsline{toc}{chapter}{\eabstractname}%
   ~
-  \begin{center}{\sanhao \bf \textsf{\@entitle}}\end{center}%
+  \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
   \xiaosi \vspace{1.4pt}
   \begin{center}%
     \begin{tabular}[c]{ll}%
