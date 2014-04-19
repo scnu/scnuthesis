@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2014/04/11 v0.6.5 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2014/04/19 v0.6.6 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -36,7 +36,7 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}
 %
-% \CheckSum{1247}
+% \CheckSum{1239}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -707,18 +707,21 @@
 %
 % 本文档类直接采用\XeTeX{}引擎，方便了字体配置以及编译，
 % 这里需要调用\textsf{XeCJK}宏包，no--math的作用是不改变先前数学宏包设定的数学字体。
-% 同时采用\textsf{indentfirst}宏包管理文字的缩进:
+% 同时采用\textsf{indentfirst}宏包管理文字的缩进，使用\textsf{setspace}宏包管理
+% 段落内的行距:
 % \changes{v0.5.7}{2013/04/28}{使用ulem宏包替代kulem宏包，以解决MikTeX编译出错的
 %问题}
 % \changes{v0.6}{2013/05/19}{使用半角格式处理标点}
 % \changes{v0.6.2}{2013/05/22}{取消使用CheckSingle和xeCJKsetup}
 % \changes{v0.6.3}{2013/11/24}{修复半角标点出现在首行的问题，谢谢Yuheng。}
+% \changes{v0.6.6}{2014/04/19}{添加 setspace 宏包处理段落内的行距}
 %    \begin{macrocode}
 %<*cls>
 \RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
 \punctstyle{hangmobanjiao}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
+\RequirePackage{setspace}
 %</cls>
 %    \end{macrocode}
 %
@@ -1215,7 +1218,8 @@
 % \changes{v0.6.5}{2014/04/11}{修改“专业名称”、“申请者”和“导师”信息的上下
 % 间隔}
 % \changes{v0.6.5}{2014/04/11}{英文的“ABSTRACT”和“KEY WORDS”改为用黑体}
-% \changes{v0.6.5}{2014/04/11}{字号的调整。}
+% \changes{v0.6.5}{2014/04/11}{字号的调整}
+% \changes{v0.6.6}{2014/04/19}{去掉盲审模式下的表格字段}
 %    \begin{macrocode}
 %<*cls>
 \newcommand\cabstractname{摘\hspace{1em}要}
@@ -1229,20 +1233,24 @@
   {\if@openright\cleardoublepage\else\clearpage\fi}%
   \addcontentsline{toc}{chapter}{\cabstractname}%
   ~
-  \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  \begin{spacing}{2.0}
+    \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  \end{spacing}
   \xiaosi \vspace{1.4pt}%
+  \ifisanon{}\else{
   \begin{center}%
     \begin{tabular}[c]{ll}%
-      专业名称： & \ifisanon{}\else{\@subject}\fi \\%
-      申请者：& \ifisanon{}\else{\@author}\fi \\%
-      导师： & \ifisanon{}\else{\@supervisor \@protitle}\fi \\%
-    \end{tabular}%
+      专业名称： & \@subject \\%
+      申请者：& \@author \\%
+      导师： & \@supervisor \\%
+    \end{tabular}%    
   \end{center}%
+  }\fi
   ~\\%
   ~\\%
   ~\\%
   {\heiti\xiaosan \cabstractname} %
-  
+
   % \@afterheading
 }
 {\par\vspace{2em}\par}
@@ -1251,20 +1259,24 @@
   \if@openright\cleardoublepage\else\clearpage\fi%
   \addcontentsline{toc}{chapter}{\eabstractname}%
   ~
-  \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
+  \begin{spacing}{2.0}
+    \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
+  \end{spacing}
   \xiaosi \vspace{1.4pt}
+  \ifisanon{}\else{
   \begin{center}%
     \begin{tabular}[c]{ll}%
-      Major： &\ifisanon{}\else{\@ensubject}\fi \\%
-      Name：& \ifisanon{}\else{\@enauthor}\fi \\%
-      Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\%
+      Major： & \@ensubject \\%
+      Name：& \@enauthor \\%
+      Supervisor： & \@ensupervisor \\%
     \end{tabular}%
   \end{center}%
+  }\fi
   ~\\%
   ~\\%
   ~\\%
   {\sihao \textsf \eabstractname} %
-  
+
   % \@afterheading
 }
 {\par\vspace{2em}\par}

@@ -76,6 +76,7 @@
 \punctstyle{hangmobanjiao}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
+\RequirePackage{setspace}
 \RequirePackage[numbers,sort&compress,square]{natbib}
 \RequirePackage[CJKbookmarks=true,pdfborder=0 0 1]{hyperref}
 \defaultfontfeatures{Mapping=tex-text}
@@ -340,15 +341,19 @@
   {\if@openright\cleardoublepage\else\clearpage\fi}%
   \addcontentsline{toc}{chapter}{\cabstractname}%
   ~
-  \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  \begin{spacing}{2.0}
+    \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  \end{spacing}
   \xiaosi \vspace{1.4pt}%
+  \ifisanon{}\else{
   \begin{center}%
     \begin{tabular}[c]{ll}%
-      专业名称： & \ifisanon{}\else{\@subject}\fi \\%
-      申请者：& \ifisanon{}\else{\@author}\fi \\%
-      导师： & \ifisanon{}\else{\@supervisor \@protitle}\fi \\%
+      专业名称： & \@subject \\%
+      申请者：& \@author \\%
+      导师： & \@supervisor \\%
     \end{tabular}%
   \end{center}%
+  }\fi
   ~\\%
   ~\\%
   ~\\%
@@ -362,15 +367,19 @@
   \if@openright\cleardoublepage\else\clearpage\fi%
   \addcontentsline{toc}{chapter}{\eabstractname}%
   ~
-  \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
+  \begin{spacing}{2.0}
+    \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
+  \end{spacing}
   \xiaosi \vspace{1.4pt}
+  \ifisanon{}\else{
   \begin{center}%
     \begin{tabular}[c]{ll}%
-      Major： &\ifisanon{}\else{\@ensubject}\fi \\%
-      Name：& \ifisanon{}\else{\@enauthor}\fi \\%
-      Supervisor： &\ifisanon{}\else{\@ensupervisor}\fi\\%
+      Major： & \@ensubject \\%
+      Name：& \@enauthor \\%
+      Supervisor： & \@ensupervisor \\%
     \end{tabular}%
   \end{center}%
+  }\fi
   ~\\%
   ~\\%
   ~\\%
