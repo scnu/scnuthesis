@@ -10,7 +10,6 @@ thesis.pdf: thesis.tex scnuthesis.cls data/*tex
 	bibtex thesis
 	xelatex thesis
 	xelatex thesis
-	- pdf2htmlEX --zoom 1.33 thesis.pdf
 
 clean:
 	rm -v *.aux *.log *.toc *.ind *.gls *.glo *.idx *.ilg *.out *.bbl *.thm *.blg *.lot *.lof *~
