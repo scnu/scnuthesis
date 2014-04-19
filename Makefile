@@ -10,7 +10,6 @@ thesis.pdf: thesis.tex scnuthesis.cls data/*.tex
 	bibtex thesis
 	xelatex thesis
 	xelatex thesis
-	- pdf2htmlEX --zoom 1.33 thesis.pdf
 
 scnuthesis.cls:	scnuthesis.ins scnuthesis.dtx
 	xelatex scnuthesis.ins
