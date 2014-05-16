@@ -19,7 +19,7 @@
 % <package>		[2012/3/1 v0.5 By Joseph Pan <cs.wzpan@gmail.com>]
 %
 %<*driver>
-\ProvidesFile{scnuthesis.dtx}[2014/04/19 v0.6.6 SCNUThesis]
+\ProvidesFile{scnuthesis.dtx}[2014/05/17 v0.6.7 SCNUThesis]
 \documentclass[11pt]{ltxdoc}
 \usepackage{scnux}
 \EnableCrossrefs
@@ -177,14 +177,6 @@
 %
 % \subsection{下载}
 % \textsc{SCNUThesis} 主页：\url{http://wzpan.github.io/scnuthesis/}。
-% 模板的更新信息发布在 \href{http://blog.josephpan.net}{我的博客}
-% 以及 \href{http://bbs.scnu.edu.cn}{陶园BBS论坛}。
-%
-% \scnuthesis{}的开发版本同样可以在 \textsc{Github} 上获得：
-% \changes{v0.5.5}{2011/06/01}{改为使用Git来做版本控制}
-% \begin{shell}
-% $ git clone git@github.com:wzpan/scnuthesis.git
-% \end{shell}
 %
 % \subsection{模板的组成部分}
 % 下表列出了 \scnuthesis{} 的主要文件及其功能介绍：
@@ -235,9 +227,9 @@
 %	array & booktabs & longtable  \\
 %   amsmath & amssymb & ntheorem &
 %   indentfirst & paralist & txfonts \\
-%	natbib & hyperref &  &
+%	natbib & hyperref & 
 %   graphicx & subfig\footnote{版本要求：$\geq$2005/06/28 ver: 1.3} &
-%   caption\footnote{版本要求：$\geq$2006/03/21 v3.0j} \\
+%   caption\footnote{版本要求：$\geq$2006/03/21 v3.0j} & \\
 % \hline
 % \end{tabular}
 % \end{minipage}
@@ -671,7 +663,8 @@
 % 这样，我们就可以简单的使用\verb|\toprule|，\verb|\midrule|，\verb|bottomrulle|
 % 这样的命令;
 % 为了在表格中支持跨行，需要引入\textsf{multirow}包，\textsf{tabularx}的作用是为了使用
-% 固定宽度的表格，\textsf{slashbox}可以让我们在表格中使用反斜线:
+% 固定宽度的表格，\textsf{diagbox}可以让我们在表格中使用反斜线:
+% \changes{v0.6.7}{2014/05/17}{听取了zcchen的建议，替换过时的slashbox宏包为diagbox}
 %    \begin{macrocode}
 %<*cls>
 \RequirePackage{array}
@@ -679,7 +672,7 @@
 \RequirePackage{booktabs}
 \RequirePackage{multirow}
 \RequirePackage{tabularx}
-\RequirePackage{slashbox}
+\RequirePackage{diagbox}
 %</cls>
 %    \end{macrocode}
 % 表格和图片的例子可以搜索C\TeX{}论坛或者看示例文件。
@@ -1756,7 +1749,7 @@
   \vspace{1cm} %插入空白
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
   \vspace{1cm} %插入空白
-  \uline{\songti \erhao[1.25] 题目：\@title }
+  \uline{\songti \erhao[1.25] \@title }
   \vspace{45bp} 
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
