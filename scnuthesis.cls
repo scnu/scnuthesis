@@ -66,7 +66,7 @@
 \RequirePackage{booktabs}
 \RequirePackage{multirow}
 \RequirePackage{tabularx}
-\RequirePackage{slashbox}
+\RequirePackage{diagbox}
 \RequirePackage[neverdecrease]{paralist}
 \RequirePackage{xcolor}
 \RequirePackage{amsmath,amssymb,bm}
@@ -652,7 +652,7 @@
   \vspace{1cm} %插入空白
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
   \vspace{1cm} %插入空白
-  \uline{\songti \erhao[1.25] 题目：\@title }
+  \uline{\songti \erhao[1.25] \@title }
   \vspace{45bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
