@@ -664,10 +664,10 @@
       \raisebox{-3.7ex}[0pt]{学位申请人} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@author}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业名称} &
+      \raisebox{-3.7ex}[0pt]{专业学位名称} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@subject}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{研究方向} &
+      \raisebox{-3.7ex}[0pt]{专业学位领域} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@researchfield}\hfil{}} & \\[3.2ex]
         \cline{2-2}
       \raisebox{-3.7ex}[0pt]{所在院系} &
