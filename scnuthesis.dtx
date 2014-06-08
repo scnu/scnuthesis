@@ -36,7 +36,7 @@
 % \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 % \def\scnuthesis{\textsc{SCNU}\-\textsc{Thesis}}
 %
-% \CheckSum{1250}
+% \CheckSum{1241}
 %
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
@@ -945,8 +945,7 @@
 \renewcommand\figurename{图}
 \renewcommand\tablename{表}
 \renewcommand\appendixname{附录}
-%\def\CJK@today{\CJKdigits{\the\year} 年 \CJKnumber{\the\month} 月} 
-\def\CJK@today{\the\year 年 \the\month 月}
+\def\CJK@today{\the\year 年 \the\month 月 \the\day 日}
 \newcommand\zhtoday{\CJK@today}
 \newcommand\entoday{\today{}}
 %</cls>
@@ -1756,8 +1755,8 @@
   {\songti \xiaosan (\@mastertype 型学位)\\}
   \fi
   \vspace{1cm} %插入空白
-  {\songti \xiaoer[1.25] \@title }\\
-  \vspace{45bp}
+  \uline{\songti \xiaoer[1.25] \@title }\\
+  \vspace{40bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
       \raisebox{-3.7ex}[0pt]{学位申请人} &
@@ -1775,11 +1774,11 @@
       \raisebox{-3.7ex}[0pt]{导师姓名及职称} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{论文提交日期} &
-        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@zhdate}\hfil{}} & \\[3.2ex]
-        \cline{2-2}
     \end{tabular}
-  }
+  }\\
+  \vspace{1cm}
+  \@zhdate
+  \vspace{1cm}
   \end{center}%
   \vspace{1mm}
   \cleardoublepage%

@@ -180,7 +180,7 @@
 \renewcommand\figurename{图}
 \renewcommand\tablename{表}
 \renewcommand\appendixname{附录}
-\def\CJK@today{\the\year 年 \the\month 月}
+\def\CJK@today{\the\year 年 \the\month 月 \the\day 日}
 \newcommand\zhtoday{\CJK@today}
 \newcommand\entoday{\today{}}
 \geometry{top=21mm,bottom=25.5mm,left=30mm,right=30mm}
@@ -657,17 +657,17 @@
   {\songti \xiaosan (\@mastertype 型学位)\\}
   \fi
   \vspace{1cm} %插入空白
-  \uline{\songti \xiaoer[1.25] \@title}\\
-  \vspace{45bp}
+  \uline{\songti \xiaoer[1.25] \@title }\\
+  \vspace{40bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
       \raisebox{-3.7ex}[0pt]{学位申请人} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@author}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业学位名称} &
+      \raisebox{-3.7ex}[0pt]{专业名称} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@subject}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业学位领域} &
+      \raisebox{-3.7ex}[0pt]{研究方向} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@researchfield}\hfil{}} & \\[3.2ex]
         \cline{2-2}
       \raisebox{-3.7ex}[0pt]{所在院系} &
@@ -678,8 +678,8 @@
         \cline{2-2}
     \end{tabular}
   }\\
-  \vspace{1.5cm}
-  {\@zhdate}
+  \vspace{1cm}
+  \@zhdate
   \vspace{1cm}
   \end{center}%
   \vspace{1mm}
