@@ -591,7 +591,8 @@
 }
 \def\classification#1{\def\@classification{#1}} % 中图分类号
 \def\serialno#1{\def\@serialno{#1}} % 学号
-\def\university#1{\def\@university{#1}} % university号
+\def\udc#1{\def\@udc{#1}} % UDC号
+\def\mastertype#1{\def\@mastertype{#1}} % 硕士学位类型
 \def\confidentiality#1{\def\@confidentiality{#1}} % 密级
 \def\title#1{\def\@title{#1}} % 中文题目
 \def\displaytitle#1{\def\@displaytitle{#1}} % 文章标题
@@ -638,21 +639,25 @@
   \vspace{-2.3cm}
   {\songti \sihao[1.25]%
     \begin{tabular}{llcll}
-    学校代码 & \entry{1}{3.2cm}{\@university}     & \hspace*{4.8cm}%
-    分类号  & \entry{1}{3.2cm}{\@classification}     \\[5mm]    %
-    学\hspace{1em}  号  & \entry{1}{3.2cm}{\@serialno} &            \hspace*{4.8cm}
-    密\hspace{1em}  级 & \entry{1}{3.2cm}{\@confidentiality}
+      分类号：  & \entry{1}{3.2cm}{\@classification}      \hspace*{4.8cm}   %
+      密级： & \entry{1}{3.2cm}{\@confidentiality} \\[5mm]
+      UDC & \entry{1}{3.2cm}{\@udc}     \hspace*{4.8cm}%
+      学号：  & \entry{1}{3.2cm}{\@serialno}
     \end{tabular}
   }
   \par
   \vspace*{1.5cm} %插入空白
   \includegraphics[width=11cm]{title.pdf}\\
   %\vspace{-1.5cm} %文字上移
-  \erhao\textbf{\textit{South China Normal University}}\\
-  \vspace{1cm} %插入空白
+  \sanhao\textbf{\textit{South China Normal University}}\\
+  \vspace{0.1cm} %插入空白
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
+  \ifismaster
+  \vspace{0.2cm} %插入空白
+  {\songti \xiaosan (\@mastertype 型学位)\\}
+  \fi
   \vspace{1cm} %插入空白
-  \uline{\songti \erhao[1.25] \@title }
+  {\songti \xiaoer[1.25] \@title }\\
   \vspace{45bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
