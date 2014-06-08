@@ -657,11 +657,7 @@
   {\songti \xiaosan (\@mastertype 型学位)\\}
   \fi
   \vspace{1cm} %插入空白
-<<<<<<< HEAD
-  \uline{\songti \erhao[1.25] \@title }
-=======
   {\songti \xiaoer[1.25] \@title }\\
->>>>>>> pro
   \vspace{45bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
