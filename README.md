@@ -1,7 +1,7 @@
 SCNUThesis
 =============
 
-* 原作者：@wzpan 
+* 原作者：[@wzpan](http://github.com/wzpan)
 * 维护者：招募中
 
 ## 相关页面 ##
@@ -122,10 +122,10 @@ $ make
 
 ## <a name="如何参与"></a>如何参与 ##
 
-由于工作关系，@wzpan 已经没有时间再维护 SCNUThesis。我们迫切希望得到更多 LaTeX 爱好者的支持，尤其是 _SCNUers_ 。如果要加入对 SCNUThesis 的贡献，你可以：
+由于工作关系，[@wzpan](http://github.com/wzpan) 已经没有时间再维护 SCNUThesis。我们迫切希望得到更多 LaTeX 爱好者的支持，尤其是 _SCNUers_ 。如果要加入对 SCNUThesis 的贡献，你可以：
 
 1. 到[官方 github 主页](http://github.com/scnu/scnuthesis/)上 fork 这个项目，做出你的修改，然后向 scnu 组织发送 pull request；
-2. 给 @wzpan 发送邮件，申请成为 scnu 组织的成员，你将具有 developer 的权限。
+2. 给 [@wzpan](http://github.com/wzpan) 发送邮件，申请成为 scnu 组织的成员，你将具有 developer 的权限。
 
 ## <a name="其他说明"></a>其他说明 ##
 
