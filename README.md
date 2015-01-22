@@ -1,11 +1,14 @@
 SCNUThesis
 =============
 
+* 原作者：@wzpan 
+* 维护者：招募中
+
 ## 相关页面 ##
 
-:octocat: 项目主页: http://wzpan.github.io/scnuthesis/
+:octocat: 项目主页: http://scnu.github.io/scnuthesis/
 
-:octocat: 输出示例: http://wzpan.github.io/scnuthesis/thesis.html
+:octocat: 输出示例: http://scnu.github.io/scnuthesis/thesis.html
 
 <img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle">
 在线编辑：https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d
@@ -17,24 +20,22 @@ SCNUThesis
 * [版本历史](#版本历史)
 * [下载须知](#下载须知)
 * [安装使用](#安装使用)
+* [如何参与](#如何参与)
 * [其他说明](#其他说明)
 * [特别感谢](#特别感谢)
 
 ## <a name="简介"></a>简介
 
-符合华南师范大学硕士/博士学位论文格式要求的 [LaTeX](https://github.com/wzpan/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX) 模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
+符合华南师范大学硕士/博士学位论文格式要求的 [LaTeX](https://github.com/scnu/scnuthesis/wiki/%E6%BC%AB%E8%B0%88-LaTeX) 模板。关于这个项目的发起原因，请下载这个[slides](http://code.google.com/p/scnuthesis/downloads/detail?name=scnuthesis.pdf&can=2&q=)。
 
-这个项目遵循[The LaTeX project public license](http://latex-project.org/lppl/)，我们迫切希望得到更多LaTeX爱好者的支持，尤其是 _SCNUers_ 。如果要加入我们，请联系作者。
+这个项目遵循[The LaTeX project public license](http://latex-project.org/lppl/)。在使用过程中如果有任何意见、建议或者疑惑，欢迎联系维护者。你可以：
 
-在使用过程中如果有任何意见、建议或者疑惑，欢迎联系作者。你可以：
+  * 在[issues](https://github.com/scnu/scnuthesis/issues)板块提交意见和建议（推荐）；
+  * 在[项目主页](http://scnu.github.io/scnuthesis/#comment)下方留言区留言；
+  * 直接给维护者发邮件（不推荐）；
+  * 但在你联系维护者之前，建议先认真看看这份[F&Q](https://github.com/scnu/scnuthesis/wiki/F&Q)。
 
-  * 在[issues](https://github.com/wzpan/scnuthesis/issues)板块提交意见和建议（推荐）；
-  * 在[项目主页](http://wzpan.github.io/scnuthesis/#comment)下方留言区留言；
-  * 直接给作者发邮件（不推荐）；
-  * 但在你联系作者之前，建议先认真看看这份[F&Q](https://github.com/wzpan/scnuthesis/wiki/F&Q)。
-
-**郑重声明**：这份模板目前还处于个人开发阶段，并非学校提供的官方模板。如果因为使用这份模板蒙受了任何经济、学术上的损失，作者将不承担任何责任。
-
+**郑重声明**：这份模板由个人爱好者维护，并非学校提供的官方模板。如果因为使用这份模板蒙受了任何经济、学术上的损失，作者将不承担任何责任。
 
 ## <a name="模板特色"></a>模板特色
 
@@ -118,6 +119,13 @@ $ make
 ![使用在线编辑器 ShareLaTeX 排版论文](http://ww1.sinaimg.cn/large/5ac2fba5jw1eds31ggkm8j218f0ozgto.jpg)
 
 注意：由于在线模板已经预先配好了字体方案，因此去掉了 vista、ttf 和 otf 字体相关的选项。
+
+## <a name="如何参与"></a>如何参与 ##
+
+由于工作关系，@wzpan 已经没有时间再维护 SCNUThesis。我们迫切希望得到更多 LaTeX 爱好者的支持，尤其是 _SCNUers_ 。如果要加入对 SCNUThesis 的贡献，你可以：
+
+1. 到[官方 github 主页](http://github.com/scnu/scnuthesis/)上 fork 这个项目，做出你的修改，然后向 scnu 组织发送 pull request；
+2. 给 @wzpan 发送邮件，申请成为 scnu 组织的成员，你将具有 developer 的权限。
 
 ## <a name="其他说明"></a>其他说明 ##
 
