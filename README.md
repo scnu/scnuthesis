@@ -5,7 +5,7 @@
 
 * 原作者：[@wzpan](http://github.com/wzpan)
 * 维护者1：[@donghaoye](http://github.com/donghaoye)
-* 维护者N：招募中
+* 维护者N：招募中……
 
 ## 相关页面 ##
 
