@@ -5,31 +5,31 @@
 %% The original source files were:
 %%
 %% scnuthesis.dtx  (with options: `cls')
-%% 
+%%
 %% !Mode:: "TeX:UTF-8"
-%% 
+%%
 %% This is a generated file.
-%% 
+%%
 %% Copyright (C) 2015 by Joseph Pan <cs.wzpan@gmail.com>
-%% 
+%%
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3a
 %% of this license or (at your option) any later version.
 %% The latest version of this license is in:
-%% 
+%%
 %% http://www.latex-project.org/lppl.txt
-%% 
+%%
 %% and version 1.3a or later is part of all distributions of LaTeX
 %% version 2004/10/01 or later.
-%% 
+%%
 %% To produce the documentation run the original source files ending with `.dtx'
 %% through LaTeX.
-%% 
+%%
 %% Any Suggestions : Joseph Pan <cs.wzpan@gmail.com>
 %% Thanks LiuBenYuan <liubenyuan@gmail.com> for the nudtpapre class!
 %% Thanks Xue Ruini <xueruini@gmail.com> for the thuthesis class!
 %% Thanks sofoot for the original NUDT paper class!
-%% 
+%%
 \NeedsTeXFormat{LaTeX2e}[1999/12/01]
 \ProvidesClass{scnuthesis}
 
@@ -211,8 +211,8 @@
       }
       \else
       {\chaptertitle}\fi
-      \else %标题不作为页眉
-      {\@displaytitle}\fi
+    \else %标题不作为页眉
+    {\@displaytitle}\fi
   }
 }{}
 \headrule%
@@ -339,11 +339,14 @@
 \newcommand\ekeywords[1]{{\xiaosi \ekeywordsname~#1}}
 \newenvironment{cabstract}{%
   {\if@openright\cleardoublepage\else\clearpage\fi}%
-  \addcontentsline{toc}{chapter}{\cabstractname}%
-  ~
   \begin{spacing}{2.0}
-    \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  \chapter*{\@displaytitle} % no tocline
+  \addcontentsline{toc}{chapter}{\cabstractname}%
   \end{spacing}
+  ~
+  %\begin{spacing}{2.0}
+  %  \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  %\end{spacing}
   \xiaosi \vspace{1.4pt}%
   \ifisanon{}\else{
   \begin{center}%
@@ -365,11 +368,14 @@
 
 \newenvironment{eabstract}{%
   \if@openright\cleardoublepage\else\clearpage\fi%
-  \addcontentsline{toc}{chapter}{\eabstractname}%
-  ~
   \begin{spacing}{2.0}
-    \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
+  \chapter*{\@entitle} % no tocline
+  \addcontentsline{toc}{chapter}{\eabstractname}%
   \end{spacing}
+  ~
+  %\begin{spacing}{2.0}
+  %  \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
+  %\end{spacing}
   \xiaosi \vspace{1.4pt}
   \ifisanon{}\else{
   \begin{center}%
