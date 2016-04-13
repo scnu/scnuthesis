@@ -216,7 +216,7 @@
   }
 }{}
 \headrule%
-\setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
+\setfoot{}{{\hei \wuhao \bfseries 第~\thepage~页}}{}%
 \footrule%
 \setfootrule{1bp}
 }
@@ -235,12 +235,12 @@
         }
         \else
         {第\thechapter 章\hspace{1em}\chaptertitle}\fi
-        \else %标题不作为页眉
-        {\@displaytitle}\fi
+      \else %标题不作为页眉
+      {\@displaytitle}\fi
     }
   }{}
   \headrule%
-  \setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
+  \setfoot{}{{\hei \wuhao \bfseries 第~\thepage~页}}{}%
   \footrule%
   \setfootrule{1bp}
 }
@@ -264,7 +264,7 @@
     }
 }{}
 \headrule%
-\setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
+\setfoot{}{{\hei \wuhao \bfseries 第~\thepage~页}}{}%
 \footrule%
 \setfootrule{1bp}
 }
@@ -288,7 +288,7 @@
   }
 }{}
 \headrule%
-\setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
+\setfoot{}{{\hei \wuhao \bfseries 第~\thepage~页}}{}%
 \footrule%
 \setfootrule{1bp}
 }
@@ -312,7 +312,7 @@
   }
 \renewcommand\backmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
-    \titleformat{\chapter}{\filcenter \heiti \sanhao}{附录\,\thechapter\,}{1em}{}
+    \titleformat{\chapter}{\filcenter \hei \xiaoer \bfseries}{附录\,\thechapter\,}{1em}{}
     \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
       {附录\,\thecontentslabel\quad}{}
       {\hspace{.5em}\titlerule*{.}\contentspage}
@@ -331,36 +331,36 @@
 }
 %%
 \newcommand\cabstractname{摘\hspace{1em}要}
-\newcommand\ckeywordsname{\hspace{-2em}{\heiti \sihao 关键词：}}
+\newcommand\ckeywordsname{\hspace{0em}{\textbf{关键词：}}}
 \newcommand\ckeywords[1]{{\xiaosi \songti \ckeywordsname #1}}
 
 \newcommand\eabstractname{ABSTRACT}
-\newcommand\ekeywordsname{\hspace{-2em}{\textsf{KEY WORDS:}}}
+\newcommand\ekeywordsname{\hspace{0em}{\textsf{KEY WORDS:}}}
 \newcommand\ekeywords[1]{{\xiaosi \ekeywordsname~#1}}
 \newenvironment{cabstract}{%
   {\if@openright\cleardoublepage\else\clearpage\fi}%
-  \begin{spacing}{2.0}
-  \chapter*{\@displaytitle} % no tocline
+  %\begin{spacing}{2.0}
+  \chapter*{\cabstractname} % no tocline
   \addcontentsline{toc}{chapter}{\cabstractname}%
-  \end{spacing}
+  %\end{spacing}
   ~
   %\begin{spacing}{2.0}
   %  \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
   %\end{spacing}
   \xiaosi \vspace{1.4pt}%
-  \ifisanon{}\else{
-  \begin{center}%
-    \begin{tabular}[c]{ll}%
-      专业名称： & \@subject \\%
-      申请者：& \@author \\%
-      导师： & \@supervisor \\%
-    \end{tabular}%
-  \end{center}%
-  }\fi
-  ~\\%
-  ~\\%
-  ~\\%
-  {\heiti\xiaosan \cabstractname} %
+  % \ifisanon{}\else{
+  % \begin{center}%
+  %   \begin{tabular}[c]{ll}%
+  %     专业名称： & \@subject \\%
+  %     申请者：& \@author \\%
+  %     导师： & \@supervisor \\%
+  %   \end{tabular}%
+  % \end{center}%
+  % }\fi
+  % ~\\%
+  % ~\\%
+  % ~\\%
+  %{\heiti\xiaosan \cabstractname} %
 
   % \@afterheading
 }
@@ -368,34 +368,34 @@
 
 \newenvironment{eabstract}{%
   \if@openright\cleardoublepage\else\clearpage\fi%
-  \begin{spacing}{2.0}
-  \chapter*{\@entitle} % no tocline
+  %\begin{spacing}{2.0}
+  \chapter*{\eabstractname} % no tocline
   \addcontentsline{toc}{chapter}{\eabstractname}%
-  \end{spacing}
+  %\end{spacing}
   ~
   %\begin{spacing}{2.0}
   %  \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
   %\end{spacing}
   \xiaosi \vspace{1.4pt}
-  \ifisanon{}\else{
-  \begin{center}%
-    \begin{tabular}[c]{ll}%
-      Major： & \@ensubject \\%
-      Name：& \@enauthor \\%
-      Supervisor： & \@ensupervisor \\%
-    \end{tabular}%
-  \end{center}%
-  }\fi
-  ~\\%
-  ~\\%
-  ~\\%
-  {\sihao \textsf \eabstractname} %
+  % \ifisanon{}\else{
+  % \begin{center}%
+  %   \begin{tabular}[c]{ll}%
+  %     Major： & \@ensubject \\%
+  %     Name：& \@enauthor \\%
+  %     Supervisor： & \@ensupervisor \\%
+  %   \end{tabular}%
+  % \end{center}%
+  % }\fi
+  % ~\\%
+  % ~\\%
+  % ~\\%
+  % {\sihao \textsf \eabstractname} %
 
   % \@afterheading
 }
 {\par\vspace{2em}\par}
-\titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
-    {第\CJKnumber{\thecontentslabel}章\quad}{}
+\titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \hei \xiaosi[1.25]}
+    {\CJKnumber{\thecontentslabel}.\quad}{}
     {\hspace{.5em}\titlerule*{.}\contentspage}
 \titlecontents{section}[2em]{\songti \xiaosi[1.25]}
     {\thecontentslabel\quad}{}
@@ -441,11 +441,11 @@
 }
 \setlength{\topskip}{0pt}
 \setcounter{secnumdepth}{3}
-\titleformat{\chapter}{\filcenter \songti \bfseries \sanhao[1.25]}{第\CJKnumber{\thechapter}章\,}{1em}{}
-\titleformat{\section}{\songti \bfseries\xiaosan[1.25]}{\thesection}{1em}{}
-\titleformat{\subsection}{\songti \bfseries\sihao[1.25]}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\songti \bfseries\xiaosi[1.25]}{\thesubsubsection}{1em}{}
-\titlespacing{\chapter}{0pt}{2.4ex-\topskip-\heightof{A}}{2.4ex}
+\titleformat{\chapter}{\filcenter \hei \bfseries\xiaoer}{{\thechapter}.}{1em}{}
+\titleformat{\section}{\songti \bfseries\xiaosan}{\thesection}{1em}{}
+\titleformat{\subsection}{\songti \bfseries\sihao}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\songti \bfseries\xiaosi}{\thesubsubsection}{1em}{}
+\titlespacing{\chapter}{0pt}{0ex}{2.4ex}
 \titlespacing{\section}{0pt}{2ex-\heightof{a}}{2ex}
 \titlespacing{\subsection}{0em}{2ex}{2ex}
 \titlespacing{\subsubsection}{0em}{1ex}{0ex}
