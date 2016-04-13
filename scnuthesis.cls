@@ -54,7 +54,7 @@
   \LoadClass[a4paper,12pt,openright,twoside]{book}
 \else
   \LoadClass[a4paper,12pt,openany]{book}
-  \fi
+\fi
 \RequirePackage[includeheadfoot]{geometry}
 \RequirePackage[center,pagestyles]{titlesec}
 \RequirePackage{titletoc}
@@ -167,10 +167,10 @@
 \def\scnuthesis{\textsc{SCNU}\textsc{Thesis}}
 \newcommand{\pozhehao}{\kern0.3ex\rule[0.8ex]{2em}{0.1ex}\kern0.3ex}
 \newcommand{\chapterlabel}{}
-\renewcommand\contentsname{\hei 目\hspace{1em}录}
-\renewcommand\listfigurename{\hei 图\hspace{1em}目\hspace{1em}录}
-\renewcommand\listtablename{\hei 表\hspace{1em}目\hspace{1em}录}
-\newcommand\denotationname{\hei 符号列表}
+\renewcommand\contentsname{目\hspace{1em}录}
+\renewcommand\listfigurename{图\hspace{1em}目\hspace{1em}录}
+\renewcommand\listtablename{表\hspace{1em}目\hspace{1em}录}
+\newcommand\denotationname{符号列表}
 \newcommand\ackname{致\hspace{1em}谢}
 \newcommand\resumename{作者攻读学位期间发表的学术论文目录}
 \newcommand\listequationname{公式索引}
@@ -312,10 +312,10 @@
   }
 \renewcommand\backmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
-    \titleformat{\chapter}{\filcenter \hei \xiaoer \bfseries}{附录\,\thechapter\,}{1em}{}
-    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
-      {附录\,\thecontentslabel\quad}{}
-      {\hspace{.5em}\titlerule*{.}\contentspage}
+    %\titleformat{\chapter}{\filcenter \hei \xiaoer \bfseries}{附录\,\thechapter\,}{1em}{}
+    \titleformat{\chapter}{\filcenter \hei \xiaoer \bfseries}{}{0pt}{}
+    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
+      {}{}{\hspace{.5em}\titlerule*{.}\contentspage}
       \@mainmattertrue
     \pagestyle{appendixpage}
   }
@@ -393,8 +393,8 @@
 
   % \@afterheading
 }
-{\par\vspace{2em}\par}
-\titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \hei \xiaosi[1.25]}
+{\par\vspace{2em}\par} % 下面的都是设置目录中显示的条目样式
+\titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
     {\CJKnumber{\thecontentslabel}.\quad}{}
     {\hspace{.5em}\titlerule*{.}\contentspage}
 \titlecontents{section}[2em]{\songti \xiaosi[1.25]}
@@ -441,7 +441,7 @@
 }
 \setlength{\topskip}{0pt}
 \setcounter{secnumdepth}{3}
-\titleformat{\chapter}{\filcenter \hei \bfseries\xiaoer}{{\thechapter}.}{1em}{}
+\titleformat{\chapter}{\filcenter \hei \bfseries\xiaoer}{{\thechapter}.}{1em}{} % 设置章标题样式
 \titleformat{\section}{\songti \bfseries\xiaosan}{\thesection}{1em}{}
 \titleformat{\subsection}{\songti \bfseries\sihao}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\songti \bfseries\xiaosi}{\thesubsubsection}{1em}{}
@@ -450,7 +450,7 @@
 \titlespacing{\subsection}{0em}{2ex}{2ex}
 \titlespacing{\subsubsection}{0em}{1ex}{0ex}
 \renewcommand\normalsize{%
-  \xiaosi%
+  \xiaosi% 设置正文字体
   \renewcommand{\baselinestretch}{1.4}%
 \setlength\abovedisplayskip{10bp \@plus 2bp \@minus 2bp}%
 \setlength\abovedisplayshortskip{10bp \@plus 2bp \@minus 2bp}%
@@ -690,6 +690,10 @@
   \end{center}%
   \vspace{1mm}
   \cleardoublepage%
+}
+\newcommand{\myappendix}{
+  \chapter{\appendixname}
+%  \addcontentsline{toc}{chapter}{\appendixname}%
 }
 \endinput
 %%
