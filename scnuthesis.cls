@@ -216,7 +216,7 @@
   }
 }{}
 \headrule%
-\setfoot{}{{\hei \wuhao \bfseries 第~\thepage~页}}{}%
+\setfoot{}{{\hei \wuhao \bfseries \thepage}}{}%
 \footrule%
 \setfootrule{1bp}
 }
@@ -240,7 +240,7 @@
     }
   }{}
   \headrule%
-  \setfoot{}{{\hei \wuhao \bfseries 第~\thepage~页}}{}%
+  \setfoot{}{{\hei \wuhao \bfseries \thepage}}{}%
   \footrule%
   \setfootrule{1bp}
 }
@@ -264,7 +264,7 @@
     }
 }{}
 \headrule%
-\setfoot{}{{\hei \wuhao \bfseries 第~\thepage~页}}{}%
+\setfoot{}{{\hei \wuhao \bfseries \thepage}}{}%
 \footrule%
 \setfootrule{1bp}
 }
@@ -288,7 +288,7 @@
   }
 }{}
 \headrule%
-\setfoot{}{{\hei \wuhao \bfseries 第~\thepage~页}}{}%
+\setfoot{}{{\hei \wuhao \bfseries \thepage}}{}%
 \footrule%
 \setfootrule{1bp}
 }
