@@ -1,3 +1,13 @@
+本科论文模板说明
+===============
+从硕士/博士论文模板改写而成,  
+示例文档是mythesis.tex(包括从data,figures,ref引入的全部或部分文件)  
+具体效果请看mythesis.pdf  
+
+
+下面是原项目的说明文档,一切版权及使用说明以其为准  
+
+----------------
 SCNUThesis
 =============
 
@@ -60,39 +70,39 @@ SCNUThesis
 ### 如果使用的是 Windows ###
 
 1. 下载安装 MikTeX 或者 CTeX；
-  
+
 2. 使用 WinEdit 、TeXMaker 或其他文本编辑器打开 thesis.tex 文件。
-  
+
 3. 如果使用的是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：
-  
+
 ```
 \documentclass[master,twoside,ttf,chapterhead]{scnuthesis}
 ```
-     
+
    如果使用的是 Windows Vista 或更高的版本，则不需要做任何改动。
-	 
+
 4. 双击模板目录下的 makepdf.bat，生成示例论文。
 
 ### 如果使用的是 Linux ###
 
 1. 安装 TexLive；
-  
+
 2. 配置字体：将 Windows 下的 simsun.ttf, simhei.ttf, simkai.ttf，simli,ttf，simfang.ttf 拷贝到 `~/.fonts` 目录下；
-  
+
   终端下输入
 
 ``` bash
 $ fc-cache
 ```
-     
+
   完成后输入
 
 ``` bash
 $ fc-list :lang=zh
 ```
-	  
+
   观察列表中是否有宋体等 Windows字体。
-	  
+
 3. 使用Emacs或其他文本编辑器打开thesis.tex文件。
 
 4. 如果字体拷贝的来源是 Windows XP 或更早的 Windows 系列，请去掉第45行的vista选项，即将第45行内容改为：
@@ -102,7 +112,7 @@ $ fc-list :lang=zh
 ```
 
   如果来源是 Windows Vista 或更高的版本，则不需要做任何改动。
-  
+
 5. `cd` 进去模板目录，然后输入这条命令：
 
 ```
