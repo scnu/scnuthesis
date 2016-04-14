@@ -297,6 +297,7 @@
     \if@openright\cleardoublepage\else\clearpage\fi
     \@mainmatterfalse
     \pagenumbering{Roman}
+    \normalsize
     \pagestyle{plain}
 }
 
@@ -316,7 +317,8 @@
     \titleformat{\chapter}{\filcenter \hei \xiaoer \bfseries}{}{0pt}{}
     \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
       {}{}{\hspace{.5em}\titlerule*{.}\contentspage}
-      \@mainmattertrue
+    \@mainmattertrue
+    \normalsize
     \pagestyle{appendixpage}
   }
 \renewcommand\cleardoublepage{\clearpage\if@openright \ifodd\c@page
@@ -451,11 +453,13 @@
 \titlespacing{\subsubsection}{0em}{1ex}{0ex}
 \renewcommand\normalsize{%
   \xiaosi% 设置正文字体
-  \renewcommand{\baselinestretch}{1.4}%
+  \renewcommand{\baselinestretch}{1.2}%
 \setlength\abovedisplayskip{10bp \@plus 2bp \@minus 2bp}%
 \setlength\abovedisplayshortskip{10bp \@plus 2bp \@minus 2bp}%
 \setlength\belowdisplayskip{\abovedisplayskip}%
 \setlength\belowdisplayshortskip{\abovedisplayshortskip}%
+\renewcommand{\footnotesize}{\xiaowu}% 设置脚注字体大小
+\renewcommand{\thefootnote}{\textcircled{\lower.1em\hbox{\arabic{footnote}}}}% 设置脚注上标
 }
 \setlength{\parindent}{2.5em}
 \setlength{\parskip}{0bp \@plus .5bp \@minus .5bp}
@@ -712,8 +716,6 @@
 
 
 }
-\renewcommand{\thefootnote}{\textcircled{\lower.1em\hbox{\arabic{footnote}}}} % 设置脚注上标
-%\def\@makefnmark{\hbox{\textsuperscript\textcircled{\@thefnmark}}}
 \endinput
 %%
 %% End of file `scnuthesis.cls'.
