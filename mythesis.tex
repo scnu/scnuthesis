@@ -1,0 +1,52 @@
+
+\documentclass[master,vista,ttf,twoside]{scnuthesis}
+
+\begin{document}
+\graphicspath{{figures/}}
+
+\title{华南师范大学本科论文\LaTeX{}模板}
+\entitle{\LaTeX{} DOCUMENT CLASS\\ FOR SCNU DISSERTATIONS}
+\displaytitle{华南师范大学本科论文\LaTeX{}模板}
+\author{张三}
+\enauthor{San Zhang}
+% 插入摘要，制作封面
+% \ifisanon{}\else{\maketitle}\fi
+\frontmatter
+\input{data/abstract}
+
+% 生成目录
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}%
+%\listoftables           % 如果要生成表目录
+%\listoffigures          % 如果要生成图目录
+
+%\renewcommand{\chapterlabel}{\denotationname} %设置页眉
+
+%\input{data/denotation} % 如果要生成符号列表
+
+% 书写正文，可以根据需要增添章节。
+\mainmatter
+\input{data/chap01}
+\input{data/chap02}
+\input{data/chap03}
+
+% 参考文献
+\cleardoublepage
+%\renewcommand{\chapterlabel}{\bibname} % 设置参考文献的页眉
+\bibliographystyle{bstutf8}
+\bibliography{ref/refs}
+
+% 附录
+\appendix
+\backmatter
+\appendixtitle
+\input{data/appendix01}
+\input{data/appendix02}
+
+% 致谢
+\cleardoublepage
+\renewcommand{\chapterlabel}{\ackname} % 设置参考文献的页眉
+\input{data/ack}
+
+\end{document}
+%%
