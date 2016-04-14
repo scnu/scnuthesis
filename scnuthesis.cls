@@ -691,10 +691,29 @@
   \vspace{1mm}
   \cleardoublepage%
 }
-\newcommand{\myappendix}{
+% 以下设置附录样式
+\newcommand{\appendixtitle}{
   \chapter{\appendixname}
 %  \addcontentsline{toc}{chapter}{\appendixname}%
+  \newcounter{appendixsection}[chapter]
 }
+\newcommand{\appendixsection}[1]{
+  \stepcounter{appendixsection} %
+  \par\noindent %
+  {\hei\sihao\bfseries#1} %
+
+
+  \newcounter{appendixitem}[appendixsection] %
+}
+\newcommand{\appendixitem}[1]{
+  \stepcounter{appendixitem} %
+  \par\indent %
+  {\songti\xiaosi{附录\arabic{appendixitem}：#1}} %
+
+
+}
+\renewcommand{\thefootnote}{\textcircled{\lower.1em\hbox{\arabic{footnote}}}} % 设置脚注上标
+%\def\@makefnmark{\hbox{\textsuperscript\textcircled{\@thefnmark}}}
 \endinput
 %%
 %% End of file `scnuthesis.cls'.
