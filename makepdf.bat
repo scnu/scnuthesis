@@ -20,8 +20,8 @@ goto :EOF
 
 :makefile
 call :CleanFolder
-xelatex thesis.tex  rem generate .toc file
-xelatex thesis.tex rem generate pdf file
+xelatex mythesis.tex  rem generate .toc file
+xelatex mythesis.tex rem generate pdf file
 goto :EOF
 
 :helpme
