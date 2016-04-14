@@ -179,7 +179,7 @@
 \renewcommand\indexname{索引}
 \renewcommand\figurename{图}
 \renewcommand\tablename{表}
-\renewcommand\appendixname{附录}
+\renewcommand\appendixname{附\hspace{1em}录}
 \def\CJK@today{\the\year 年 \the\month 月 \the\day 日}
 \newcommand\zhtoday{\CJK@today}
 \newcommand\entoday{\today{}}
