@@ -315,8 +315,8 @@
     \if@openright\cleardoublepage\else\clearpage\fi
     %\titleformat{\chapter}{\filcenter \hei \xiaoer \bfseries}{附录\,\thechapter\,}{1em}{}
     \titleformat{\chapter}{\filcenter \hei \xiaoer \bfseries}{}{0pt}{}
-    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
-      {}{}{\hspace{.5em}\titlerule*{.}\contentspage}
+%     \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
+%       {}{}{\hspace{.5em}\titlerule*{.}\contentspage}
     \@mainmattertrue
     \normalsize
     \pagestyle{appendixpage}
@@ -397,7 +397,7 @@
 }
 {\par\vspace{2em}\par} % 下面的都是设置目录中显示的条目样式
 \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
-    {\CJKnumber{\thecontentslabel}.\quad}{}
+    {{\thecontentslabel}.\quad}{}
     {\hspace{.5em}\titlerule*{.}\contentspage}
 \titlecontents{section}[2em]{\songti \xiaosi[1.25]}
     {\thecontentslabel\quad}{}
@@ -697,8 +697,8 @@
 }
 % 以下设置附录样式
 \newcommand{\appendixtitle}{
-  \chapter{\appendixname}
-%  \addcontentsline{toc}{chapter}{\appendixname}%
+  \chapter*{\appendixname}
+  \addcontentsline{toc}{chapter}{\appendixname}%
   \newcounter{appendixsection}[chapter]
 }
 \newcommand{\appendixsection}[1]{
