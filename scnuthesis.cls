@@ -294,7 +294,12 @@
 \footrule%
 \setfootrule{1bp}
 }
-
+\newcommand{\makemeta}{%
+  \hypersetup{%
+    pdfauthor={\@author},
+    pdftitle={\@title}
+  }%
+}
 \renewcommand\frontmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
     \@mainmatterfalse
@@ -336,7 +341,11 @@
 %%
 \newcommand\cabstractname{摘\hspace{1em}要}
 \newcommand\ckeywordsname{\hspace{0em}{\textbf{关键词：}}}
-\newcommand\ckeywords[1]{{\xiaosi \songti \ckeywordsname #1}}
+\newcommand\ckeywords[1]{{\xiaosi \songti \ckeywordsname #1}%
+  \hypersetup{%
+    pdfkeywords={#1}
+  }%
+}
 
 \newcommand\eabstractname{ABSTRACT}
 \newcommand\ekeywordsname{\hspace{0em}{\textsf{KEY WORDS:}}}
