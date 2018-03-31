@@ -23,9 +23,9 @@ SCNUThesis
 * [下载须知](#下载须知)
 * [安装使用](#安装使用)
 * [如何参与](#如何参与)
+* [成果展示](#成果展示)
 * [其他说明](#其他说明)
 * [特别感谢](#特别感谢)
-* [成果展示](#成果展示)
 
 ## <a name="简介"></a>简介
 
@@ -130,15 +130,15 @@ $ make
 1. 到[官方 github 主页](http://github.com/scnu/scnuthesis/)上 fork 这个项目，做出你的修改，然后向 scnu 组织发送 pull request；
 2. 给 [@wzpan](http://github.com/wzpan) 发送邮件，申请成为 scnu 组织的成员，你将具有 developer 的权限。
 
+## <a name="成果展示"></a>成果展示 ##
+
+你也用了 SCNUThesis 吗？在[这个页面](https://github.com/scnu/scnuthesis/wiki/showcase)里加上你的成果，方便后面的人参考吧！
+
 ## <a name="其他说明"></a>其他说明 ##
 
 具体的使用方法请参考附带的thesis.pdf示例文件。
 
 **如果喜欢这份模板，请为这个项目加一颗星，谢谢！**
-
-## <a name="成果展示"></a>成果展示 ##
-
-你也用了 SCNUThesis 吗？在[这个页面](https://github.com/scnu/scnuthesis/wiki/showcase)里加上你的成果，方便后面的人参考吧！
 
 ***Happy Texing!***
 
