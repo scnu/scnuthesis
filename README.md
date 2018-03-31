@@ -12,8 +12,7 @@ SCNUThesis
 
 :octocat: 输出示例: http://scnu.github.io/scnuthesis/thesis.html
 
-<img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle">
-在线编辑：http://t.cn/RnBxubd
+<img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle"></img> 在线编辑：http://t.cn/RnBxubd
 
 ## Table of Contents ##
 
