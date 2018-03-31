@@ -138,7 +138,7 @@ $ make
 
 ## <a name="成果展示"></a>成果展示 ##
 
-你也用了 SCNUThesis 吗？在[这个页面](https://github.com/scnu/scnuthesis/wiki/who-is-using)里加上你的成果，方便后面的人参考吧！
+你也用了 SCNUThesis 吗？在[这个页面](https://github.com/scnu/scnuthesis/wiki/showcase)里加上你的成果，方便后面的人参考吧！
 
 ***Happy Texing!***
 
