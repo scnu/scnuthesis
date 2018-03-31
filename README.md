@@ -13,7 +13,7 @@ SCNUThesis
 :octocat: 输出示例: http://scnu.github.io/scnuthesis/thesis.html
 
 <img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle">
-在线编辑：https://www.sharelatex.com/project/53075d2d4164da985a003334?r=76bc0f35&rs=ps&rm=d
+在线编辑：http://t.cn/RnBxubd
 
 ## Table of Contents ##
 
@@ -25,6 +25,7 @@ SCNUThesis
 * [如何参与](#如何参与)
 * [其他说明](#其他说明)
 * [特别感谢](#特别感谢)
+* [成果展示](#成果展示)
 
 ## <a name="简介"></a>简介
 
@@ -134,6 +135,10 @@ $ make
 具体的使用方法请参考附带的thesis.pdf示例文件。
 
 **如果喜欢这份模板，请为这个项目加一颗星，谢谢！**
+
+## <a name="成果展示"></a>成果展示 ##
+
+你也用了 SCNUThesis 吗？在[这个页面](https://github.com/scnu/scnuthesis/wiki/who-is-using)里加上你的成果，方便后面的人参考吧！
 
 ***Happy Texing!***
 
