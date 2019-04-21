@@ -14,6 +14,8 @@ SCNUThesis
 
 <img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle"></img> 在线编辑：http://t.cn/RnBxubd
 
+:octocat: **本科版**: https://github.com/scnu/scnuthesis/tree/bachelor_degree
+
 ## Table of Contents ##
 
 * [简介](#简介)
