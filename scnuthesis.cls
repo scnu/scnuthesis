@@ -389,7 +389,7 @@
 }
 {\par\vspace{2em}\par}
 \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
-    {第{\thecontentslabel}章\quad}{}
+    {第\CJKnumber{\thecontentslabel}章\quad}{}
     {\hspace{.5em}\titlerule*{.}\contentspage}
 \titlecontents{section}[2em]{\songti \xiaosi[1.25]}
     {\thecontentslabel\quad}{}
@@ -435,7 +435,7 @@
 }
 \setlength{\topskip}{0pt}
 \setcounter{secnumdepth}{3}
-\titleformat{\chapter}{\filcenter \songti \bfseries \sanhao[1.25]}{第{\thechapter}章\,}{1em}{}
+\titleformat{\chapter}{\filcenter \songti \bfseries \sanhao[1.25]}{第\CJKnumber{\thechapter}章\,}{1em}{}
 \titleformat{\section}{\songti \bfseries\xiaosan[1.25]}{\thesection}{1em}{}
 \titleformat{\subsection}{\songti \bfseries\sihao[1.25]}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\songti \bfseries\xiaosi[1.25]}{\thesubsubsection}{1em}{}
