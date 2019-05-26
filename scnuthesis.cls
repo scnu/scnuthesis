@@ -127,7 +127,7 @@
 \newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
 \newcommand{\kai}{\CJKfamily{kai}}      % 楷体
 \newcommand{\hei}{\CJKfamily{hei}}      % 黑体
-\newcommand{\li}{\CJKfamily{li}}        % 隶书
+\newcommand{\li}{\CJKfamily{zhli}}      % 隶书
 \newcommand{\you}{\CJKfamily{you}}      % 幼圆
 \def\songti{\song}
 \def\fangsong{\fs}
@@ -389,7 +389,7 @@
 }
 {\par\vspace{2em}\par}
 \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
-    {第\CJKnumber{\thecontentslabel}章\quad}{}
+    {第{\thecontentslabel}章\quad}{}
     {\hspace{.5em}\titlerule*{.}\contentspage}
 \titlecontents{section}[2em]{\songti \xiaosi[1.25]}
     {\thecontentslabel\quad}{}
@@ -435,7 +435,7 @@
 }
 \setlength{\topskip}{0pt}
 \setcounter{secnumdepth}{3}
-\titleformat{\chapter}{\filcenter \songti \bfseries \sanhao[1.25]}{第\CJKnumber{\thechapter}章\,}{1em}{}
+\titleformat{\chapter}{\filcenter \songti \bfseries \sanhao[1.25]}{第{\thechapter}章\,}{1em}{}
 \titleformat{\section}{\songti \bfseries\xiaosan[1.25]}{\thesection}{1em}{}
 \titleformat{\subsection}{\songti \bfseries\sihao[1.25]}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\songti \bfseries\xiaosi[1.25]}{\thesubsubsection}{1em}{}
@@ -661,19 +661,19 @@
   \vspace{40bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
-      \raisebox{-3.7ex}[0pt]{学位申请人} &
+      \raisebox{-3.7ex}[0pt]{学位申请人：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@author}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业学位名称} &
+      \raisebox{-3.7ex}[0pt]{专业学位名称：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@subject}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业学位领域} &
+      \raisebox{-3.7ex}[0pt]{专业学位领域：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@researchfield}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{所在院系} &
+      \raisebox{-3.7ex}[0pt]{所在院系：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@school}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{导师姓名及职称} &
+      \raisebox{-3.7ex}[0pt]{导师姓名及职称：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[3.2ex]
         \cline{2-2}
     \end{tabular}
