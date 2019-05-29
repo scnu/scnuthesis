@@ -127,7 +127,7 @@
 \newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
 \newcommand{\kai}{\CJKfamily{kai}}      % 楷体
 \newcommand{\hei}{\CJKfamily{hei}}      % 黑体
-\newcommand{\li}{\CJKfamily{zhli}}      % 隶书
+\newcommand{\li}{\CJKfamily{li}}        % 隶书
 \newcommand{\you}{\CJKfamily{you}}      % 幼圆
 \def\songti{\song}
 \def\fangsong{\fs}
@@ -654,7 +654,7 @@
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
   \ifismaster
   \vspace{0.2cm} %插入空白
-  {\songti \xiaosan (\@mastertype 型学位)\\}
+  {\songti \xiaosan (\@mastertype 学位)\\}
   \fi
   \vspace{1cm} %插入空白
   \uline{\songti \xiaoer[1.25] \@title }\\
@@ -664,10 +664,10 @@
       \raisebox{-3.7ex}[0pt]{学位申请人：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@author}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业学位名称：} &
+      \raisebox{-3.7ex}[0pt]{专业名称：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@subject}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业学位领域：} &
+      \raisebox{-3.7ex}[0pt]{研究方向：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@researchfield}\hfil{}} & \\[3.2ex]
         \cline{2-2}
       \raisebox{-3.7ex}[0pt]{所在院系：} &
