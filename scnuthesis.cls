@@ -654,26 +654,26 @@
   {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
   \ifismaster
   \vspace{0.2cm} %插入空白
-  {\songti \xiaosan (\@mastertype 型学位)\\}
+  {\songti \xiaosan (\@mastertype 学位)\\}
   \fi
   \vspace{1cm} %插入空白
   \uline{\songti \xiaoer[1.25] \@title }\\
   \vspace{40bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
-      \raisebox{-3.7ex}[0pt]{学位申请人} &
+      \raisebox{-3.7ex}[0pt]{学位申请人：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@author}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业学位名称} &
+      \raisebox{-3.7ex}[0pt]{专业名称：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@subject}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业学位领域} &
+      \raisebox{-3.7ex}[0pt]{研究方向：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@researchfield}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{所在院系} &
+      \raisebox{-3.7ex}[0pt]{所在院系：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@school}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{导师姓名及职称} &
+      \raisebox{-3.7ex}[0pt]{导师姓名及职称：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[3.2ex]
         \cline{2-2}
     \end{tabular}
