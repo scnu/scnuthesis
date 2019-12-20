@@ -3,8 +3,10 @@ SCNUThesis
 
 符合华南师范大学硕士/博士学位论文格式要求的 LaTeX 模板。
 
+> SCNUThesis 正在招募新的维护者，在这之前，此项目将不再维护。如果你有兴趣和精力，希望在毕业前为母校做点贡献，可以邮件跟原作者交流。
+
 * 原作者：[@wzpan](http://github.com/wzpan)
-* 维护者：[@donghaoye](http://github.com/donghaoye)
+* 维护者：招募中。
 
 ## 相关页面 ##
 
