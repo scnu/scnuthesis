@@ -10,9 +10,9 @@
 %% 张煜 (email:dazzlezhang@gmail.com)
 %%
 %% 更新记录:
-%% $LastChangedBy: dazzlezhang $
-%% $LastChangedDate: 2009-05-08 21:36:34 +0800 (Fri, 08 May 2009) $
-%% $LastChangedRevision: 64 $
+%% $LastChangedBy$
+%% $LastChangedDate$
+%% $LastChangedRevision$
 
 %% 一些设置的缺省值
 % 英文姓名排版格式字符串, 按<last name全称>~<first name首字母><, Jr.>格式
@@ -34,8 +34,8 @@ FUNCTION {is.print.banners.to.terminal} {#1}
 % 版本与提示信息
 %%%%%%%%%%%%%%%%
 % 版本信息
-FUNCTION{bst.file.version} { "1.0 Beta 1" }
-FUNCTION{bst.file.date} { "2009/05/31" }
+FUNCTION{bst.file.version} { "0.2" }
+FUNCTION{bst.file.date} { "2009/01/25" }
 FUNCTION{bst.file.website} { 
   "http://code.google.com/p/buptthesis/" }
 
@@ -698,7 +698,6 @@ FUNCTION {new.sentence}
   if$
 }
 
-
 FUNCTION {new.block.checka}
 { empty$
     'skip$
@@ -1067,7 +1066,8 @@ FUNCTION {bib.type.designator} {
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { title }
+    { new.block
+      title }
   if$
 }
 
@@ -1265,7 +1265,10 @@ FUNCTION {n.dashify}
 FUNCTION {format.year.volume.number} {
   year empty$
     { "" }
-    { new.block
+    { type$ "periodical" =
+	{ new.block }
+	{ mid.sentence 'output.state := }
+      if$
       year 
       volume empty$
 	'skip$
@@ -1898,7 +1901,7 @@ FUNCTION {format.address.school.year} {
 
 FUNCTION {format.note} {
   note empty$
-    { "" }
+    { new.block "" }
     { url empty$
 	{ new.block }
 	{ before.all 'output.state := }
@@ -2012,7 +2015,10 @@ FUNCTION {format.collection.editors} {
   if$
 }
 FUNCTION {format.address} {
-  new.block
+  booktitle empty$
+    { new.block }
+    { mid.sentence 'output.state := }
+  if$
   address empty$
     { "" }
     { address }
@@ -2315,19 +2321,21 @@ FUNCTION {manual}
 
 FUNCTION {misc}
 { start.entry
+
   format.authors output
-  title howpublished new.block.checkb
+%  title howpublished new.block.checkb
   format.title output
-  howpublished new.block.checka
-  howpublished output
+%  howpublished new.block.checka
+%  howpublished output
 %  format.date output
   format.address output
   format.month.year output
+  format.pages "pages" output.warn
   format.url output
-  new.block
-  note output
+%  new.block
+  format.note output
   fin.entry
-  empty.misc.check
+%  empty.misc.check
 }
 
 FUNCTION {phdthesis.type}
