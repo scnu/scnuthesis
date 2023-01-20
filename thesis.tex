@@ -66,6 +66,10 @@
 
 \input{data/denotation} % 如果要生成符号列表
 
+% 更新图标题和表标题设置
+\renewcommand{\thetable}{\thechapter{}-\arabic{table}}
+\renewcommand{\thefigure}{\thechapter{}-\arabic{figure}}
+
 % 书写正文，可以根据需要增添章节。
 \mainmatter
 \input{data/chap01}
