@@ -1855,7 +1855,7 @@ FUNCTION {format.address.publisher.year} {
 FUNCTION {format.address.school.year} {   
   new.block
   address empty$
-    { "[" bbl.sine.loco * "]" * bbl.colon * % 无出版地
+    { "" % "[" bbl.sine.loco * "]" * bbl.colon * % 无出版地
       school empty$
 	{ "there's neither address nor school in " cite$ * warning$
 	  "[" bbl.sine.nomine * "]" * % 无出版者
