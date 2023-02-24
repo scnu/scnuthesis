@@ -45,6 +45,8 @@
 \DeclareOption{otf}{\isttffalse}
 \newif\ifisvista\isvistafalse
 \DeclareOption{vista}{\isvistatrue}
+\newif\ifistwoprof\istwoproffalse
+\DeclareOption{twoprof}{\istwoproftrue}
 \newif\ifischapter\ischapterfalse
 \DeclareOption{chapterhead}{\ischaptertrue}
 \DeclareOption*{\PackageWarning{scnuthesis}{Unknown Option '\CurrentOption'}}
@@ -350,8 +352,13 @@
     \begin{tabular}[c]{ll}%
       专业名称： & \@subject \\%
       申请者：& \@author \\%
-      导师： & \@supervisor \\%
-    \end{tabular}%
+      \ifistwoprof
+         导师一： & \@supervisor~\@protitle \\%
+         导师二： & \@secondsupervisor~\@secondprotitle \\%
+      \else
+          导师： & \@supervisor~\@protitle \\%
+      \fi
+    \end{tabular}%    
   \end{center}%
   }\fi
   ~\\%
@@ -376,7 +383,12 @@
     \begin{tabular}[c]{ll}%
       Major： & \@ensubject \\%
       Name：& \@enauthor \\%
-      Supervisor： & \@ensupervisor \\%
+      \ifistwoprof
+          Supervisor 1： & \@ensupervisor \\%
+          Supervisor 2： & \@secondensupervisor \\% 
+      \else
+          Supervisor： & \@ensupervisor \\%
+      \fi
     \end{tabular}%
   \end{center}%
   }\fi
@@ -605,7 +617,10 @@
 \def\researchfield#1{\def\@researchfield{#1}} % 中文研究方向
 \def\supervisor#1{\def\@supervisor{#1}} % 导师
 \def\ensupervisor#1{\def\@ensupervisor{#1}} % 导师英文名
+\def\secondsupervisor#1{\def\@secondsupervisor{#1}} % 第二导师
+\def\secondensupervisor#1{\def\@secondensupervisor{#1}} % 第二导师英文名
 \def\protitle#1{\def\@protitle{#1}} % 导师的职称
+\def\secondprotitle#1{\def\@secondprotitle{#1}} % 第二导师的职称
 \def\school#1{\def\@school{#1}} % 学院
 
 \def\optionpaperclass#1{\def\@optionpaperclass{#1}} % paperclass
@@ -657,8 +672,12 @@
   {\songti \xiaosan (\@mastertype 学位)\\}
   \fi
   \vspace{1cm} %插入空白
-  \uline{\songti \xiaoer[1.25] \@title }\\
-  \vspace{40bp}
+  \uline{\songti \xiaoer[1.25] \@title}\\
+  \ifistwoprof
+    \vspace{0bp}
+  \else
+    \vspace{45bp}
+  \fi
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
       \raisebox{-3.7ex}[0pt]{学位申请人：} &
@@ -673,8 +692,16 @@
       \raisebox{-3.7ex}[0pt]{所在院系：} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@school}\hfil{}} & \\[3.2ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{导师姓名及职称：} &
+      \ifistwoprof
+        \raisebox{-3.7ex}[0pt]{导师一姓名及职称} &
         {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[3.2ex]
+        \cline{2-2}
+        \raisebox{-3.7ex}[0pt]{导师二姓名及职称} &
+        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@secondsupervisor~\@secondprotitle}\hfil{}} & \\[3.2ex]
+      \else
+        \raisebox{-3.7ex}[0pt]{导师姓名及职称} &
+        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[3.2ex]
+      \fi      
         \cline{2-2}
     \end{tabular}
   }\\
