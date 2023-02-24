@@ -12,7 +12,7 @@ SCNUThesis
 
 :octocat: 项目主页: http://scnu.github.io/scnuthesis/
 
-:octocat: 输出示例: http://scnu.github.io/scnuthesis/thesis.html
+:octocat: 输出示例: http://scnu.github.io/scnuthesis/thesis.html （请克隆后再修改，不要直接改源文件，避免泄漏你的研究成果）
 
 <img class="emoji" src="https://www.sharelatex.com/brand/logo/logo-64.png" height="20" width="20" align="absmiddle"></img> 在线编辑：https://www.overleaf.com/1576337499pzfnsnsmftnw
 
