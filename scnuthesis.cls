@@ -10,7 +10,7 @@
 %% 
 %% This is a generated file.
 %% 
-%% Copyright (C) 2015 by Joseph Pan <cs.wzpan@gmail.com>
+%% Copyright (C) 2013 by Joseph Pan <cs.wzpan@gmail.com>
 %% 
 %% This file may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3a
@@ -34,17 +34,12 @@
 \ProvidesClass{scnuthesis}
 
 \newif\ifismaster\ismastertrue
-\newif\ifisttf\isttftrue
 \DeclareOption{master}{\ismastertrue}
 \DeclareOption{doctor}{\ismasterfalse}
 \newif\ifisanon\isanonfalse
 \DeclareOption{anon}{\isanontrue}
 \newif\ifistwoside\istwosidefalse
 \DeclareOption{twoside}{\istwosidetrue}
-\DeclareOption{ttf}{\isttftrue}
-\DeclareOption{otf}{\isttffalse}
-\newif\ifisvista\isvistafalse
-\DeclareOption{vista}{\isvistatrue}
 \newif\ifischapter\ischapterfalse
 \DeclareOption{chapterhead}{\ischaptertrue}
 \DeclareOption*{\PackageWarning{scnuthesis}{Unknown Option '\CurrentOption'}}
@@ -62,6 +57,7 @@
 \RequirePackage[config]{subfig}
 \RequirePackage{float}
 \RequirePackage{array}
+\RequirePackage{setspace}
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
 \RequirePackage{multirow}
@@ -76,59 +72,31 @@
 \punctstyle{hangmobanjiao}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
-\RequirePackage{setspace}
 \RequirePackage[numbers,sort&compress,square]{natbib}
 \RequirePackage[CJKbookmarks=true,pdfborder=0 0 1]{hyperref}
 \defaultfontfeatures{Mapping=tex-text}
 \xeCJKsetcharclass{"0}{"2E7F}{0}
 \xeCJKsetcharclass{"2E80}{"FFFF}{1}
-\newcommand\installTTF{%
-  \setmainfont{Times New Roman}
-  \setsansfont{Arial}
-  \setmonofont{Courier New}
-  \ifisvista
-    \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
-    \setCJKmonofont{KaiTi} % Pluto use LiSu Thu use Kaiti, orig is SimSun
-    \setCJKfamilyfont{fs}{FangSong}
-    \setCJKfamilyfont{kai}{KaiTi}
-  \else
-    \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi_GB2312}]{SimSun}
-    \setCJKmonofont{KaiTi_GB2312} % Pluto use LiSu Thu use Kaiti, orig is SimSun
-    \setCJKfamilyfont{fs}{FangSong_GB2312}
-    \setCJKfamilyfont{kai}{KaiTi_GB2312}
-  \fi
-  \setCJKsansfont{SimHei}
-  \setCJKfamilyfont{song}{SimSun}
-  \setCJKfamilyfont{hei}{SimHei}
-  \setCJKfamilyfont{li}{LiSu}
-  \setCJKfamilyfont{you}{YouYuan}
-}
-\newcommand\installOTF{%
-  \setmainfont{Times New Roman} % could be changed to "Times New Roman PS Std"
-  \setsansfont{Arial}
-  \setmonofont{Courier New}
-  \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
-  \setCJKsansfont{Adobe Heiti Std}
-  \setCJKmonofont{Adobe Kaiti Std}
-  \setCJKfamilyfont{song}{Adobe Song Std}
-  \setCJKfamilyfont{hei}{Adobe Heiti Std}
-  \setCJKfamilyfont{fs}{Adobe Fangsong Std}
-  \setCJKfamilyfont{kai}{Adobe Kaiti Std}
-  \setCJKfamilyfont{li}{Adobe Kaiti Std}
-  \setCJKfamilyfont{you}{Adobe Kaiti Std}
-}
+\setmainfont[ExternalLocation=fonts/, BoldFont={timesbd.ttf},ItalicFont={timesi.ttf}]{times.ttf}
+\setsansfont[ExternalLocation=fonts/, BoldFont={arialbd.ttf},ItalicFont={ariali.ttf}]{arial.ttf}
+\setmonofont[ExternalLocation=fonts/, BoldFont={courbd.ttf},ItalicFont={couri.ttf}]{cour.ttf}
+\setCJKfamilyfont{song}[ExternalLocation=fonts/]{AdobeSong.otf}
+\setCJKfamilyfont{hei}[ExternalLocation=fonts/]{AdobeHei.otf}
+\setCJKfamilyfont{fs}[ExternalLocation=fonts/]{AdobeFangsong.otf}
+\setCJKfamilyfont{kai}[ExternalLocation=fonts/]{AdobeKai.otf}
+\setCJKfamilyfont{li}[ExternalLocation=fonts/]{AdobeKai.otf}
+\setCJKfamilyfont{you}[ExternalLocation=fonts/]{AdobeKai.otf}
+\setCJKmainfont[ExternalLocation=fonts/, BoldFont={AdobeHei.otf},ItalicFont={AdobeKai.otf}]{AdobeSong.otf}
+\setCJKsansfont[ExternalLocation=fonts/]{AdobeHei.otf}
+\setCJKmonofont[ExternalLocation=fonts/]{AdobeKai.otf}
 
-\ifisttf
-  \installTTF
-\else
-  \installOTF
-\fi
 \newcommand{\song}{\CJKfamily{song}}    % 宋体
 \newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
 \newcommand{\kai}{\CJKfamily{kai}}      % 楷体
 \newcommand{\hei}{\CJKfamily{hei}}      % 黑体
 \newcommand{\li}{\CJKfamily{li}}        % 隶书
 \newcommand{\you}{\CJKfamily{you}}      % 幼圆
+
 \def\songti{\song}
 \def\fangsong{\fs}
 \def\kaishu{\kai}
@@ -160,11 +128,34 @@
 \thu@define@fontsize{xiaoliu}{6.5bp}
 \thu@define@fontsize{qihao}{5.5bp}
 \thu@define@fontsize{bahao}{5bp}
+
+
 \newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}} % 上标形式引用
 \newcommand{\china}{中华人民共和国}
+
 \def\thuthesis{\textsc{Thu}-\textsc{Thesis}}
 \def\nudtpaper{\textsc{Nudt}\textsc{Paper}}
 \def\scnuthesis{\textsc{SCNU}\textsc{Thesis}}
+\def\CJK@today{\the\year 年 \the\month 月 \the\day 日}
+\def\classification#1{\def\@classification{#1}} % 中图分类号
+\def\serialno#1{\def\@serialno{#1}} % 学号
+\def\udc#1{\def\@udc{#1}} % udc号
+\def\mastertype#1{\def\@mastertype{#1}} % 硕士学位类型
+\def\confidentiality#1{\def\@confidentiality{#1}} % 密级
+\def\title#1{\def\@title{#1}} % 中文题目
+\def\displaytitle#1{\def\@displaytitle{#1}} % 文章标题
+\def\entitle#1{\def\@entitle{#1}} % 英文标题
+\def\author#1{\def\@author{#1}} % 中文作者名
+\def\enauthor#1{\def\@enauthor{#1}} % 英文作者名
+\def\zhdate#1{\def\@zhdate{#1}} % 中文日期
+\def\subject#1{\def\@subject{#1}} % 中文学科
+\def\ensubject#1{\def\@ensubject{#1}} % 英文学科
+\def\researchfield#1{\def\@researchfield{#1}} % 中文研究方向
+\def\supervisor#1{\def\@supervisor{#1}} % 导师
+\def\ensupervisor#1{\def\@ensupervisor{#1}} % 导师英文名
+\def\protitle#1{\def\@protitle{#1}} % 导师的职称
+\def\school#1{\def\@school{#1}} % 学院
+
 \newcommand{\pozhehao}{\kern0.3ex\rule[0.8ex]{2em}{0.1ex}\kern0.3ex}
 \newcommand{\chapterlabel}{}
 \renewcommand\contentsname{\hei 目\hspace{1em}录}
@@ -180,7 +171,7 @@
 \renewcommand\figurename{图}
 \renewcommand\tablename{表}
 \renewcommand\appendixname{附录}
-\def\CJK@today{\the\year 年 \the\month 月 \the\day 日}
+
 \newcommand\zhtoday{\CJK@today}
 \newcommand\entoday{\today{}}
 \geometry{top=21mm,bottom=25.5mm,left=30mm,right=30mm}
@@ -341,19 +332,19 @@
   {\if@openright\cleardoublepage\else\clearpage\fi}%
   \addcontentsline{toc}{chapter}{\cabstractname}%
   ~
-  \begin{spacing}{2.0}
-    \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
-  \end{spacing}
+  % \begin{spacing}{2.0}
+  %   \begin{center}{\sanhao \hei \@displaytitle}\end{center}%
+  % \end{spacing}
   \xiaosi \vspace{1.4pt}%
-  \ifisanon{}\else{
-  \begin{center}%
-    \begin{tabular}[c]{ll}%
-      专业名称： & \@subject \\%
-      申请者：& \@author \\%
-      导师： & \@supervisor \\%
-    \end{tabular}%
-  \end{center}%
-  }\fi
+  % \ifisanon{}\else{
+  % \begin{center}%
+  %   \begin{tabular}[c]{ll}%
+  %     专业名称： & \@subject \\%
+  %     申请者：& \@author \\%
+  %     导师： & \@supervisor~\@protitle \\%
+  %   \end{tabular}%    
+  % \end{center}%
+  % }\fi
   ~\\%
   ~\\%
   ~\\%
@@ -371,15 +362,15 @@
     \begin{center}{\sanhao \textsf{\@entitle}}\end{center}%
   \end{spacing}
   \xiaosi \vspace{1.4pt}
-  \ifisanon{}\else{
-  \begin{center}%
-    \begin{tabular}[c]{ll}%
-      Major： & \@ensubject \\%
-      Name：& \@enauthor \\%
-      Supervisor： & \@ensupervisor \\%
-    \end{tabular}%
-  \end{center}%
-  }\fi
+  % \ifisanon{}\else{
+  % \begin{center}%
+  %   \begin{tabular}[c]{ll}%
+  %     Major： & \@ensubject \\%
+  %     Name：& \@enauthor \\%
+  %     Supervisor： & \@ensupervisor \\%
+  %   \end{tabular}%
+  % \end{center}%
+  % }\fi
   ~\\%
   ~\\%
   ~\\%
@@ -589,24 +580,7 @@
   \egroup%
   \iftagsleft@ \@xp\lendsplit@ \else \@xp\rendsplit@ \fi%
 }
-\def\classification#1{\def\@classification{#1}} % 中图分类号
-\def\serialno#1{\def\@serialno{#1}} % 学号
-\def\udc#1{\def\@udc{#1}} % UDC号
-\def\mastertype#1{\def\@mastertype{#1}} % 硕士学位类型
-\def\confidentiality#1{\def\@confidentiality{#1}} % 密级
-\def\title#1{\def\@title{#1}} % 中文题目
-\def\displaytitle#1{\def\@displaytitle{#1}} % 文章标题
-\def\entitle#1{\def\@entitle{#1}} % 英文标题
-\def\author#1{\def\@author{#1}} % 中文作者名
-\def\enauthor#1{\def\@enauthor{#1}} % 英文作者名
-\def\zhdate#1{\def\@zhdate{#1}} % 中文日期
-\def\subject#1{\def\@subject{#1}} % 中文学科
-\def\ensubject#1{\def\@ensubject{#1}} % 英文学科
-\def\researchfield#1{\def\@researchfield{#1}} % 中文研究方向
-\def\supervisor#1{\def\@supervisor{#1}} % 导师
-\def\ensupervisor#1{\def\@ensupervisor{#1}} % 导师英文名
-\def\protitle#1{\def\@protitle{#1}} % 导师的职称
-\def\school#1{\def\@school{#1}} % 学院
+
 
 \def\optionpaperclass#1{\def\@optionpaperclass{#1}} % paperclass
 \def\optionpaperclassen#1{\def\@optionpaperclassen{#1}} % paperclass english
@@ -637,12 +611,12 @@
   \thispagestyle{empty}%
   \begin{center}\leavevmode % 表格环境
   \vspace{-2.3cm}
-  {\songti \sihao[1.25]%
+    {\songti \sihao[1.25]%
     \begin{tabular}{llcll}
-      分类号：  & \entry{1}{3.2cm}{\@classification}      \hspace*{4.8cm}   %
-      密级： & \entry{1}{3.2cm}{\@confidentiality} \\[5mm]
-      UDC & \entry{1}{3.2cm}{\@udc}     \hspace*{4.8cm}%
-      学号：  & \entry{1}{3.2cm}{\@serialno}
+      分类号：  & \entry{1}{3.2cm}{}      \hspace*{4.8cm}   %
+      密级： & \entry{1}{3.2cm}{} \\[5mm]
+      UDC & \entry{1}{3.2cm}{}     \hspace*{4.8cm}%
+      学号：  & \entry{1}{3.2cm}{}
     \end{tabular}
   }
   \par
@@ -651,14 +625,14 @@
   %\vspace{-1.5cm} %文字上移
   \sanhao\textbf{\textit{South China Normal University}}\\
   \vspace{0.1cm} %插入空白
-  {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
+  {\songti \bfseries \yihao \ziju{12pt} \@title\\}
   \ifismaster
   \vspace{0.2cm} %插入空白
-  {\songti \xiaosan (\@mastertype 学位)\\}
+  {\songti \xiaosan (\@mastertype 型学位)\\}
   \fi
   \vspace{1cm} %插入空白
-  \uline{\songti \xiaoer[1.25] \@title }\\
-  \vspace{40bp}
+  % \uline{\songti \xiaoer[1.25] \@title}\\
+  \vspace{45bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
       \raisebox{-3.7ex}[0pt]{学位申请人：} &
@@ -678,8 +652,8 @@
         \cline{2-2}
     \end{tabular}
   }\\
-  \vspace{1cm}
-  \@zhdate
+  \vspace{1.5cm}
+  {\@zhdate}
   \vspace{1cm}
   \end{center}%
   \vspace{1mm}
