@@ -82,47 +82,47 @@
 \defaultfontfeatures{Mapping=tex-text}
 \xeCJKsetcharclass{"0}{"2E7F}{0}
 \xeCJKsetcharclass{"2E80}{"FFFF}{1}
-\newcommand\installTTF{%
-  \setmainfont{Times New Roman}
-  \setsansfont{Arial}
-  \setmonofont{Courier New}
-  \ifisvista
-    \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
-    \setCJKmonofont{KaiTi} % Pluto use LiSu Thu use Kaiti, orig is SimSun
-    \setCJKfamilyfont{fs}{FangSong}
-    \setCJKfamilyfont{kai}{KaiTi}
-  \else
-    \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi_GB2312}]{SimSun}
-    \setCJKmonofont{KaiTi_GB2312} % Pluto use LiSu Thu use Kaiti, orig is SimSun
-    \setCJKfamilyfont{fs}{FangSong_GB2312}
-    \setCJKfamilyfont{kai}{KaiTi_GB2312}
-  \fi
-  \setCJKsansfont{SimHei}
-  \setCJKfamilyfont{song}{SimSun}
-  \setCJKfamilyfont{hei}{SimHei}
-  \setCJKfamilyfont{li}{LiSu}
-  \setCJKfamilyfont{you}{YouYuan}
-}
-\newcommand\installOTF{%
-  \setmainfont{Times New Roman} % could be changed to "Times New Roman PS Std"
-  \setsansfont{Arial}
-  \setmonofont{Courier New}
-  \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
-  \setCJKsansfont{Adobe Heiti Std}
-  \setCJKmonofont{Adobe Kaiti Std}
-  \setCJKfamilyfont{song}{Adobe Song Std}
-  \setCJKfamilyfont{hei}{Adobe Heiti Std}
-  \setCJKfamilyfont{fs}{Adobe Fangsong Std}
-  \setCJKfamilyfont{kai}{Adobe Kaiti Std}
-  \setCJKfamilyfont{li}{Adobe Kaiti Std}
-  \setCJKfamilyfont{you}{Adobe Kaiti Std}
-}
+% \newcommand\installTTF{%
+%   \setmainfont{Times New Roman}
+%   \setsansfont{Arial}
+%   \setmonofont{Courier New}
+%   \ifisvista
+%     \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}
+%     \setCJKmonofont{KaiTi} % Pluto use LiSu Thu use Kaiti, orig is SimSun
+%     \setCJKfamilyfont{fs}{FangSong}
+%     \setCJKfamilyfont{kai}{KaiTi}
+%   \else
+%     \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi_GB2312}]{SimSun}
+%     \setCJKmonofont{KaiTi_GB2312} % Pluto use LiSu Thu use Kaiti, orig is SimSun
+%     \setCJKfamilyfont{fs}{FangSong_GB2312}
+%     \setCJKfamilyfont{kai}{KaiTi_GB2312}
+%   \fi
+%   \setCJKsansfont{SimHei}
+%   \setCJKfamilyfont{song}{SimSun}
+%   \setCJKfamilyfont{hei}{SimHei}
+%   \setCJKfamilyfont{li}{LiSu}
+%   \setCJKfamilyfont{you}{YouYuan}
+% }
+% \newcommand\installOTF{%
+%   \setmainfont{Times New Roman} % could be changed to "Times New Roman PS Std"
+%   \setsansfont{Arial}
+%   \setmonofont{Courier New}
+%   \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+%   \setCJKsansfont{Adobe Heiti Std}
+%   \setCJKmonofont{Adobe Kaiti Std}
+%   \setCJKfamilyfont{song}{Adobe Song Std}
+%   \setCJKfamilyfont{hei}{Adobe Heiti Std}
+%   \setCJKfamilyfont{fs}{Adobe Fangsong Std}
+%   \setCJKfamilyfont{kai}{Adobe Kaiti Std}
+%   \setCJKfamilyfont{li}{Adobe Kaiti Std}
+%   \setCJKfamilyfont{you}{Adobe Kaiti Std}
+% }
 
-\ifisttf
-  \installTTF
-\else
-  \installOTF
-\fi
+% \ifisttf
+%   \installTTF
+% \else
+%   \installOTF
+% \fi
 \newcommand{\song}{\CJKfamily{song}}    % 宋体
 \newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
 \newcommand{\kai}{\CJKfamily{kai}}      % 楷体
