@@ -75,7 +75,7 @@ FUNCTION {load.config}
   #0 'show.patent.country :=
   #1 'show.mark :=
   #0 'space.before.mark :=
-  #1 'show.medium.type :=
+  #0 'show.medium.type :=
   "slash" 'component.part.label :=
   #0 'short.journal :=
   #0 'italic.journal :=
@@ -86,8 +86,8 @@ FUNCTION {load.config}
   #0 'only.start.page :=
   #0 'wave.dash.in.pages :=
   #1 'show.urldate :=
-  #1 'show.url :=
-  #1 'show.doi :=
+  #0 'show.url :=
+  #0 'show.doi :=
   #1 'show.preprint :=
   #0 'show.note :=
   #0 'show.english.translation :=
