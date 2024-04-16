@@ -72,7 +72,8 @@
 \RequirePackage{amsmath,amssymb,bm}
 \RequirePackage[varg]{txfonts}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
-\RequirePackage[CJKnumber,no-math,BoldFont,SlantFont]{xeCJK}
+\RequirePackage[no-math,BoldFont,SlantFont]{xeCJK}
+\RequirePackage{CJKnumb}
 \punctstyle{hangmobanjiao}
 \RequirePackage{ulem}
 \RequirePackage{indentfirst}
@@ -451,7 +452,7 @@
 \setlength\belowdisplayskip{\abovedisplayskip}%
 \setlength\belowdisplayshortskip{\abovedisplayshortskip}%
 }
-\setlength{\parindent}{2.5em}
+\setlength{\parindent}{2em}
 \setlength{\parskip}{0bp \@plus .5bp \@minus .5bp}
 \newcommand*{\ziju}[1]{\renewcommand{\CJKglue}{\hskip #1}}
 \renewenvironment{thebibliography}[1]{%
@@ -607,6 +608,7 @@
 \def\ensupervisor#1{\def\@ensupervisor{#1}} % 导师英文名
 \def\protitle#1{\def\@protitle{#1}} % 导师的职称
 \def\school#1{\def\@school{#1}} % 学院
+\def\degreename#1{\def\@degreename{#1}} % 专业学位名称
 
 \def\optionpaperclass#1{\def\@optionpaperclass{#1}} % paperclass
 \def\optionpaperclassen#1{\def\@optionpaperclassen{#1}} % paperclass english
@@ -620,6 +622,37 @@
   \optionpaperclassen{Doctor}
   \optionas{Supervisor}
 \fi
+
+% ==== 论文标题调整。added by jayvee start ====%
+\def\@title@width{18em}
+\newcommand\@title@box[2][\@title@width]{
+  \def\@@title@uline{\rule[-.6ex]{#1}{.4pt}}
+  \def\@@title@box##1{\parbox[t]{#1}{##1}}
+  \newlength\@@title@temp@ht
+  \settoheight\@@title@temp@ht{\@@title@box{#2}}
+  \settodepth\@tempdima{\@@title@box{#2}}
+  \advance\@@title@temp@ht\@tempdima
+  \ifdim\@@title@temp@ht=0pt
+    \@@title@uline%
+  \else
+    \leavevmode%
+    \ifdim\@@title@temp@ht>\normalbaselineskip
+      \rlap{\smash{\@@title@box{
+        \@whiledim\@@title@temp@ht>0pt
+        \leavevmode
+        \do{
+          \rlap{\@@title@uline}\\
+          \addtolength\@@title@temp@ht{-\normalbaselineskip}
+        }
+      }}}
+      \@@title@box{\centering #2}\\
+    \else
+      \parbox[t]{\@title@width}{\uline{\hfill\@title\hfill}}\\
+    \fi
+  \fi
+}
+% ==== added by jayvee end ====%
+
 \def\maketitle{%
   \renewcommand{\baselinestretch}{1.3}%
   \def\entry##1##2##3{%
@@ -636,50 +669,56 @@
   \pagenumbering{alph}% not display, for print only
   \thispagestyle{empty}%
   \begin{center}\leavevmode % 表格环境
-  \vspace{-2.3cm}
-  {\songti \sihao[1.25]%
-    \begin{tabular}{llcll}
-      分类号：  & \entry{1}{3.2cm}{\@classification}      \hspace*{4.8cm}   %
-      密级： & \entry{1}{3.2cm}{\@confidentiality} \\[5mm]
-      UDC & \entry{1}{3.2cm}{\@udc}     \hspace*{4.8cm}%
-      学号：  & \entry{1}{3.2cm}{\@serialno}
-    \end{tabular}
-  }
+  \begin{minipage}{\textwidth}
+      \vspace{-1cm}
+      {\songti \xiaosi[1.25]%
+        \begin{tabular}{llcll}
+          \hspace{3.7em} 分类号：  & \entry{1}{0cm}{\@classification}  \hspace*{6.2cm}   %
+          密级： & \entry{1}{0cm}{\@confidentiality} \\[1.5mm]
+          \hspace{3.7em} UDC & \entry{1}{0cm}{\@udc}     \hspace*{6.2cm}%
+          学号：  & \entry{1}{0cm}{\@serialno}
+        \end{tabular}
+      }
+      \par
+  \end{minipage}
   \par
-  \vspace*{1.5cm} %插入空白
+  \vspace*{3cm} %插入空白
   \includegraphics[width=11cm]{title.pdf}\\
   %\vspace{-1.5cm} %文字上移
   \sanhao\textbf{\textit{South China Normal University}}\\
-  \vspace{0.1cm} %插入空白
-  {\songti \bfseries \yihao \ziju{12pt} \@optionpaperclass{}学位论文\\}
+  \vspace{-0.5cm} %插入空白
+  {\songti \bfseries \xiaochu \ziju{2pt} \@optionpaperclass{}学位论文\\}
   \ifismaster
   \vspace{0.2cm} %插入空白
-  {\songti \xiaosan (\@mastertype 学位)\\}
+  {\songti \xiaoer \textbf{(\@mastertype 学位)}\\}
   \fi
-  \vspace{1cm} %插入空白
-  \uline{\songti \xiaoer[1.25] \@title }\\
-  \vspace{40bp}
+  
+  \vspace{1.8cm} %插入空白
+  % added by jayvee
+  \@title@box{\@title}
+  
+  \vspace{45bp}
   {\songti \sihao
     \begin{tabular}{lp{5cm}c}
-      \raisebox{-3.7ex}[0pt]{学位申请人：} &
-        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@author}\hfil{}} & \\[3.2ex]
+      \raisebox{-1.5ex}[0pt]{学\hspace{0.5em}位\hspace{0.5em}申\hspace{0.5em}请\hspace{0.5em}人：} &
+        {\fs \hfil\raisebox{-1ex}[0pt]{\@author}\hfil{}} & \\[0.5ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{专业名称：} &
-        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@subject}\hfil{}} & \\[3.2ex]
+      \raisebox{-1.5ex}[0pt]{专\hspace{0.2em}业\hspace{0.2em}学\hspace{0.2em}位\hspace{0.2em}名\hspace{0.2em}称：} &
+        {\fs \hfil\raisebox{-1ex}[0pt]{\@degreename}\hfil{}} & \\[0.5ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{研究方向：} &
-        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@researchfield}\hfil{}} & \\[3.2ex]
+      \raisebox{-1.5ex}[0pt]{专\hspace{0.2em}业\hspace{0.2em}学\hspace{0.2em}位\hspace{0.2em}领\hspace{0.2em}域：} &
+        {\fs \hfil\raisebox{-1ex}[0pt]{\@researchfield}\hfil{}} & \\[0.5ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{所在院系：} &
-        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@school}\hfil{}} & \\[3.2ex]
+      \raisebox{-1.5ex}[0pt]{所\hspace{1em}在\hspace{1em}院\hspace{1em}系：} &
+        {\fs \hfil\raisebox{-1ex}[0pt]{\@school}\hfil{}} & \\[0.5ex]
         \cline{2-2}
-      \raisebox{-3.7ex}[0pt]{导师姓名及职称：} &
-        {\fs \hfil\raisebox{-3.7ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[3.2ex]
+      \raisebox{-1.5ex}[0pt]{导师姓名及职称：} &
+        {\fs \hfil\raisebox{-1ex}[0pt]{\@supervisor~\@protitle}\hfil{}} & \\[0.5ex]   
         \cline{2-2}
     \end{tabular}
   }\\
-  \vspace{1cm}
-  \@zhdate
+  \vspace{2cm}
+  {\sihao \@zhdate}
   \vspace{1cm}
   \end{center}%
   \vspace{1mm}
