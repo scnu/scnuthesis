@@ -601,21 +601,20 @@ $\beta_a=\lnot \left(\left[s_1\lor s_2\lor \cdots\lor s_m\right]^T\right)$，而
 \section{参考文献}
 \label{sec:bib}
 当然参考文献可以直接写 bibitem，虽然费点功夫，但是好控制，各种格式可以自己随意改
-写，在\scnuthesis{}里面，建议使用JabRef编辑和管理文献，再结合\verb|bstutf8.bst|之后，
-对中文的支持也很好。
+写。
 
-本模板推荐使用 BIB\TeX，样式文件为 bstutf8.bst，基本符合学校的参考文献格式（如专利
-等引用未加详细测试）。看看这个例子，关于书的\upcite{tex, companion}，
+本模板推荐使用 BIB\TeX，样式文件为 gbt7714-numerical.bst，这个文件是 GB/T 7714—2015《信息与文献 参考文献著录规则》中国参考文献推荐标准的 BIB\TeX 实现。国内的绝大部分学术期刊、学位论文都使用了基于该标准的格式。该 bst 文件天然支持各种中文参考文献格式，同时本项目使用做了一些配置上的改动以使用本校的使用习惯。
+
+看看这个例子，关于书的\upcite{tex, companion}，
 还有这些\upcite{clzs}，关于杂志的\upcite{ELIDRISSI94,
   MELLINGER96, SHELL02}，硕士论文\upcite{zhubajie, metamori2004}，博士论文
 \upcite{shaheshang, FistSystem01}，标准文件\upcite{IEEE-1363}~，会议论文\upcite{DPMG}，%
-技术报告\upcite{NPB2}。中文参考文献\upcite{cnarticle}\textsf{特别注意}，需要在\verb|bibitem|中
-增加\verb|language|域并设为\verb|zh|，英文此项可不填，之后由\verb|bstutf8|统一处理
-(具体就是决定一些文献的显示格式，如等、etc)。
-若使用\verb|JabRef|，则选择\textsf{Options}$\rightarrow$\textsf{Set Up General Fields}，
-在\verb|General:|后加入\verb|language|就可以了。
+技术报告\upcite{NPB2}。
 
-有时候不想要上标，那么可以这样 \cite{shaheshang}，这个非常重要。
+如果使用 \\cite 命令，就会是：
+
+\citet{tsfm}提出了transform架构，或者是这样子： \citeauthor{tsfm}在\cite{tsfm}中提出了新架构。
+
 
 \section{代码高亮}
 有些时候我们需要在论文中引入一段代码，用来衬托正文的内容，或者体现关键思路的实现。
